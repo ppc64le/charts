@@ -1,0 +1,125 @@
+[debug] Created tunnel using local port: '34335'
+
+[debug] SERVER: "localhost:34335"
+
+[debug] Original chart version: ""
+[debug] CHART PATH: /home/ISVonboard/bps-orderdemo-hc
+
+NAME:   nomadic-clownfish
+REVISION: 1
+RELEASED: Mon Feb 19 20:14:44 2018
+CHART: bps-orderdemo-hc-0.1.0
+USER-SUPPLIED VALUES:
+{}
+
+COMPUTED VALUES:
+bpschartid: bps-orderdemo
+bpschartversion: 0.1
+deployment:
+  configMap: orderdb
+  containerPort: 9080
+  name: bps-was-orderdemo
+image:
+  pullPolicy: IfNotPresent
+  repository: mycluster.icp:8500/default/bps-was-orderdemo
+  tag: v5
+ingress:
+  annotations: null
+  enabled: true
+  hosts:
+  - chart-example.local
+  tls: null
+replicaCount: null
+resources: {}
+service:
+  externalPort: 80
+  internalPort: 9080
+  name: customerorderservices
+  type: NodePort
+
+HOOKS:
+MANIFEST:
+
+---
+# Source: bps-orderdemo-hc/templates/deployment.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: bps-orderdemo
+  labels:
+    app: customerorderservices
+    chart: 0.1 
+    release: nomadic-clownfish
+spec:
+  ports:
+    - port: 
+      targetPort: 9080
+  selector:
+    app:  customerorderservices
+  type: NodePort
+---
+# Source: bps-orderdemo-hc/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nomadic-clownfish-bps-orderdemo-hc
+  labels:
+    app: bps-orderdemo-hc
+    chart: bps-orderdemo-hc-0.1.0
+    release: nomadic-clownfish
+    heritage: Tiller
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 9080
+      protocol: TCP
+      name: customerorderservices
+  selector:
+    app: bps-orderdemo-hc
+    release: nomadic-clownfish
+---
+# Source: bps-orderdemo-hc/templates/deployment.yaml
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app: customerorderservices 
+  name: bps-was-orderdemo 
+spec:
+  replicas: 
+  template:
+    metadata:
+      labels:
+        app:  customerorderservices 
+    spec:
+      containers:
+      - image: "mycluster.icp:8500/default/bps-was-orderdemo:v5" 
+        name: bps-was-orderdemo
+        ports:
+        - containerPort: 9080
+          protocol: TCP
+        envFrom:
+        - configMapRef:
+            name: orderdb
+---
+# Source: bps-orderdemo-hc/templates/ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nomadic-clownfish-bps-orderdemo-hc
+  labels:
+    app: bps-orderdemo-hc
+    chart: bps-orderdemo-hc-0.1.0
+    release: nomadic-clownfish
+    heritage: Tiller
+  annotations:
+spec:
+  rules:
+    - host: chart-example.local
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nomadic-clownfish-bps-orderdemo-hc
+              servicePort: 80

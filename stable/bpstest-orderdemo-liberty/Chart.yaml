@@ -1,0 +1,6 @@
+name: bpstest-orderdemo-liberty
+version: 0.1.0
+description: HELM Chart to deploy the WAS OrderDemo (not including the backend) 
+maintainers:
+  - name: Bruce Semple
+    email: sempleb@us.ibm.com
