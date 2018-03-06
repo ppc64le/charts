@@ -1,0 +1,74 @@
+##############################################################################
+################################ IBM Db2 ######################################
+###############################################################################
+
+###############################################################################
+## Common image variables
+###############################################################################
+
+## Architecture - e.g. amd64, s390x, ppc64le. Specific worker node architecture
+## to deploy to.
+## You can use kubectl version command to determine the architecture on the 
+## desired worker node. 
+
+# Specify architecture (amd64, ppc64le, s390x) and weight to be  used for scheduling as follows : 
+#   0 - Do not use
+#   1 - Least preferred
+#   2 - No preference
+#   3 - Most preferred
+arch:
+  amd64: "0"
+  ppc64le: "3"
+  s390x: "0"
+bpsGlobals:
+  releaseName: bps-orderdemo-release
+  releaseNameTest: bps-orderdemo-release-test
+  serviceName: bps-orderdemo-service
+  db2pwsecretsName: bps-orderdemo-db2pw-secret
+  db2imagelicenseName: bps-orderdemo-db2-license
+  pvcName: bps-orderdemo-pvc
+image:
+  repository: na.cumulusrepo.com/hcicp_dev/db2server_dec
+  tag: 11.1.2.2b
+  pullPolicy: IfNotPresent 
+  secret: "eyJuYS5jdW11bHVzcmVwby5jb20iOnsidXNlcm5hbWUiOiJ0b2tlbiIsInBhc3N3b3JkIjoiOTkxOTE5NGIwMDU3MDM0N2FmZTA1YmQzNjljN2Y3MmYiLCJlbWFpbCI6ImlkZWxpZGphQGNhLmlibS5jb20iLCJhdXRoIjoiZEc5clpXNDZPVGt4T1RFNU5HSXdNRFUzTURNME4yRm1aVEExWW1Rek5qbGpOMlkzTW1ZPSJ9fQ=="
+service:
+  name: bps-db2-orderdemo 
+  type: NodePort
+  port: 50000
+  tsport: 55000
+db2inst:
+  instname: "db2inst1"
+  password: "db2inst1"
+options:
+  databaseName: "ORDERDB"
+  oracleCompatibility: "false"
+
+## global persistence settings
+persistence:
+  enabled: true
+  useDynamicProvisioning: false
+
+## Persistence parameters for /database
+dataVolume:
+  name: "bps-db2-data-stor"
+
+  ## Specify the name of the Existing Claim to be used by your application
+  ## empty string means don't use an existClaim
+  existingClaimName: 
+
+  ## Specify the name of the StorageClass
+  ## empty string means don't use a StorageClass
+  storageClassName: "bps-storage"
+  size: 13Gi
+
+## Configure resource requests and limits
+## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+##
+resources:
+  requests:
+    memory: 2Gi
+    cpu: 2000m
+  limits:
+    memory: 16Gi
+    cpu: 4000m

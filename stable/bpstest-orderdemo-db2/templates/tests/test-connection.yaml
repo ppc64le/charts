@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ .Values.service.name }}-credentials-test"
+  labels:
+    app: {{  .Values.service.name }}-credentials-test
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{  .Values.bpsGlobals.releaseNameTest }}"
+    heritage: "{{ .Release.Service }}"
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+{{- if not (.Values.secretOverride) }}
+  imagePullSecrets:
+    - name: {{ .Values.service.name }}-db2-secret
+{{- end }}
+  containers:
+  - name: {{  .Values.service.name }}
+    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    env:
+      - name: DB
+        value: "{{ .Values.options.databaseName }}"
+      - name: HOST
+        value: {{ .Values.service.name }}
+      - name: USER
+        value: {{ default "db2inst1" .Values.db2inst.instname | quote }}
+      - name: PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: {{  .Values.service.name }}
+            key: password
+      - name: PORT
+        value: {{ default "50000" .Values.service.port | quote }}
+    {{- if .Values.options.databaseName }}
+    command: ["sh", "-c", "useradd -m $USER  && /opt/ibm/db2/V11.1/instance/db2icrt -s client -u $USER $USER && su - $USER -c \". sqllib/db2profile ; db2cli validate -connect -database $DB:$HOST:$PORT -user $USER -passwd $PASSWORD\""]
+    {{- else }}
+    command: ["sh", "-c", "yum install nc -y; echo $HOST; nc --sh-exec ls -v -w10 $HOST $PORT"]
+    {{- end }}
+  restartPolicy: Never

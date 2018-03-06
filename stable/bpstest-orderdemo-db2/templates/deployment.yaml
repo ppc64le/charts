@@ -1,0 +1,102 @@
+{{- if not (.Values.secretOverride) }}
+apiVersion: v1
+data:
+  .dockercfg: {{ .Values.image.secret }}
+kind: Secret
+metadata:
+  name: {{ .Values.bpsGlobals.db2imagelicenseName }}
+  labels:
+    app: {{ .Values.service.name  }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Values.bpsGlobals.releaseName }}"
+    heritage: "{{ .Release.Service }}"
+type: kubernetes.io/dockercfg
+---
+{{- end }}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{  .Values.service.name }}
+  labels:
+    name: {{  .Values.service.name  }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Values.bpsGlobals.releaseName }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  template:
+    metadata:
+      name: {{   .Values.service.name }}
+      labels:
+        app: {{   .Values.service.name }}
+    spec:
+      affinity:
+      {{- include "nodeaffinity" . | indent 6 }}
+      volumes:
+      - name: {{ .Values.dataVolume.name }} 
+        persistentVolumeClaim:
+          claimName: {{ .Values.bpsGlobals.pvcName }} 
+      containers:
+      - name: {{   .Values.service.name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        securityContext:
+          capabilities:
+            add: ["SYS_RESOURCE", "IPC_OWNER", "SYS_NICE"]
+        ports:
+        - containerPort: 50000
+        - containerPort: 55000
+        env:
+        - name: LICENSE
+          value: "accept"
+        - name: DB2INSTANCE
+          value: {{ default "db2inst1" .Values.db2inst.instname | quote }}
+        - name: DB2INST1_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{   .Values.bpsGlobals.db2pwsecretsName }}
+              key: password 
+        - name: DBNAME
+          value: "{{ .Values.options.databaseName }}"
+        - name: BLU
+          value: "false"
+        - name: ENABLE_ORACLE_COMPATIBILITY
+          value: "{{ .Values.options.oracleCompatibility }}"
+        - name: UPDATEAVAIL
+          value: "NO"
+        - name: TO_CREATE_SAMPLEDB
+          value: "false" 
+        - name: IS_OSXFS
+          value: "false"
+        - name: REPODB
+          value: "false"
+        # set liveness probe to determine if container needs to be restarted
+        # - command, http, or tcp
+        # ref : https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - /database/config/$DB2INSTANCE/sqllib/bin/db2gcf -s
+          initialDelaySeconds: 400
+          periodSeconds: 90
+          failureThreshold: 3
+        readinessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - /database/config/$DB2INSTANCE/sqllib/bin/db2gcf -s
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          failureThreshold: 20
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - mountPath: /database
+          name: "{{ .Values.dataVolume.name }}"
+{{- if .Values.bpsGlobals.db2imagelicenseName }}
+      imagePullSecrets:
+          - name: {{ .Values.bpsGlobals.db2imagelicenseName }}
+{{- end }}
+

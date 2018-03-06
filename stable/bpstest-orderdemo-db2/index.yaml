@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  bps-db2:
+  - apiVersion: v1
+    created: 2018-02-28T11:41:25.321247408-05:00
+    description: IBM Db2 Developer-C Edition 11.1.2.2 iFix002
+    digest: fdaaf3124d2073b47a1251412ba5bd18a65d6df2c93dee6b61a7e756043d7397
+    engine: gotpl
+    home: https://www.ibm.com/analytics/us/en/db2/
+    icon: https://na.cumulusrepo.com/assetswithkey/ba5345023eb40c21d01ad81bc927a36f/db2logoicp-01.png/v1
+    keywords:
+    - db2
+    - database
+    - sql
+    maintainers:
+    - name: IBM Analytics
+    name: bps-db2
+    sources:
+    - https://github.com/IBM/charts/tree/master/stable
+    tillerVersion: '>=2.4.0'
+    urls:
+    - https://brucesemple.github.io/helmCharts/bps-db2-1.1.1.tgz
+    version: 1.1.1
+generated: 2018-02-28T11:41:25.240317716-05:00
