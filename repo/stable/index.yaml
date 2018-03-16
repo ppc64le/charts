@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   bps-db2:
   - apiVersion: v1
-    created: 2018-03-06T11:18:37.984978707-05:00
+    created: 2018-03-16T09:25:14.500925942-04:00
     description: IBM Db2 Developer-C Edition 11.1.2.2 iFix002
     digest: fdaaf3124d2073b47a1251412ba5bd18a65d6df2c93dee6b61a7e756043d7397
     engine: gotpl
@@ -23,7 +23,7 @@ entries:
     version: 1.1.1
   bps-orderdemo-hc:
   - apiVersion: v1
-    created: 2018-03-06T11:18:37.985562298-05:00
+    created: 2018-03-16T09:25:14.50147746-04:00
     description: HELM Chart to deploy the WAS OrderDemo (not including the backend)
     digest: 5274a8d02196bff7f333e943b24842a1efd7d09a7d16cfda54ecef7f461d50c8
     maintainers:
@@ -33,4 +33,14 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/stable/bps-orderdemo-hc-0.1.0.tgz
     version: 0.1.0
-generated: 2018-03-06T11:18:37.890615981-05:00
+  h2oai:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-03-16T09:25:14.501908651-04:00
+    description: DriverlessAI distribution for Kubernetes
+    digest: df87a39a76e657b1e4b7492c70fa40b3ba5ca8e64235039ce4d8e81532907d1d
+    name: h2oai
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/stable/h2oai-1.0.25.tgz
+    version: 1.0.25
+generated: 2018-03-16T09:25:14.429542361-04:00
