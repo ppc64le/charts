@@ -11,5 +11,5 @@ Want to learn more about [IBM Cloud Private?](https://developer.ibm.com/linuxonp
 
 ## Repository Structure
 
-The repo/stable  master branch serves as the landing ground for the published HELM charts.
-The repo/beta  master branch serves as the landing ground for charts that are in a pre-releases stage and or under test and verfication.
+* **repo/stable** -  master branch serves as the landing ground for the published HELM charts.
+* **repo/beta**  -  master branch serves as the landing ground for charts that are in a pre-releases stage and or under test and verfication.
