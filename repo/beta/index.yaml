@@ -1,0 +1,56 @@
+apiVersion: v1
+entries:
+  bps-db2:
+  - apiVersion: v1
+    created: 2018-04-16T16:20:30.543705906-04:00
+    description: IBM Db2 Developer-C Edition 11.1.2.2 iFix002
+    digest: fdaaf3124d2073b47a1251412ba5bd18a65d6df2c93dee6b61a7e756043d7397
+    engine: gotpl
+    home: https://www.ibm.com/analytics/us/en/db2/
+    icon: https://na.cumulusrepo.com/assetswithkey/ba5345023eb40c21d01ad81bc927a36f/db2logoicp-01.png/v1
+    keywords:
+    - db2
+    - database
+    - sql
+    maintainers:
+    - name: IBM Analytics
+    name: bps-db2
+    sources:
+    - https://github.com/IBM/charts/tree/master/stable
+    tillerVersion: '>=2.4.0'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/bps-db2-1.1.1.tgz
+    version: 1.1.1
+  bps-orderdemo-hc:
+  - apiVersion: v1
+    created: 2018-04-16T16:20:30.544416976-04:00
+    description: HELM Chart to deploy the WAS OrderDemo (not including the backend)
+    digest: 5274a8d02196bff7f333e943b24842a1efd7d09a7d16cfda54ecef7f461d50c8
+    maintainers:
+    - email: sempleb@us.ibm.com
+      name: Bruce Semple
+    name: bps-orderdemo-hc
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/bps-orderdemo-hc-0.1.0.tgz
+    version: 0.1.0
+  dai-cpu:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-04-16T16:20:30.544992021-04:00
+    description: DriverlessAI distribution for Kubernetes
+    digest: fd68fa2899a4478fd7ec939b06316a36585f01802654ce072acf3e73eb3fc28f
+    name: dai-cpu
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-cpu-1.0.25.tgz
+    version: 1.0.25
+  dai-gpu:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-04-16T16:20:30.545407893-04:00
+    description: DriverlessAI distribution for Kubernetes
+    digest: d40ffdf8a10e28fe677315f9740328bd5e7487950661074d28058a3712f2b897
+    name: dai-gpu
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.0.25.tgz
+    version: 1.0.25
+generated: 2018-04-16T16:20:30.470380765-04:00
