@@ -3,11 +3,11 @@ entries:
   dai-gpu:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-05-17T15:58:49.013237251-04:00
+    created: 2018-05-17T16:14:41.052937365-04:00
     description: DriverlessAI distribution for Kubernetes
-    digest: 9b8c463f3c2ad319b635e45abe92867dd1553df606884def126c63482fc1b255
+    digest: 0424082a6272d8acc26987b064124b71c496892963205b3cdcfe75fcfd151f6e
     name: dai-gpu
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/stable/dai-gpu-1.1.1.tgz
-    version: 1.1.0
-generated: 2018-05-17T15:58:49.012556466-04:00
+    version: 1.1.1
+generated: 2018-05-17T16:14:41.052241863-04:00
