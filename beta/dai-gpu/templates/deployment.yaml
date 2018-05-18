@@ -1,0 +1,50 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "h2oai.fullname" . }}
+  labels:
+    app: {{ template "h2oai.name" . }}
+    chart: {{ template "h2oai.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "h2oai.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "h2oai.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 12345
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 12345
+            initialDelaySeconds: 60
+            timeoutSeconds: 2
+            periodSeconds: 15
+            successThreshold: 1
+            failureThreshold: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 12345
+            initialDelaySeconds: 60
+            timeoutSeconds: 2
+            periodSeconds: 15
+            successThreshold: 1
+            failureThreshold: 10
+          resources:
+            limits:
+              alpha.kubernetes.io/nvidia-gpu: 1
