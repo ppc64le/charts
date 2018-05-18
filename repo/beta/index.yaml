@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   bps-db2:
   - apiVersion: v1
-    created: 2018-05-18T08:57:20.478321909-04:00
+    created: 2018-05-18T10:28:34.898819748-04:00
     description: IBM Db2 Developer-C Edition 11.1.2.2 iFix002
     digest: fdaaf3124d2073b47a1251412ba5bd18a65d6df2c93dee6b61a7e756043d7397
     engine: gotpl
@@ -23,7 +23,7 @@ entries:
     version: 1.1.1
   bps-orderdemo-hc:
   - apiVersion: v1
-    created: 2018-05-18T08:57:20.478951328-04:00
+    created: 2018-05-18T10:28:34.899361207-04:00
     description: HELM Chart to deploy the WAS OrderDemo (not including the backend)
     digest: 5274a8d02196bff7f333e943b24842a1efd7d09a7d16cfda54ecef7f461d50c8
     maintainers:
@@ -33,33 +33,14 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/bps-orderdemo-hc-0.1.0.tgz
     version: 0.1.0
-  dai-cpu:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-05-18T08:57:20.479531936-04:00
-    description: DriverlessAI distribution for Kubernetes
-    digest: fd68fa2899a4478fd7ec939b06316a36585f01802654ce072acf3e73eb3fc28f
-    name: dai-cpu
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-cpu-1.0.25.tgz
-    version: 1.0.25
   dai-gpu:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-05-18T08:57:20.480498675-04:00
+    created: 2018-05-18T10:28:34.899806181-04:00
     description: DriverlessAI distribution for Kubernetes
-    digest: 55d86dc39504f035a146695726ded2ca763b95f75ad24de82f994e14b20cc380
+    digest: 4278049f36c71ae160b333b43e99ae37e25c76371ad87eb3f672081352cd1d63
     name: dai-gpu
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
-    version: 1.1.2
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-05-18T08:57:20.479996332-04:00
-    description: DriverlessAI distribution for Kubernetes
-    digest: d40ffdf8a10e28fe677315f9740328bd5e7487950661074d28058a3712f2b897
-    name: dai-gpu
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.0.25.tgz
-    version: 1.0.25
-generated: 2018-05-18T08:57:20.415797006-04:00
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.3.tgz
+    version: 1.1.3
+generated: 2018-05-18T10:28:34.832116301-04:00
