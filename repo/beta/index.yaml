@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   bps-db2:
   - apiVersion: v1
-    created: 2018-05-18T13:27:19.223532472-04:00
+    created: 2018-05-22T17:32:06.534361615-04:00
     description: IBM Db2 Developer-C Edition 11.1.2.2 iFix002
     digest: fdaaf3124d2073b47a1251412ba5bd18a65d6df2c93dee6b61a7e756043d7397
     engine: gotpl
@@ -23,7 +23,7 @@ entries:
     version: 1.1.1
   bps-orderdemo-hc:
   - apiVersion: v1
-    created: 2018-05-18T13:27:19.224150308-04:00
+    created: 2018-05-22T17:32:06.535169118-04:00
     description: HELM Chart to deploy the WAS OrderDemo (not including the backend)
     digest: 5274a8d02196bff7f333e943b24842a1efd7d09a7d16cfda54ecef7f461d50c8
     maintainers:
@@ -36,11 +36,11 @@ entries:
   dai-gpu:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-05-18T13:27:19.224656745-04:00
+    created: 2018-05-22T17:32:06.535617812-04:00
     description: DriverlessAI distribution for Kubernetes
-    digest: a55f088f2eb67dc27a2c49213273f9158dcb54ce096de3870818c52be9d460f8
+    digest: 5d1afeda9f3aa71a064c5f77c06c06f5c25412a6c20f7fe0db4ac669bbc3320b
     name: dai-gpu
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.4.tgz
     version: 1.1.4
-generated: 2018-05-18T13:27:19.147732018-04:00
+generated: 2018-05-22T17:32:06.436865284-04:00
