@@ -31,20 +31,20 @@ spec:
             httpGet:
               path: /
               port: 12345
-            initialDelaySeconds: 60
+            initialDelaySeconds: 180
             timeoutSeconds: 2
             periodSeconds: 15
             successThreshold: 1
-            failureThreshold: 10
+            failureThreshold: 100
           readinessProbe:
             httpGet:
               path: /
               port: 12345
-            initialDelaySeconds: 60
+            initialDelaySeconds: 180
             timeoutSeconds: 2
             periodSeconds: 15
             successThreshold: 1
-            failureThreshold: 10
+            failureThreshold: 100
           resources:
             limits:
               alpha.kubernetes.io/nvidia-gpu: 1
