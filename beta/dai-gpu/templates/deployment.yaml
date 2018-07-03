@@ -24,27 +24,20 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
+            - name: dai
               containerPort: 12345
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 12345
-            initialDelaySeconds: 180
-            timeoutSeconds: 2
-            periodSeconds: 15
-            successThreshold: 1
-            failureThreshold: 100
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 12345
-            initialDelaySeconds: 180
-            timeoutSeconds: 2
-            periodSeconds: 15
-            successThreshold: 1
-            failureThreshold: 100
+            - name: jupyter
+              containerPort: 8888
+              protocol: TCP
+          volumeMounts:
+            - mountPath: "/var/run/nvidia-persistenced"
+              name: nvidia-pers-indicator
           resources:
             limits:
               alpha.kubernetes.io/nvidia-gpu: 1
+      volumes:
+        - name: nvidia-pers-indicator
+          hostPath:
+            path: /var/run/nvidia-persistenced
+            type: Directory
