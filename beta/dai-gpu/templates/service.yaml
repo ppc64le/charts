@@ -11,9 +11,9 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: dai
       protocol: TCP
-      name: http
+      name: dai
   selector:
     app: {{ template "h2oai.name" . }}
     release: {{ .Release.Name }}

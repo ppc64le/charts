@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: opsh2oai/dai-ppc64le
-  tag: 9.0-1.1.0
+  tag: 9.0-1.2.2.c
   pullPolicy: IfNotPresent
 
 service:

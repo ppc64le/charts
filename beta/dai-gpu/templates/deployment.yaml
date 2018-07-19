@@ -19,7 +19,28 @@ spec:
         app: {{ template "h2oai.name" . }}
         release: {{ .Release.Name }}
     spec:
+      securityContext:
+        runAsUser: 0
       containers:
+        - name: bps-sidecar-filebeat
+          image: ibmcom/filebeat-ppc64le:5.5.1
+          env: 
+            - name: LOG_DIRS
+              value: /opt/h2oai/dai/log/dai.out
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: NODE_HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          volumeMounts:
+          - name: logs-volume
+            mountPath: /opt/h2oai/dai/log
+          - name: config-vol
+            mountPath: /usr/share/filebeat/filebeat.yml
+            subPath: filebeat.yml
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
@@ -31,13 +52,23 @@ spec:
               containerPort: 8888
               protocol: TCP
           volumeMounts:
-            - mountPath: "/var/run/nvidia-persistenced"
-              name: nvidia-pers-indicator
+            - name: logs-volume
+              mountPath: /opt/h2oai/dai/log
+            - name: nvidia-pers-indicator
+              mountPath: "/var/run/nvidia-persistenced"
           resources:
             limits:
               alpha.kubernetes.io/nvidia-gpu: 1
       volumes:
+        - name: logs-volume
+          emptyDir: {}
         - name: nvidia-pers-indicator
-          hostPath:
+          hostPath: 
             path: /var/run/nvidia-persistenced
-            type: Directory
+            type: Directory 
+        - name: config-vol
+          configMap:
+            name: dai-filebeat-sidecar-config
+            items:
+              - key: filebeat.yml
+                path: filebeat.yml
