@@ -3,7 +3,7 @@
 # ISV HELM Chart Repository 
 
 ## Overview 
-This repository gives IBM Cloud Private users access to technology from non-IBM software providers.  Working with IBM, these companies have verified thier components run on IBM Cloud Private and meet basic operational standards.  Some of the components in this repository will require you contact the respective company to obtain license keys as needed.
+This repository gives IBM Cloud Private users access to technology from non-IBM software providers.  Working with IBM, these companies have verified their components run on IBM Cloud Private and meet basic operational standards.  Some of the components in this repository will require you contact the respective company to obtain license keys as needed.
 
 If you are interested in having your technology made available via this repository an [IBM Cloud Private "on-boarding guide"](https://developer.ibm.com/linuxonpower/ibm-cloud-private-on-power/isv-guide/) is available.
 
