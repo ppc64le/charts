@@ -56,9 +56,31 @@ spec:
               mountPath: /opt/h2oai/dai/log
             - name: nvidia-pers-indicator
               mountPath: "/var/run/nvidia-persistenced"
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: "/"
+              port: 12345
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2 
+            initialDelaySeconds: 30
+          readinessProbe: 
+            failureThreshold: 3
+            httpGet:
+              path: "/"
+              port: 12345
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2
+            initialDelaySeconds: 30
           resources:
             limits:
-              alpha.kubernetes.io/nvidia-gpu: 1
+              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.limits }}
+            requests:
+              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.requests }}
       volumes:
         - name: logs-volume
           emptyDir: {}

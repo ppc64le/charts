@@ -6,4 +6,8 @@ version: 1.1.4
 keywords:
   - ppc64le
   - ml
+  - Analytics
+  - Commercial
+  - ICP
 icon: http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_static/favicon.ico
+tillerVersion: ">=2.6.0"
