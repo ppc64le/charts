@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: opsh2oai/dai-ppc64le
-  tag: 9.0-1.2.2.c
+  tag: 9.0-1.2.2c
   pullPolicy: IfNotPresent
 
 service:
@@ -27,10 +27,8 @@ ingress:
   #      - chart-example.local
 
 resources: 
-  limits:
-    alpha.kubernetes.io/nvidia-gpu: 1
-  requests:
-    alpha.kubernetes.io/nvidia-gpu: 1
+  limits: 1
+  requests: 1
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
