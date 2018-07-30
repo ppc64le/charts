@@ -3,9 +3,9 @@ entries:
   dai-gpu:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-07-29T22:12:42.952764975-04:00
+    created: 2018-07-29T23:20:26.228261543-04:00
     description: DriverlessAI distribution for Kubernetes
-    digest: f5086992db50c3b36ea7f7ee7e15fa741ae75f280a8017ca6e5b9394df981e0d
+    digest: a6f7e71426c27b97d08cb3b5472632537644ddc3250ca1b14adc7f2c981e299a
     icon: http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_static/favicon.ico
     keywords:
     - ppc64le
@@ -18,4 +18,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/stable/dai-gpu-1.1.4.tgz
     version: 1.1.4
-generated: 2018-07-29T22:12:42.951554154-04:00
+generated: 2018-07-29T23:20:26.227130351-04:00
