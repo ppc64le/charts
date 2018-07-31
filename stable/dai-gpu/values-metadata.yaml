@@ -1,0 +1,31 @@
+## Metadata for H2O's DriverlessAI HELM Chart 
+## This metadata is used to augment the value.yaml to drive IPC UI for configuration of the Helm chart installation
+##
+##
+## image configuration metadata
+image:
+  __metadata:
+    label: "Docker image configuration"
+  repository:
+    __metadata:
+      name: "Repository"
+      label: "Docker Repository"
+      description: "Docker registry to pull image from."
+      type: "string"
+      immutable: "false"
+      required: true
+  pullPolicy:
+    __metadata:
+      name: "pullPolicy"
+      label: "Docker image pull policy"
+      description: "Always, Never, or IfNotPresent. Defaults to IfNotPresent"
+      type: "string"
+      immutable: "false"
+      required: true
+      options:
+      - label: "IfNotPresent"
+        value: "IfNotPresent"
+      - label: "Always"
+        value: "Always"
+      - label: "Never"
+        value: "Never"

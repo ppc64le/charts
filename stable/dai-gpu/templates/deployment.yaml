@@ -1,0 +1,96 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "h2oai.fullname" . }}
+  labels:
+    app: {{ template "h2oai.name" . }}
+    chart: {{ template "h2oai.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "h2oai.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "h2oai.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: bps-sidecar-filebeat
+          image: ibmcom/filebeat-ppc64le:5.5.1
+          env: 
+            - name: LOG_DIRS
+              value: /opt/h2oai/dai/log/dai.out
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: NODE_HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          volumeMounts:
+          - name: logs-volume
+            mountPath: /opt/h2oai/dai/log
+          - name: config-vol
+            mountPath: /usr/share/filebeat/filebeat.yml
+            subPath: filebeat.yml
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: dai
+              containerPort: 12345
+              protocol: TCP
+            - name: jupyter
+              containerPort: 8888
+              protocol: TCP
+          volumeMounts:
+            - name: logs-volume
+              mountPath: /opt/h2oai/dai/log
+            - name: nvidia-pers-indicator
+              mountPath: "/var/run/nvidia-persistenced"
+          livenessProbe:
+            failureThreshold: 10
+            httpGet:
+              path: "/"
+              port: 12345
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2 
+            initialDelaySeconds: 30
+          readinessProbe: 
+            failureThreshold: 10
+            httpGet:
+              path: "/"
+              port: 12345
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2
+            initialDelaySeconds: 30
+          resources:
+            limits:
+              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.limits.gpu }}
+              memory: {{ .Values.resources.limits.memory }}
+            requests:
+              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.requests.gpu }}
+              memory: {{ .Values.resources.requests.memory }}
+      volumes:
+        - name: logs-volume
+          emptyDir: {}
+        - name: nvidia-pers-indicator
+          hostPath: 
+            path: /var/run/nvidia-persistenced
+            type: Directory 
+        - name: config-vol
+          configMap:
+            name: dai-filebeat-sidecar-config
+            items:
+              - key: filebeat.yml
+                path: filebeat.yml

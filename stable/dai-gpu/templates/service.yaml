@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "h2oai.fullname" . }}
+  labels:
+    app: {{ template "h2oai.name" . }}
+    chart: {{ template "h2oai.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: dai
+      protocol: TCP
+      name: dai
+  selector:
+    app: {{ template "h2oai.name" . }}
+    release: {{ .Release.Name }}

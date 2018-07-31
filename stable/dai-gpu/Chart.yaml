@@ -1,0 +1,13 @@
+apiVersion: v1
+appVersion: "1.0"
+description: DriverlessAI distribution for Kubernetes
+icon: http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_static/favicon.ico
+keywords:
+- ppc64le
+- ml
+- Analytics
+- Commercial
+- ICP
+name: dai-gpu
+tillerVersion: '>=2.6.0'
+version: 1.1.4
