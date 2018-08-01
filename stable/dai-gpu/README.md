@@ -11,6 +11,7 @@ GPUs are mounted and utilizaed using the alpha.kubernetes.io/nvidia-gpu property
 
 ## Prerequisites
 This process is inteded to run on a GPU capable system that supports CUDA 8 or 9
+This process utilizes NVIDIA's persistence mode.  Enable the drivers persistence mode by running the command "sudo nvidia-smi -pm 1" on the host system.
 
 ## Resources Required
 You should provide DAI with enough memory to hold 2x the size of your largest dataset 
