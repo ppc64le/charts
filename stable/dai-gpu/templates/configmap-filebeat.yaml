@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ labels:
+   app: filebeat-daemonset
+   component: filebeat
+   release: dai-logging
+ name: dai-filebeat-sidecar-config
+data:
+ filebeat.yml: |-
+   filebeat.prospectors:
+   - input_type: log
+     encoding: '${ENCODING:utf-8}'
+     paths: '${LOG_DIRS}'
+
+     exclude_lines: '${EXCLUDE_LINES:[]}'
+     include_lines: '${INCLUDE_LINES:[]}'
+
+     ignore_older: '${IGNORE_OLDER:0}'
+     scan_frequency: '${SCAN_FREQUENCY:10s}'
+     symlinks: '${SYMLINKS:true}'
+     max_bytes: '${MAX_BYTES:10485760}'
+     harvester_buffer_size: '${HARVESTER_BUFFER_SIZE:16384}'
+
+     multiline.pattern: '${MULTILINE_PATTERN:^\s}'
+     multiline.match: '${MULTILINE_MATCH:after}'
+     multiline.negate: '${MULTILINE_NEGATE:false}'
+
+     fields_under_root: '${FIELDS_UNDER_ROOT:true}'
+     fields:
+       type: '${FIELDS_TYPE:kube-logs}'
+       node_hostname: '${NODE_HOSTNAME}'
+       pod_ip: '${POD_IP}'
+     tags: '${TAGS:sidecar}'
+
+   filebeat.config.modules:
+     # Set to true to enable config reloading
+     reload.enabled: true
+
+   output.logstash:
+     # Sends logs to IBM Cloud Private managed Logstash by default
+     hosts: '${LOGSTASH:logstash.kube-system:5044}'
+     timeout: 15
+
+   logging.level: '${LOG_LEVEL:info}'

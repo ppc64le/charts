@@ -19,8 +19,6 @@ spec:
         app: {{ template "h2oai.name" . }}
         release: {{ .Release.Name }}
     spec:
-      securityContext:
-        runAsUser: 0
       containers:
         - name: bps-sidecar-filebeat
           image: ibmcom/filebeat-ppc64le:5.5.1
@@ -57,7 +55,7 @@ spec:
             - name: nvidia-pers-indicator
               mountPath: "/var/run/nvidia-persistenced"
           livenessProbe:
-            failureThreshold: 3
+            failureThreshold: 10
             httpGet:
               path: "/"
               port: 12345
@@ -67,7 +65,7 @@ spec:
             timeoutSeconds: 2 
             initialDelaySeconds: 30
           readinessProbe: 
-            failureThreshold: 3
+            failureThreshold: 10
             httpGet:
               path: "/"
               port: 12345
@@ -78,9 +76,11 @@ spec:
             initialDelaySeconds: 30
           resources:
             limits:
-              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.limits }}
+              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.limits.gpu }}
+              memory: {{ .Values.resources.limits.memory }}
             requests:
-              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.requests }}
+              alpha.kubernetes.io/nvidia-gpu: {{ .Values.resources.requests.gpu }}
+              memory: {{ .Values.resources.requests.memory }}
       volumes:
         - name: logs-volume
           emptyDir: {}
