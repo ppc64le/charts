@@ -62,4 +62,32 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
-generated: 2018-07-03T20:17:58.630439357Z
+  - appVersion: 1.5.6
+    created: 2018-08-23T16:22:49.659510906+05:30
+    description: Free & open source, high-performance, distributed memory object caching
+      system.
+    digest: 53ef9375874a096208b4416a1d56ec1f8dc7bde28e18915fd7cbe0c67630d8d7
+    engine: gotpl
+    home: http://memcached.org/
+    icon: https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Memcached.svg/1024px-Memcached.svg.png
+    keywords:
+    - memcached
+    - cache
+    - Limited
+    - amd64
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com (The original work for this helm chart is done by
+        Kubernetes Charts Greg Taylor(gtaylor@gc-taylor.com))
+      name: IBM ISV Team
+    name: ibm-memcached
+    sources:
+    - https://github.com/docker-library/memcached
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
+    version: 2.1.1
+generated: 2018-08-23T16:22:49.658229192+05:30
+
