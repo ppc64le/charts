@@ -9,10 +9,15 @@ The original work for this helm chart is present @ [kubernetes Charts](https://g
 ```bash
 $ helm install stable/memcached
 ```
+## Resources Required
+The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
 
 ## Introduction
 
 This chart bootstraps a [Memcached](https://hub.docker.com/_/memcached/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+
+## Chart Details
+This chart bootstraps a [Memcached](https://hub.docker.com/_/memcached/) deployment on a [Kubernetes](http://kubernetes.io) cluster
 
 ## Installing the Chart
 
@@ -35,6 +40,31 @@ $ helm delete my-release
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
+## Prerequisites
+
+- Kubernetes 1.7+ with Beta APIs enabled
+- Tiller 2.6.0 or later
+
+## Installing the Chart
+
+To install the chart
+
+```shell
+helm install --name <release-name> stable/ibm-memcached
+```
+## Verifying the Chart
+
+See NOTES.txt associated with this chart for verification instructions.
+
+## Uninstalling the Chart
+
+To uninstall/delete the deployment:
+
+```shell
+helm delete --purge <release-name>
+```
+
+## Limitations
 
 ## Configuration
 

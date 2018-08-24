@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   bps-db2:
   - apiVersion: v1
-    created: 2018-07-24T20:09:33.284979442+05:30
+    created: 2018-07-03T20:17:58.660788555Z
     description: IBM Db2 Developer-C Edition 11.1.2.2 iFix002
     digest: fdaaf3124d2073b47a1251412ba5bd18a65d6df2c93dee6b61a7e756043d7397
     engine: gotpl
@@ -23,7 +23,7 @@ entries:
     version: 1.1.1
   bps-orderdemo-hc:
   - apiVersion: v1
-    created: 2018-07-24T20:09:33.285862119+05:30
+    created: 2018-07-03T20:17:58.661141452Z
     description: HELM Chart to deploy the WAS OrderDemo (not including the backend)
     digest: 5274a8d02196bff7f333e943b24842a1efd7d09a7d16cfda54ecef7f461d50c8
     maintainers:
@@ -36,7 +36,7 @@ entries:
   dai-gpu:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-07-24T20:09:33.288006646+05:30
+    created: 2018-07-03T20:17:58.662154832Z
     description: DriverlessAI distribution for Kubernetes
     digest: d2ca7cf6c97c5a2c878b4d3a1926fbc166fb1283540bc5c16b53d3cfce4e6060
     icon: http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_static/favicon.ico
@@ -46,42 +46,48 @@ entries:
     version: 1.1.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-07-24T20:09:33.287382128+05:30
+    created: 2018-07-03T20:17:58.661796911Z
     description: DriverlessAI distribution for Kubernetes
-    digest: 4278049f36c71ae160b333b43e99ae37e25c76371ad87eb3f672081352cd1d63
+    digest: dad0a6e06352355fa35fa8f5235d1360916a89bb050d1fec792cc039192e199b
     name: dai-gpu
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.3.tgz
     version: 1.1.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-07-24T20:09:33.286556797+05:30
+    created: 2018-07-03T20:17:58.661470952Z
     description: DriverlessAI distribution for Kubernetes
     digest: 55d86dc39504f035a146695726ded2ca763b95f75ad24de82f994e14b20cc380
     name: dai-gpu
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
-  memcached:
+  ibm-memcached:
   - appVersion: 1.5.6
-    created: 2018-07-24T20:09:33.288866833+05:30
+    created: 2018-08-23T16:22:49.659510906+05:30
     description: Free & open source, high-performance, distributed memory object caching
       system.
-    digest: 70e6f409ffa790ca0b717755b3e339990fba00116ed36d3b301ee95aede66bca
+    digest: 53ef9375874a096208b4416a1d56ec1f8dc7bde28e18915fd7cbe0c67630d8d7
     engine: gotpl
     home: http://memcached.org/
     icon: https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Memcached.svg/1024px-Memcached.svg.png
     keywords:
     - memcached
     - cache
+    - Limited
+    - amd64
+    - ppc64le
+    - Tools
+    - ICP
     maintainers:
     - email: smohite@us.ibm.com (The original work for this helm chart is done by
         Kubernetes Charts Greg Taylor(gtaylor@gc-taylor.com))
       name: IBM ISV Team
-    name: memcached
+    name: ibm-memcached
     sources:
     - https://github.com/docker-library/memcached
+    tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/memcached-2.1.1.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
     version: 2.1.1
-generated: 2018-07-24T20:09:33.154468539+05:30
+generated: 2018-08-23T16:22:49.658229192+05:30

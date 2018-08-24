@@ -7,11 +7,19 @@ icon: https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Memcached.svg/1024px-
 keywords:
 - memcached
 - cache
+- Limited
+- amd64
+- ppc64le
+- Tools
+- ICP
+
+# The original work for this helm chart is done by Kubernetes  Charts Greg Taylor(gtaylor@gc-taylor.com)
 maintainers:
-- email: smohite@us.ibm.com (The original work for this helm chart is done by Kubernetes
-    Charts Greg Taylor(gtaylor@gc-taylor.com))
+- email: smohite@us.ibm.com 
   name: IBM ISV Team
-name: memcached
+
+name: ibm-memcached
 sources:
 - https://github.com/docker-library/memcached
+tillerVersion: '>=2.7.2'
 version: 2.1.1
