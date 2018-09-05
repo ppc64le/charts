@@ -1,0 +1,20 @@
+appVersion: 0.2.1
+description: A Helm chart for k8s prometheus adapter
+home: https://github.com/DirectXMan12/k8s-prometheus-adapter
+keywords:
+- hpa
+- prometheus
+- adapter
+- Limited
+- ppc64le
+- Tools
+- ICP
+maintainers:
+- email: smohite@us.ibm.com
+  name: IBM ISV Team
+name: ibm-prometheus-adapter
+sources:
+- https://github.com/kubernetes/charts
+- https://github.com/DirectXMan12/k8s-prometheus-adapter
+tillerVersion: '>=2.7.2'
+version: 0.1.0

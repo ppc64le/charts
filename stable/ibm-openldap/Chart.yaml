@@ -1,0 +1,20 @@
+appVersion: 2.4.44
+description: Community developed LDAP software
+engine: gotpl
+home: https://www.openldap.org
+icon: http://www.openldap.org/images/headers/LDAPworm.gif
+keywords:
+- ldap
+- openldap
+- Limited
+- ppc64le
+- Tools
+- ICP
+maintainers:
+- email: smohite@us.ibm.com
+  name: IBM ISV Team
+name: ibm-openldap
+sources:
+- https://github.com/kubernetes/charts
+version: 0.1.1
+tillerVersion: '>=2.7.2'
