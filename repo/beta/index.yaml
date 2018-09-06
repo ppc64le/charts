@@ -62,6 +62,58 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
+  ibm-elasticsearch-exporter:
+  - apiVersion: v1
+    appVersion: 1.0.2
+    created: 2018-09-05T03:55:49.789088135-07:00
+    description: Elasticsearch stats exporter for Prometheus
+    digest: d544ddbadbcc889a362cc24f889cc8099f9d09bf7916e5fcce56e88c21ead005
+    home: https://github.com/justwatchcom/elasticsearch_exporter
+    keywords:
+    - metrics
+    - elasticsearch
+    - monitoring
+    - adapter
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-elasticsearch-exporter
+    sources:
+    - https://github.com/justwatchcom/elasticsearch_exporter
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
+    version: 0.2.2
+  ibm-kube-state-metrics:
+  - apiVersion: v1
+    appVersion: 1.3.1
+    created: 2018-09-05T03:55:49.789965899-07:00
+    description: Install kube-state-metrics to generate and expose cluster-level metrics
+    digest: 89019184f8368263aa0435d2a34795a63f623090c18c8f1601ae1baeb4538570
+    home: https://github.com/kubernetes/kube-state-metrics/
+    keywords:
+    - metric
+    - monitoring
+    - prometheus
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-kube-state-metrics
+    sources:
+    - https://github.com/kubernetes/kube-state-metrics/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kube-state-metrics-0.8.1.tgz
+    version: 0.8.1
+  ibm-memcached:
   - appVersion: 1.5.6
     created: 2018-08-23T16:22:49.659510906+05:30
     description: Free & open source, high-performance, distributed memory object caching
@@ -89,5 +141,79 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
     version: 2.1.1
-generated: 2018-08-23T16:22:49.658229192+05:30
-
+  ibm-openldap:
+  - appVersion: 2.4.44
+    created: 2018-09-05T03:55:49.790973967-07:00
+    description: Community developed LDAP software
+    digest: cf7be532a327d5fda439feb8af13006f994382fbb47b691e1009a16c338e527f
+    engine: gotpl
+    home: https://www.openldap.org
+    icon: http://www.openldap.org/images/headers/LDAPworm.gif
+    keywords:
+    - ldap
+    - openldap
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-openldap
+    sources:
+    - https://github.com/kubernetes/charts
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-openldap-0.1.1.tgz
+    version: 0.1.1
+  ibm-prometheus-adapter:
+  - appVersion: 0.2.1
+    created: 2018-09-05T03:55:49.792149808-07:00
+    description: A Helm chart for k8s prometheus adapter
+    digest: b489d2ec4b702cc910f1eea0f7f15a0056a14184b242f56ac67923723024e745
+    home: https://github.com/DirectXMan12/k8s-prometheus-adapter
+    keywords:
+    - hpa
+    - prometheus
+    - adapter
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-prometheus-adapter
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/DirectXMan12/k8s-prometheus-adapter
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-adapter-0.1.0.tgz
+    version: 0.1.0
+  ibm-prometheus-pushgateway:
+  - apiVersion: v1
+    appVersion: 0.4.0
+    created: 2018-09-05T03:55:49.793064168-07:00
+    description: A Helm chart for prometheus pushgateway
+    digest: 7637d1ab0fd320133fd7e4a1f3d9c0fb60691e323874a705c538d486129a4e32
+    home: https://github.com/prometheus/pushgateway
+    keywords:
+    - pushgateway
+    - prometheus
+    - adapter
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-prometheus-pushgateway
+    sources:
+    - https://github.com/prometheus/pushgateway
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
+    version: 0.1.2
+generated: 2018-09-05T03:55:49.787898663-07:00
