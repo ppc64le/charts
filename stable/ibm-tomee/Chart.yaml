@@ -1,0 +1,26 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Apache TomEE, pronounced "Tommy", is an all-Apache Java EE Web Profile certified stack where Apache Tomcat is top dog. Apache TomEE is assembled from a vanilla Apache Tomcat zip file. We start with Apache Tomcat, add our jars and zip up the rest. The result is Tomcat with added EE features - TomEE
+
+engine: gotpl
+home: http://tomee.apache.org/
+
+keywords:
+- tomee
+- apache
+- Limited
+- ICP
+- ppc64le
+- amd64
+- Tools
+
+
+maintainers:
+- email: smohite@us.ibm.com 
+  name: IBM ISV Team
+
+name: ibm-tomee
+sources:
+- https://hub.docker.com/r/ppc64le/tomee/
+tillerVersion: '>=2.7.2'
+version: 0.1.0

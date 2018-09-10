@@ -62,6 +62,57 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
+  ibm-adminer:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-10T16:24:49.087618805+05:30
+    description: Database management in a single PHP file
+    digest: aa297b4b3fc4bb60a5d42a42894834915058e1de666ad5c6aec392e1d7da23ad
+    engine: gotpl
+    home: https://www.adminer.org/
+    keywords:
+    - Database management
+    - database
+    - PHP
+    - Limited
+    - amd64
+    - ppc64le
+    - ICP
+    maintainers:
+    - email: lysannef@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-adminer
+    sources:
+    - https://hub.docker.com/_/adminer/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-adminer-0.1.0.tgz
+    version: 0.1.0
+  ibm-crate:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-10T16:24:49.08858387+05:30
+    description: A distributed SQL DBMS built atop NoSQL storage & indexing delivers
+      the best of SQL & NoSQL in one database.
+    digest: ab1b3f2d2e60a344bc0c6c3c6c4029f9d7f5fb960b57f9c21662cb345cacb2e5
+    engine: gotpl
+    home: https://crate.io/
+    keywords:
+    - crateDB
+    - database
+    - Limited
+    - ppc64le
+    - ICP
+    maintainers:
+    - email: lysannef@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-crate
+    sources:
+    - https://hub.docker.com/r/ibmcom/crate-ppc64le/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-crate-0.1.0.tgz
+    version: 0.1.0
   ibm-elasticsearch-exporter:
   - apiVersion: v1
     appVersion: 1.0.2
@@ -88,6 +139,34 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
     version: 0.2.2
+  ibm-jetty:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-10T16:24:49.089499509+05:30
+    description: Eclipse Jetty® - Web Container & Clients - supports HTTP/2, HTTP/1.1,
+      HTTP/1.0, websocket, servlets, and more
+    digest: 38b4a15206782a57680372c9a0df944c2c87f7589590ff20433a9c430c202d1f
+    engine: gotpl
+    home: https://www.eclipse.org/jetty
+    keywords:
+    - eclipse
+    - jetty
+    - IDE
+    - Limited
+    - amd64
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-jetty
+    sources:
+    - https://hub.docker.com/r/ppc64le/jetty/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-jetty-0.1.0.tgz
+    version: 0.1.0
   ibm-kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.3.1
@@ -141,6 +220,31 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
     version: 2.1.1
+  ibm-open-liberty:
+  - apiVersion: "1"
+    appVersion: "1.0"
+    created: 2018-09-10T16:24:49.090563019+05:30
+    description: Open Liberty is a highly composable, fast to start, dynamic application
+      server runtime environment.
+    digest: dccc1a91410f2601cd8725bc835a2f30259d4d51fec1b7f56d30729f4cb742d9
+    home: https://openliberty.io/
+    icon: https://github.com/OpenLiberty/open-liberty/blob/master/logos/logo_horizontal_light_navy.png
+    keywords:
+    - server
+    - runtime
+    - ppc64le
+    - ICP
+    - Limited
+    maintainers:
+    - email: lysannef@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-open-liberty
+    sources:
+    - https://github.com/OpenLiberty/open-liberty
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-open-liberty-0.1.0.tgz
+    version: 0.1.0
   ibm-openldap:
   - appVersion: 2.4.44
     created: 2018-09-05T03:55:49.790973967-07:00
@@ -216,4 +320,33 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
-generated: 2018-09-05T03:55:49.787898663-07:00
+  ibm-tomee:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-10T16:24:49.091521792+05:30
+    description: Apache TomEE, pronounced "Tommy", is an all-Apache Java EE Web Profile
+      certified stack where Apache Tomcat is top dog. Apache TomEE is assembled from
+      a vanilla Apache Tomcat zip file. We start with Apache Tomcat, add our jars
+      and zip up the rest. The result is Tomcat with added EE features - TomEE
+    digest: fc7e4eac2cc27930d07b7ec00cbb360668daea0f0b1ed9266e3b713b3e50417c
+    engine: gotpl
+    home: http://tomee.apache.org/
+    keywords:
+    - tomee
+    - apache
+    - Limited
+    - ICP
+    - ppc64le
+    - amd64
+    - Tools
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-tomee
+    sources:
+    - https://hub.docker.com/r/ppc64le/tomee/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tomee-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-09-10T16:24:49.086385935+05:30
