@@ -1,0 +1,22 @@
+apiVersion: v1
+appVersion: "1.0"
+description: OrientDB is the most versatile DBMS supporting Graph, Document, Reactive, Full-Text, Geospatial and Key-Value models in one Multi-Model product.
+engine: gotpl
+home: http://orientdb.com/
+keywords:
+- orientdb
+- DBMS
+- database
+- Limited
+- ppc64le
+- ICP
+
+maintainers:
+- email: smohite@us.ibm.com 
+  name: IBM ISV Team
+
+name: ibm-orientdb
+sources:
+- https://hub.docker.com/r/ppc64le/orientdb/
+tillerVersion: '>=2.7.2'
+version: 0.1.0

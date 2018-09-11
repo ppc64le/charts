@@ -88,6 +88,59 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
     version: 0.2.2
+  ibm-geode:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-11T11:59:56.960361987+05:30
+    description: Apache Geode provides a database-like consistency model, reliable
+      transaction processing and a shared-nothing architecture to maintain very low
+      latency performance with high concurrency processing.
+    digest: 383c7edab346dea6652551438e00d503baf0d9bfbb975dde55799552d631da3e
+    engine: gotpl
+    home: http://geode.apache.org/
+    keywords:
+    - apache
+    - geode
+    - Limited
+    - amd64
+    - Tools
+    - ICP
+    maintainers:
+    - email: lysannef@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-geode
+    sources:
+    - https://github.com/apache/geode
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-geode-0.1.0.tgz
+    version: 0.1.0
+  ibm-glassfish:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-11T11:59:56.962258337+05:30
+    description: The Open Source Java EE Reference Implementation
+    digest: 21e96693fdd051bb8894bad209e983118cd6bbf74e4e0d3a9b840dc74c1f9573
+    engine: gotpl
+    home: https://javaee.github.io/glassfish/
+    keywords:
+    - glassfish
+    - deploy
+    - Java EE
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-glassfish
+    sources:
+    - https://javaee.github.io/glassfish/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-glassfish-0.1.0.tgz
+    version: 0.1.0
   ibm-kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.3.1
@@ -166,6 +219,32 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-openldap-0.1.1.tgz
     version: 0.1.1
+  ibm-orientdb:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-11T11:59:56.963851872+05:30
+    description: OrientDB is the most versatile DBMS supporting Graph, Document, Reactive,
+      Full-Text, Geospatial and Key-Value models in one Multi-Model product.
+    digest: f9741aa8070146a783d5249a22f23d06aca8d14fa2363e9ed229b4b12ecd28b4
+    engine: gotpl
+    home: http://orientdb.com/
+    keywords:
+    - orientdb
+    - DBMS
+    - database
+    - Limited
+    - ppc64le
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-orientdb
+    sources:
+    - https://hub.docker.com/r/ppc64le/orientdb/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-orientdb-0.1.0.tgz
+    version: 0.1.0
   ibm-prometheus-adapter:
   - appVersion: 0.2.1
     created: 2018-09-05T03:55:49.792149808-07:00
@@ -216,4 +295,54 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
-generated: 2018-09-05T03:55:49.787898663-07:00
+  ibm-rstudio:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-11T11:59:56.965252959+05:30
+    description: RStudio is an integrated development environment (IDE) for R
+    digest: 87f63716242d4cc37dc6724420a5d25d4043309d34867499da501a5bfc6b8f14
+    engine: gotpl
+    home: https://www.rstudio.com/
+    keywords:
+    - rstudio
+    - R
+    - IDE
+    - Limited
+    - ppc64le
+    - ICP
+    maintainers:
+    - email: lysannef@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-rstudio
+    sources:
+    - https://hub.docker.com/r/ppc64le/rstudio/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-rstudio-0.1.0.tgz
+    version: 0.1.0
+  ibm-strongloop:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-11T11:59:56.966715242+05:30
+    description: Open-source solutions for the API developer community
+    digest: fa27c71176a80859dc234c3eee65bc0a62a7f5f14eadf3d566761562c204212f
+    engine: gotpl
+    home: https://strongloop.com/
+    keywords:
+    - strongloop
+    - IBM
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-strongloop
+    sources:
+    - https://github.com/docker-library/memcached
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-strongloop-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-09-11T11:59:56.957611837+05:30
