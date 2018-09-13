@@ -413,11 +413,3 @@ entries:
     maintainers:
     - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-tidb
-    sources:
-    - https://hub.docker.com/r/ibmcom/tidb-ppc64le/
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tidb-0.1.0.tgz
-    version: 0.1.0
-generated: 2018-09-13T05:46:35.662881001-07:00
