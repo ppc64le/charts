@@ -1,0 +1,20 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Basic gerrit server.
+name: ibm-gerrit
+version: 0.1.0
+engine: gotpl
+keywords:
+- gerrit
+- Limited
+- amd64
+- ppc64le
+- Tools
+- ICP
+maintainers:
+- email: smohite@us.ibm.com
+  name: IBM ISV Team
+sources:
+- https://hub.docker.com/r/geissonator/ubuntu-gerrit-ppc64le/
+tillerVersion: '>=2.7.2'
+
