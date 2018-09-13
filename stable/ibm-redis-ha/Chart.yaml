@@ -1,0 +1,22 @@
+appVersion: 4.0.8-r0
+description: Highly available Redis cluster with multiple sentinels and standbys.
+engine: gotpl
+home: http://redis.io/
+icon: https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png
+keywords:
+- redis
+- keyvalue
+- database
+- Limited
+- ppc64le
+- Tools
+- ICP
+maintainers:
+- email: smohite@us.ibm.com
+  name: IBM ISV Team
+name: ibm-redis-ha
+sources:
+- https://github.com/smileisak/docker-images/tree/master/redis
+- https://github.com/diegocn/docker-images/tree/master/redis
+tillerVersion: '>=2.7.2'
+version: 2.2.1

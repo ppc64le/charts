@@ -1,0 +1,24 @@
+appVersion: 9.6.2
+description: Object-relational database management system (ORDBMS) with an emphasis
+  on extensibility and on standards-compliance.
+engine: gotpl
+home: https://www.postgresql.org/
+icon: https://www.postgresql.org/media/img/about/press/elephant.png
+keywords:
+- postgresql
+- postgres
+- database
+- sql
+- Limited
+- ppc64le
+- Tools
+- ICP
+maintainers:
+- email: smohite@us.ibm.com
+  name: IBM ISV Team
+name: ibm-postgresql
+sources:
+- https://github.com/kubernetes/charts
+- https://github.com/docker-library/postgres
+tillerVersion: '>=2.7.2'
+version: 0.11.0
