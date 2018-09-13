@@ -1,0 +1,24 @@
+apiVersion: v1
+appVersion: "1.0"
+description: A visual tool for wiring the Internet of Things
+  system.
+engine: gotpl
+home: http://nodered.org/
+keywords:
+- node-red
+- IOT
+- watson
+- Limited
+- ppc64le
+- Tools
+- ICP
+
+maintainers:
+- email: smohite@us.ibm.com 
+  name: IBM ISV Team
+
+name: ibm-node-red
+sources:
+- https://github.com/node-red/node-red
+tillerVersion: '>=2.7.2'
+version: 0.1.0

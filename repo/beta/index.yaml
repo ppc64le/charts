@@ -62,56 +62,52 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
-  ibm-adminer:
+  ibm-cadvisor:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-10T16:24:49.087618805+05:30
-    description: Database management in a single PHP file
-    digest: aa297b4b3fc4bb60a5d42a42894834915058e1de666ad5c6aec392e1d7da23ad
+    created: 2018-09-13T05:46:35.664172903-07:00
+    description: Analyzes resource usage and performance characteristics of running
+      containers.
+    digest: 8714f3f67cd499e06b106535cbeeae89c60f7e9b85ed8dfee888c98c3c4c48e2
     engine: gotpl
-    home: https://www.adminer.org/
     keywords:
-    - Database management
-    - database
-    - PHP
+    - cadvisor
     - Limited
-    - amd64
     - ppc64le
+    - Tools
     - ICP
     maintainers:
-    - email: lysannef@us.ibm.com
+    - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-adminer
+    name: ibm-cadvisor
     sources:
-    - https://hub.docker.com/_/adminer/
+    - https://hub.docker.com/r/ibmcom/cadvisor-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-adminer-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-cadvisor-0.1.0.tgz
     version: 0.1.0
-  ibm-crate:
+  ibm-collectd:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-10T16:24:49.08858387+05:30
-    description: A distributed SQL DBMS built atop NoSQL storage & indexing delivers
-      the best of SQL & NoSQL in one database.
-    digest: ab1b3f2d2e60a344bc0c6c3c6c4029f9d7f5fb960b57f9c21662cb345cacb2e5
+    created: 2018-09-13T05:46:35.665108105-07:00
+    description: Collectd-exporter
+    digest: fcc689157ff8665ba3c2944f52e164569aeaf5496453a79eab862a0f0836f739
     engine: gotpl
-    home: https://crate.io/
     keywords:
-    - crateDB
-    - database
     - Limited
     - ppc64le
+    - Tools
     - ICP
+    - collectd
     maintainers:
-    - email: lysannef@us.ibm.com
+    - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-crate
+    name: ibm-collectd
     sources:
-    - https://hub.docker.com/r/ibmcom/crate-ppc64le/
+    - https://hub.docker.com/r/ibmcom/collectd-exporter-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-crate-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-collectd-0.1.0.tgz
     version: 0.1.0
   ibm-elasticsearch-exporter:
   - apiVersion: v1
@@ -139,19 +135,15 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
     version: 0.2.2
-  ibm-jetty:
+  ibm-gerrit:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-10T16:24:49.089499509+05:30
-    description: Eclipse Jetty® - Web Container & Clients - supports HTTP/2, HTTP/1.1,
-      HTTP/1.0, websocket, servlets, and more
-    digest: 38b4a15206782a57680372c9a0df944c2c87f7589590ff20433a9c430c202d1f
+    created: 2018-09-13T05:46:35.666016787-07:00
+    description: Basic gerrit server.
+    digest: 6e0b41dbbd6c971ce8ef1d82f1daa7a894dba4e76fd3af7a7a2f1f8a6467743c
     engine: gotpl
-    home: https://www.eclipse.org/jetty
     keywords:
-    - eclipse
-    - jetty
-    - IDE
+    - gerrit
     - Limited
     - amd64
     - ppc64le
@@ -160,12 +152,38 @@ entries:
     maintainers:
     - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-jetty
+    name: ibm-gerrit
     sources:
-    - https://hub.docker.com/r/ppc64le/jetty/
+    - https://hub.docker.com/r/geissonator/ubuntu-gerrit-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-jetty-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-gerrit-0.1.0.tgz
+    version: 0.1.0
+  ibm-kaazinggateway:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-13T05:46:35.668179448-07:00
+    description: The Gateway is a network gateway created to provide a single access
+      point for real-time web based protocol elevation that supports load balancing,
+      clustering, and security management.
+    digest: 6fa1598e45f65d0bf8c75bee95063fc302840f77026089ef82d94690bbc5a1df
+    engine: gotpl
+    keywords:
+    - Gateway
+    - Limited
+    - amd64
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-kaazinggateway
+    sources:
+    - https://hub.docker.com/r/ibmcom/kaazing-gateway-ppc64le/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kaazinggateway-0.1.0.tgz
     version: 0.1.0
   ibm-kube-state-metrics:
   - apiVersion: v1
@@ -220,30 +238,57 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
     version: 2.1.1
-  ibm-open-liberty:
-  - apiVersion: "1"
+  ibm-node-exporter:
+  - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-10T16:24:49.090563019+05:30
-    description: Open Liberty is a highly composable, fast to start, dynamic application
-      server runtime environment.
-    digest: dccc1a91410f2601cd8725bc835a2f30259d4d51fec1b7f56d30729f4cb742d9
-    home: https://openliberty.io/
-    icon: https://github.com/OpenLiberty/open-liberty/blob/master/logos/logo_horizontal_light_navy.png
+    created: 2018-09-12T14:59:00.204274126+05:30
+    description: Prometheus exporter for hardware and OS metrics exposed by *NIX kernels,
+      written in Go with pluggable metric collectors.
+    digest: 6631129d48dc9bcfb1fca4ec12ec2caad7ad5d7faffec1badf1346d23611a902
+    engine: gotpl
+    home: https://prometheus.io/
     keywords:
-    - server
-    - runtime
-    - ppc64le
-    - ICP
+    - node-exporter
+    - prometheus
     - Limited
+    - ppc64le
+    - Tools
+    - ICP
     maintainers:
-    - email: lysannef@us.ibm.com
+    - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-open-liberty
+    name: ibm-node-exporter
     sources:
-    - https://github.com/OpenLiberty/open-liberty
+    - https://github.com/prometheus/node_exporter
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-open-liberty-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-node-exporter-0.1.0.tgz
+    version: 0.1.0
+  ibm-node-red:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-12T14:59:00.205215696+05:30
+    description: A visual tool for wiring the Internet of Things system.
+    digest: ff4c213b862cb8d620eed6be0bc1b7a2bb822a82e1e4db0f53950ae1a33668c9
+    engine: gotpl
+    home: http://nodered.org/
+    keywords:
+    - node-red
+    - IOT
+    - watson
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-node-red
+    sources:
+    - https://github.com/node-red/node-red
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-node-red-0.1.0.tgz
     version: 0.1.0
   ibm-openldap:
   - appVersion: 2.4.44
@@ -270,6 +315,35 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-openldap-0.1.1.tgz
     version: 0.1.1
+  ibm-postgresql:
+  - appVersion: 9.6.2
+    created: 2018-09-13T05:22:47.781690209-07:00
+    description: Object-relational database management system (ORDBMS) with an emphasis
+      on extensibility and on standards-compliance.
+    digest: a73c1d6c0f3acc4fa8e0b727cec07be6b2c2470bce8cc9937f5c8d7da43566fb
+    engine: gotpl
+    home: https://www.postgresql.org/
+    icon: https://www.postgresql.org/media/img/about/press/elephant.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-postgresql-0.11.0.tgz
+    version: 0.11.0
   ibm-prometheus-adapter:
   - appVersion: 0.2.1
     created: 2018-09-05T03:55:49.792149808-07:00
@@ -320,33 +394,30 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
-  ibm-tomee:
+  ibm-tidb:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-10T16:24:49.091521792+05:30
-    description: Apache TomEE, pronounced "Tommy", is an all-Apache Java EE Web Profile
-      certified stack where Apache Tomcat is top dog. Apache TomEE is assembled from
-      a vanilla Apache Tomcat zip file. We start with Apache Tomcat, add our jars
-      and zip up the rest. The result is Tomcat with added EE features - TomEE
-    digest: fc7e4eac2cc27930d07b7ec00cbb360668daea0f0b1ed9266e3b713b3e50417c
+    created: 2018-09-13T05:46:35.669163106-07:00
+    description: TiDB is a distributed NewSQL database compatible with MySQL protocol
+    digest: fe52105e26e7cf53823cd69ca67bcf6a809b027bf86a97f72efded0d008893ef
     engine: gotpl
-    home: http://tomee.apache.org/
     keywords:
-    - tomee
-    - apache
+    - TiDB
+    - database
+    - MySQLProtocol
     - Limited
-    - ICP
-    - ppc64le
     - amd64
+    - ppc64le
     - Tools
+    - ICP
     maintainers:
     - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-tomee
+    name: ibm-tidb
     sources:
-    - https://hub.docker.com/r/ppc64le/tomee/
+    - https://hub.docker.com/r/ibmcom/tidb-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tomee-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tidb-0.1.0.tgz
     version: 0.1.0
-generated: 2018-09-10T16:24:49.086385935+05:30
+generated: 2018-09-13T05:46:35.662881001-07:00

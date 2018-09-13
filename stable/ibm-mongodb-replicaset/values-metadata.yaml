@@ -1,0 +1,12 @@
+node:
+   __metadata:
+     name: "Node"
+     label: "node"
+     description: "Node Prefernce"
+     type: "string"
+     immutable: "false"
+     required: true
+     options:
+     - label: "ppc64le"
+       value: "ppc64le"
+
