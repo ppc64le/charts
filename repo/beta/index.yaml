@@ -62,20 +62,17 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
-  ibm-alertmanager:
+
+  ibm-cadvisor:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-12T14:59:00.202406195+05:30
-    description: The Alertmanager handles alerts sent by client applications such
-      as the Prometheus server. It takes care of deduplicating, grouping, and routing
-      them to the correct receiver integrations such as email, PagerDuty, or OpsGenie.
-      It also takes care of silencing and inhibition of alerts.
-    digest: 5d0b9aa9a3069fb5d4e24d1c2f09d069aaea8185e674808b6550f97a1feaa038
+    created: 2018-09-13T05:46:35.664172903-07:00
+    description: Analyzes resource usage and performance characteristics of running
+      containers.
+    digest: 8714f3f67cd499e06b106535cbeeae89c60f7e9b85ed8dfee888c98c3c4c48e2
     engine: gotpl
-    home: https://prometheus.io/docs/alerting/alertmanager/
     keywords:
-    - alertmanager
-    - prometheus
+    - cadvisor
     - Limited
     - ppc64le
     - Tools
@@ -83,12 +80,35 @@ entries:
     maintainers:
     - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-alertmanager
+    name: ibm-cadvisor
     sources:
-    - https://github.com/prometheus/alertmanager
+    - https://hub.docker.com/r/ibmcom/cadvisor-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-alertmanager-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-cadvisor-0.1.0.tgz
+    version: 0.1.0
+  ibm-collectd:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-13T05:46:35.665108105-07:00
+    description: Collectd-exporter
+    digest: fcc689157ff8665ba3c2944f52e164569aeaf5496453a79eab862a0f0836f739
+    engine: gotpl
+    keywords:
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    - collectd
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-collectd
+    sources:
+    - https://hub.docker.com/r/ibmcom/collectd-exporter-ppc64le/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-collectd-0.1.0.tgz
     version: 0.1.0
   ibm-elasticsearch-exporter:
   - apiVersion: v1
@@ -116,30 +136,56 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
     version: 0.2.2
-  ibm-jupyter-notebook:
+  ibm-gerrit:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-12T14:59:00.203320122+05:30
-    description: The Jupyter notebook is a web-based notebook environment for interactive
-      computing.
-    digest: 54b39786181cbc1ab9e63574aca2a973a16acc11e8ffb1cfbbde6514b5e596aa
+    created: 2018-09-13T05:46:35.666016787-07:00
+    description: Basic gerrit server.
+    digest: 6e0b41dbbd6c971ce8ef1d82f1daa7a894dba4e76fd3af7a7a2f1f8a6467743c
     engine: gotpl
-    home: https://jupyter-notebook.readthedocs.io/
     keywords:
-    - jupyter-notebook
+    - gerrit
     - Limited
+    - amd64
+
     - ppc64le
     - Tools
     - ICP
     maintainers:
-    - email: lysannef@us.ibm.com
+    - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-jupyter-notebook
+    name: ibm-gerrit
     sources:
-    - https://github.com/jupyter/notebook
+    - https://hub.docker.com/r/geissonator/ubuntu-gerrit-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-jupyter-notebook-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-gerrit-0.1.0.tgz
+    version: 0.1.0
+  ibm-kaazinggateway:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-13T05:46:35.668179448-07:00
+    description: The Gateway is a network gateway created to provide a single access
+      point for real-time web based protocol elevation that supports load balancing,
+      clustering, and security management.
+    digest: 6fa1598e45f65d0bf8c75bee95063fc302840f77026089ef82d94690bbc5a1df
+    engine: gotpl
+    keywords:
+    - Gateway
+    - Limited
+    - amd64
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-kaazinggateway
+    sources:
+    - https://hub.docker.com/r/ibmcom/kaazing-gateway-ppc64le/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kaazinggateway-0.1.0.tgz
     version: 0.1.0
   ibm-kube-state-metrics:
   - apiVersion: v1
@@ -321,34 +367,30 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
-  ibm-tomcat:
+  ibm-tidb:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-12T14:59:00.206155618+05:30
-    description: Apache Tomcat, often referred to as Tomcat Server, is an open-source
-      Java Servlet Container
-    digest: 64327cb742126b8e33f6eb47ea94f774ecbe24450416fe5d8411407230e0d707
+    created: 2018-09-13T05:46:35.669163106-07:00
+    description: TiDB is a distributed NewSQL database compatible with MySQL protocol
+    digest: fe52105e26e7cf53823cd69ca67bcf6a809b027bf86a97f72efded0d008893ef
     engine: gotpl
-    home: http://tomcat.apache.org/
     keywords:
-    - apache
-    - tomcat
-    - deploy
-    - server
+    - TiDB
+    - database
+    - MySQLProtocol
     - Limited
     - amd64
     - ppc64le
-    - s390x
     - Tools
     - ICP
     maintainers:
-    - email: lysannef@us.ibm.com
+    - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-tomcat
+    name: ibm-tidb
     sources:
-    - https://hub.docker.com/_/tomcat/
+    - https://hub.docker.com/r/ibmcom/tidb-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tomcat-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tidb-0.1.0.tgz
     version: 0.1.0
-generated: 2018-09-12T14:59:00.201139293+05:30
+generated: 2018-09-13T05:46:35.662881001-07:00
