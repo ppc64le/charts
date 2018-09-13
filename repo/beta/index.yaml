@@ -62,6 +62,7 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
+
   ibm-cadvisor:
   - apiVersion: v1
     appVersion: "1.0"
@@ -146,6 +147,7 @@ entries:
     - gerrit
     - Limited
     - amd64
+
     - ppc64le
     - Tools
     - ICP
@@ -238,6 +240,58 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
     version: 2.1.1
+  ibm-node-exporter:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-12T14:59:00.204274126+05:30
+    description: Prometheus exporter for hardware and OS metrics exposed by *NIX kernels,
+      written in Go with pluggable metric collectors.
+    digest: 6631129d48dc9bcfb1fca4ec12ec2caad7ad5d7faffec1badf1346d23611a902
+    engine: gotpl
+    home: https://prometheus.io/
+    keywords:
+    - node-exporter
+    - prometheus
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-node-exporter
+    sources:
+    - https://github.com/prometheus/node_exporter
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-node-exporter-0.1.0.tgz
+    version: 0.1.0
+  ibm-node-red:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-12T14:59:00.205215696+05:30
+    description: A visual tool for wiring the Internet of Things system.
+    digest: ff4c213b862cb8d620eed6be0bc1b7a2bb822a82e1e4db0f53950ae1a33668c9
+    engine: gotpl
+    home: http://nodered.org/
+    keywords:
+    - node-red
+    - IOT
+    - watson
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-node-red
+    sources:
+    - https://github.com/node-red/node-red
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-node-red-0.1.0.tgz
+    version: 0.1.0
   ibm-openldap:
   - appVersion: 2.4.44
     created: 2018-09-05T03:55:49.790973967-07:00
