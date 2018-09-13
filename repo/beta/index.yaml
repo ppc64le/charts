@@ -147,7 +147,6 @@ entries:
     - gerrit
     - Limited
     - amd64
-
     - ppc64le
     - Tools
     - ICP
@@ -317,6 +316,35 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-openldap-0.1.1.tgz
     version: 0.1.1
+  ibm-postgresql:
+  - appVersion: 9.6.2
+    created: 2018-09-13T05:22:47.781690209-07:00
+    description: Object-relational database management system (ORDBMS) with an emphasis
+      on extensibility and on standards-compliance.
+    digest: a73c1d6c0f3acc4fa8e0b727cec07be6b2c2470bce8cc9937f5c8d7da43566fb
+    engine: gotpl
+    home: https://www.postgresql.org/
+    icon: https://www.postgresql.org/media/img/about/press/elephant.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-postgresql-0.11.0.tgz
+    version: 0.11.0
   ibm-prometheus-adapter:
   - appVersion: 0.2.1
     created: 2018-09-05T03:55:49.792149808-07:00
