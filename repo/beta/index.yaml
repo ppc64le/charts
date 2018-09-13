@@ -62,6 +62,53 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/dai-gpu-1.1.2.tgz
     version: 1.1.2
+  ibm-cadvisor:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-13T05:46:35.664172903-07:00
+    description: Analyzes resource usage and performance characteristics of running
+      containers.
+    digest: 8714f3f67cd499e06b106535cbeeae89c60f7e9b85ed8dfee888c98c3c4c48e2
+    engine: gotpl
+    keywords:
+    - cadvisor
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-cadvisor
+    sources:
+    - https://hub.docker.com/r/ibmcom/cadvisor-ppc64le/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-cadvisor-0.1.0.tgz
+    version: 0.1.0
+  ibm-collectd:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-13T05:46:35.665108105-07:00
+    description: Collectd-exporter
+    digest: fcc689157ff8665ba3c2944f52e164569aeaf5496453a79eab862a0f0836f739
+    engine: gotpl
+    keywords:
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    - collectd
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-collectd
+    sources:
+    - https://hub.docker.com/r/ibmcom/collectd-exporter-ppc64le/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-collectd-0.1.0.tgz
+    version: 0.1.0
   ibm-elasticsearch-exporter:
   - apiVersion: v1
     appVersion: 1.0.2
@@ -88,58 +135,55 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
     version: 0.2.2
-  ibm-geode:
+  ibm-gerrit:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-11T11:59:56.960361987+05:30
-    description: Apache Geode provides a database-like consistency model, reliable
-      transaction processing and a shared-nothing architecture to maintain very low
-      latency performance with high concurrency processing.
-    digest: 383c7edab346dea6652551438e00d503baf0d9bfbb975dde55799552d631da3e
+    created: 2018-09-13T05:46:35.666016787-07:00
+    description: Basic gerrit server.
+    digest: 6e0b41dbbd6c971ce8ef1d82f1daa7a894dba4e76fd3af7a7a2f1f8a6467743c
     engine: gotpl
-    home: http://geode.apache.org/
     keywords:
-    - apache
-    - geode
+    - gerrit
     - Limited
     - amd64
-    - Tools
-    - ICP
-    maintainers:
-    - email: lysannef@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-geode
-    sources:
-    - https://github.com/apache/geode
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-geode-0.1.0.tgz
-    version: 0.1.0
-  ibm-glassfish:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-09-11T11:59:56.962258337+05:30
-    description: The Open Source Java EE Reference Implementation
-    digest: 21e96693fdd051bb8894bad209e983118cd6bbf74e4e0d3a9b840dc74c1f9573
-    engine: gotpl
-    home: https://javaee.github.io/glassfish/
-    keywords:
-    - glassfish
-    - deploy
-    - Java EE
-    - Limited
     - ppc64le
     - Tools
     - ICP
     maintainers:
     - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-glassfish
+    name: ibm-gerrit
     sources:
-    - https://javaee.github.io/glassfish/
+    - https://hub.docker.com/r/geissonator/ubuntu-gerrit-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-glassfish-0.1.0.tgz
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-gerrit-0.1.0.tgz
+    version: 0.1.0
+  ibm-kaazinggateway:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-13T05:46:35.668179448-07:00
+    description: The Gateway is a network gateway created to provide a single access
+      point for real-time web based protocol elevation that supports load balancing,
+      clustering, and security management.
+    digest: 6fa1598e45f65d0bf8c75bee95063fc302840f77026089ef82d94690bbc5a1df
+    engine: gotpl
+    keywords:
+    - Gateway
+    - Limited
+    - amd64
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-kaazinggateway
+    sources:
+    - https://hub.docker.com/r/ibmcom/kaazing-gateway-ppc64le/
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kaazinggateway-0.1.0.tgz
     version: 0.1.0
   ibm-kube-state-metrics:
   - apiVersion: v1
@@ -194,6 +238,58 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
     version: 2.1.1
+  ibm-node-exporter:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-12T14:59:00.204274126+05:30
+    description: Prometheus exporter for hardware and OS metrics exposed by *NIX kernels,
+      written in Go with pluggable metric collectors.
+    digest: 6631129d48dc9bcfb1fca4ec12ec2caad7ad5d7faffec1badf1346d23611a902
+    engine: gotpl
+    home: https://prometheus.io/
+    keywords:
+    - node-exporter
+    - prometheus
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-node-exporter
+    sources:
+    - https://github.com/prometheus/node_exporter
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-node-exporter-0.1.0.tgz
+    version: 0.1.0
+  ibm-node-red:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-12T14:59:00.205215696+05:30
+    description: A visual tool for wiring the Internet of Things system.
+    digest: ff4c213b862cb8d620eed6be0bc1b7a2bb822a82e1e4db0f53950ae1a33668c9
+    engine: gotpl
+    home: http://nodered.org/
+    keywords:
+    - node-red
+    - IOT
+    - watson
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-node-red
+    sources:
+    - https://github.com/node-red/node-red
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-node-red-0.1.0.tgz
+    version: 0.1.0
   ibm-openldap:
   - appVersion: 2.4.44
     created: 2018-09-05T03:55:49.790973967-07:00
@@ -219,32 +315,35 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-openldap-0.1.1.tgz
     version: 0.1.1
-  ibm-orientdb:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-09-11T11:59:56.963851872+05:30
-    description: OrientDB is the most versatile DBMS supporting Graph, Document, Reactive,
-      Full-Text, Geospatial and Key-Value models in one Multi-Model product.
-    digest: f9741aa8070146a783d5249a22f23d06aca8d14fa2363e9ed229b4b12ecd28b4
+  ibm-postgresql:
+  - appVersion: 9.6.2
+    created: 2018-09-13T05:22:47.781690209-07:00
+    description: Object-relational database management system (ORDBMS) with an emphasis
+      on extensibility and on standards-compliance.
+    digest: a73c1d6c0f3acc4fa8e0b727cec07be6b2c2470bce8cc9937f5c8d7da43566fb
     engine: gotpl
-    home: http://orientdb.com/
+    home: https://www.postgresql.org/
+    icon: https://www.postgresql.org/media/img/about/press/elephant.png
     keywords:
-    - orientdb
-    - DBMS
+    - postgresql
+    - postgres
     - database
+    - sql
     - Limited
     - ppc64le
+    - Tools
     - ICP
     maintainers:
     - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-orientdb
+    name: ibm-postgresql
     sources:
-    - https://hub.docker.com/r/ppc64le/orientdb/
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-orientdb-0.1.0.tgz
-    version: 0.1.0
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-postgresql-0.11.0.tgz
+    version: 0.11.0
   ibm-prometheus-adapter:
   - appVersion: 0.2.1
     created: 2018-09-05T03:55:49.792149808-07:00
@@ -295,54 +394,22 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
-  ibm-rstudio:
+  ibm-tidb:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-09-11T11:59:56.965252959+05:30
-    description: RStudio is an integrated development environment (IDE) for R
-    digest: 87f63716242d4cc37dc6724420a5d25d4043309d34867499da501a5bfc6b8f14
+    created: 2018-09-13T05:46:35.669163106-07:00
+    description: TiDB is a distributed NewSQL database compatible with MySQL protocol
+    digest: fe52105e26e7cf53823cd69ca67bcf6a809b027bf86a97f72efded0d008893ef
     engine: gotpl
-    home: https://www.rstudio.com/
     keywords:
-    - rstudio
-    - R
-    - IDE
+    - TiDB
+    - database
+    - MySQLProtocol
     - Limited
-    - ppc64le
-    - ICP
-    maintainers:
-    - email: lysannef@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-rstudio
-    sources:
-    - https://hub.docker.com/r/ppc64le/rstudio/
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-rstudio-0.1.0.tgz
-    version: 0.1.0
-  ibm-strongloop:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-09-11T11:59:56.966715242+05:30
-    description: Open-source solutions for the API developer community
-    digest: fa27c71176a80859dc234c3eee65bc0a62a7f5f14eadf3d566761562c204212f
-    engine: gotpl
-    home: https://strongloop.com/
-    keywords:
-    - strongloop
-    - IBM
-    - Limited
+    - amd64
     - ppc64le
     - Tools
     - ICP
     maintainers:
     - email: smohite@us.ibm.com
       name: IBM ISV Team
-    name: ibm-strongloop
-    sources:
-    - https://github.com/docker-library/memcached
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-strongloop-0.1.0.tgz
-    version: 0.1.0
-generated: 2018-09-11T11:59:56.957611837+05:30

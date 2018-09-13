@@ -1,0 +1,22 @@
+1. Get the application URL by running these commands:
+{{- if .Values.ingress.enabled }}
+{{- range .Values.ingress.hosts }}
+  http{{ if $.Values.ingress.tls }}s{{ end }}://{{ . }}{{ $.Values.ingress.path }}
+{{- end }}
+{{- else if contains "NodePort" .Values.service.type }}
+  export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ template "tidb.fullname" . }})
+  export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+  mysql -h $NODE_IP -P $NODE_PORT -u root -D test --prompt="tidb> " 
+{{- else if contains "LoadBalancer" .Values.service.type }}
+     NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+           You can watch the status of by running 'kubectl get svc -w {{ template "tidb.fullname" . }}'
+  export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "tidb.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+  #echo http://$SERVICE_IP:{{ .Values.service.port }}
+  mysql -h $SERVICE_IP -P 4000 -u root -D test --prompt="tidb> " 
+{{- else if contains "ClusterIP" .Values.service.type }}
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app={{ template "tidb.name" . }},release={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  kubectl port-forward $POD_NAME 4000:4000
+  To connect to your database run the following command:
+  mysql -h 127.0.0.1 -P 4000 -u root -D test --prompt="tidb> " 
+{{- end }}
+
