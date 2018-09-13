@@ -135,7 +135,6 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
     version: 0.2.2
-
   ibm-gerrit:
   - apiVersion: v1
     appVersion: "1.0"
