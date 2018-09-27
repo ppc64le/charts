@@ -1,0 +1,20 @@
+appVersion: "3.6"
+description: NoSQL document-oriented database that stores JSON-like documents with
+  dynamic schemas, simplifying the integration of data in content-driven applications.
+home: https://github.com/mongodb/mongo
+icon: https://webassets.mongodb.com/_com_assets/cms/mongodb-logo-rgb-j6w271g1xn.jpg
+keywords:
+- Limited
+- ppc64le
+- Tools
+- ICP
+- mongodb
+maintainers:
+- email: smohite@us.ibm.com
+  name: IBM ISV Team
+name: ibm-mongodb-replicaset
+sources:
+- https://github.com/mongodb/mongo
+- https://github.com/percona/mongodb_exporter
+tillerVersion: '>=2.7.2'
+version: 3.5.6

@@ -1,0 +1,24 @@
+apiVersion: v1
+appVersion: "1.0"
+description: The Open Source Java EE Reference Implementation 
+engine: gotpl
+home: https://javaee.github.io/glassfish/
+
+keywords:
+- glassfish
+- deploy
+- Java EE
+- Limited
+- ppc64le
+- Tools
+- ICP
+
+maintainers:
+- email: smohite@us.ibm.com 
+  name: IBM ISV Team
+
+name: ibm-glassfish
+sources:
+- https://javaee.github.io/glassfish/
+tillerVersion: '>=2.7.2'
+version: 0.1.0

@@ -1,0 +1,22 @@
+apiVersion: 1
+appVersion: "1.0"
+
+description: Open Liberty is a highly composable, fast to start, dynamic application
+  server runtime environment.
+home: https://openliberty.io/
+icon: https://github.com/OpenLiberty/open-liberty/blob/master/logos/logo_horizontal_light_navy.png
+name: ibm-open-liberty
+keywords: 
+- server
+- runtime 
+- ppc64le
+- ICP
+- Limited
+maintainers:
+- email: lysannef@us.ibm.com 
+  name: IBM ISV Team
+
+sources:
+- https://github.com/OpenLiberty/open-liberty
+version: 0.1.0
+tillerVersion: '>=2.7.2'

@@ -1,0 +1,26 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Apache Tomcat, often referred to as Tomcat Server, is an open-source Java Servlet Container
+engine: gotpl
+home: http://tomcat.apache.org/
+keywords:
+- apache
+- tomcat
+- deploy
+- server
+- Limited
+- amd64
+- ppc64le
+- s390x
+- Tools
+- ICP
+
+maintainers:
+- email: lysannef@us.ibm.com 
+  name: IBM ISV Team
+
+name: ibm-tomcat
+sources:
+- https://hub.docker.com/_/tomcat/
+tillerVersion: '>=2.7.2'
+version: 0.1.0
