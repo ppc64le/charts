@@ -1,0 +1,25 @@
+name: ibm-prometheus
+version: 7.0.0
+appVersion: 2.3.2
+description: Prometheus is a monitoring system and time series database.
+home: https://prometheus.io/
+icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+keywords:
+- Limited
+- ppc64le
+- Tools
+- ICP
+- alertmanager
+- prometheus
+- pushgateway
+sources:
+  - https://github.com/prometheus/alertmanager
+  - https://github.com/prometheus/prometheus
+  - https://github.com/prometheus/pushgateway
+  - https://github.com/prometheus/node_exporter
+  - https://github.com/kubernetes/kube-state-metrics
+maintainers:
+  - name: IBM ISV Team
+    email: smohite@us.ibm.com
+engine: gotpl
+tillerVersion: ">=2.7.3"

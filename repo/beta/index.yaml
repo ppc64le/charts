@@ -1,5 +1,25 @@
 apiVersion: v1
 entries:
+  "":
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-13T05:46:35.669163106-07:00
+    description: TiDB is a distributed NewSQL database compatible with MySQL protocol
+    digest: fe52105e26e7cf53823cd69ca67bcf6a809b027bf86a97f72efded0d008893ef
+    engine: gotpl
+    keywords:
+    - TiDB
+    - database
+    - MySQLProtocol
+    - Limited
+    - amd64
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    urls: null
   bps-db2:
   - apiVersion: v1
     created: 2018-07-03T20:17:58.660788555Z
@@ -185,6 +205,31 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kaazinggateway-0.1.0.tgz
     version: 0.1.0
+  ibm-kibana:
+  - appVersion: 6.3.1
+    created: 2018-09-27T18:05:58.219498808+05:30
+    description: Kibana is an open source data visualization plugin for Elasticsearch
+    digest: 0fd956b93772758ae5a428eb86f5f8edb917edf90fe9ea40f20a5d3c09dabee3
+    engine: gotpl
+    home: https://www.elastic.co/products/kibana
+    icon: https://raw.githubusercontent.com/elastic/kibana/master/src/ui/public/icons/kibana-color.svg
+    keywords:
+    - elasticsearch
+    - kibana
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-kibana
+    sources:
+    - https://github.com/elastic/kibana
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kibana-0.10.0.tgz
+    version: 0.10.0
   ibm-kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.3.1
@@ -210,6 +255,29 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kube-state-metrics-0.8.1.tgz
     version: 0.8.1
+  ibm-lamp:
+  - apiVersion: v1
+    appVersion: "5.7"
+    created: 2018-09-27T18:05:58.2221365+05:30
+    description: Modular and transparent LAMP stack chart supporting PHP-FPM, Release
+      Cloning, LoadBalancer, Ingress, SSL and lots more!
+    digest: 81a2da82d7a57477dd09a265ad9fb5877626cf28f6160499a291f3ce395522f5
+    home: https://github.com/lead4good/helm-lamp-stack
+    keywords:
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    - lamp
+    - mariadb
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-lamp
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-lamp-0.1.5.tgz
+    version: 0.1.5
   ibm-memcached:
   - appVersion: 1.5.6
     created: 2018-08-23T16:22:49.659510906+05:30
@@ -344,6 +412,36 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-postgresql-0.11.0.tgz
     version: 0.11.0
+  ibm-prometheus:
+  - appVersion: 2.3.2
+    created: 2018-09-27T18:05:58.2242799+05:30
+    description: Prometheus is a monitoring system and time series database.
+    digest: 9e632d1be0176c1521e1090cfb4751f766f9c280f21922e495827d4998d467f8
+    engine: gotpl
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    - alertmanager
+    - prometheus
+    - pushgateway
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    tillerVersion: '>=2.7.3'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-7.0.0.tgz
+    version: 7.0.0
   ibm-prometheus-adapter:
   - appVersion: 0.2.1
     created: 2018-09-05T03:55:49.792149808-07:00
@@ -394,22 +492,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
-  ibm-tidb:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-09-13T05:46:35.669163106-07:00
-    description: TiDB is a distributed NewSQL database compatible with MySQL protocol
-    digest: fe52105e26e7cf53823cd69ca67bcf6a809b027bf86a97f72efded0d008893ef
-    engine: gotpl
-    keywords:
-    - TiDB
-    - database
-    - MySQLProtocol
-    - Limited
-    - amd64
-    - ppc64le
-    - Tools
-    - ICP
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
+generated: 2018-09-27T18:05:58.217938335+05:30
