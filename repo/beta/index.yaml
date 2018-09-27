@@ -135,7 +135,6 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-elasticsearch-exporter-0.2.2.tgz
     version: 0.2.2
-
   ibm-gerrit:
   - apiVersion: v1
     appVersion: "1.0"
@@ -160,6 +159,33 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-gerrit-0.1.0.tgz
     version: 0.1.0
+  ibm-heapster:
+  - apiVersion: v1
+    appVersion: 1.3.0
+    created: 2018-09-27T17:45:04.321737276+05:30
+    description: Heapster enables Container Cluster Monitoring and Performance Analysis.
+    digest: 35cb4d4a6b453321210a4b5b491a2ffabc7f1d53fde6484987d8ea165edb27f2
+    engine: gotpl
+    home: https://github.com/kubernetes/heapster
+    keywords:
+    - metrics
+    - cadvisor
+    - monitoring
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-heapster
+    sources:
+    - https://github.com/kubernetes/heapster
+    - https://github.com/kubernetes/contrib/tree/master/addon-resizer
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-heapster-0.2.10.tgz
+    version: 0.2.10
   ibm-kaazinggateway:
   - apiVersion: v1
     appVersion: "1.0"
@@ -211,6 +237,30 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kube-state-metrics-0.8.1.tgz
     version: 0.8.1
+  ibm-mariadb-dev:
+  - created: 2018-09-27T17:45:04.336398376+05:30
+    description: MariaDB is developed as open source software and as a relational
+      database it provides an SQL interface for accessing data.
+    digest: a1bfd2194ee77b73e9137615c78b8739461e558d4a20d67a13aedcd3b26cc937
+    engine: gotpl
+    home: https://www.mariadb.org/
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - name: IBM Analytics
+    name: ibm-mariadb-dev
+    sources:
+    - https://github.com/IBM/charts/tree/master/stable
+    tillerVersion: '>=2.4.0'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-mariadb-dev-1.1.2.tgz
+    version: 1.1.2
   ibm-memcached:
   - appVersion: 1.5.6
     created: 2018-08-23T16:22:49.659510906+05:30
@@ -395,6 +445,78 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
+  ibm-rethinkdb:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-27T17:45:04.337193846+05:30
+    description: A Helm chart for Kubernetes
+    digest: 96005a609dacd8f54aade524a380f573cd148639c3d6f5acdbd94ffe54bc65e6
+    keywords:
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    - database
+    - rethinkdb
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-rethinkdb
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-rethinkdb-0.1.0.tgz
+    version: 0.1.0
+  ibm-telegraf:
+  - appVersion: "1.5"
+    created: 2018-09-27T17:45:04.338435305+05:30
+    deprecated: true
+    description: Telegraf is an agent written in Go for collecting, processing, aggregating,
+      and writing metrics.
+    digest: 4394cb7724174ba5689cd2e19e5077c41a1341fcde222e7aa7e7ec3a1decfa98
+    engine: gotpl
+    home: https://www.influxdata.com/time-series-platform/telegraf/
+    keywords:
+    - telegraf
+    - collector
+    - timeseries
+    - influxdata
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-telegraf
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-telegraf-0.3.3.tgz
+    version: 0.3.3
+  ibm-tensorflow-notebook:
+  - apiVersion: v1
+    appVersion: 1.6.0
+    created: 2018-09-27T17:45:04.344711257+05:30
+    description: A Helm chart for tensorflow notebook and tensorboard
+    digest: 9179fc00f85eb389342dd8d8cb52d68cfdd7d9af086b45efde25f3c81baaae1f
+    home: https://www.tensorflow.org
+    keywords:
+    - tenserflow
+    - adapter
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-tensorflow-notebook
+    sources:
+    - https://github.com/tensorflow/tensorflow
+    - https://github.com/jupyter
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tensorflow-notebook-0.1.1.tgz
+    version: 0.1.1
   ibm-tidb:
   - apiVersion: v1
     appVersion: "1.0"
@@ -421,4 +543,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tidb-0.1.0.tgz
     version: 0.1.0
-generated: 2018-09-13T05:46:35.662881001-07:00
+generated: 2018-09-27T17:45:04.319803522+05:30
