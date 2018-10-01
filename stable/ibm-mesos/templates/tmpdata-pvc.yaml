@@ -1,0 +1,27 @@
+{{- if .Values.persistence.enabled -}}
+{{- if not .Values.persistence.tmpdata.existingClaim -}}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "mesos.fullname" . }}-tmpdata
+  labels:
+    app: {{ template "mesos.name" . }}
+    release: {{ .Release.Name }}
+    chart: {{ template "mesos.chart" . }}
+    heritage: {{ .Release.Service }}
+
+spec:
+  accessModes:
+    - {{ .Values.persistence.tmpdata.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.tmpdata.size | quote }}
+{{- if .Values.persistence.tmpdata.storageClass }}
+{{- if (eq "-" .Values.persistence.tmpdata.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.tmpdata.storageClass }}"
+{{- end }}
+{{- end }}
+{{- end -}}
+{{- end -}}
