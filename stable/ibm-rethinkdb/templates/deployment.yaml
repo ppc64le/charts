@@ -1,0 +1,68 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "rethinkdb.fullname" . }}
+  labels:
+    app: {{ template "rethinkdb.name" . }}
+    chart: {{ template "rethinkdb.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "rethinkdb.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "rethinkdb.name" . }}
+        release: {{ .Release.Name }}
+        heritage: {{ .Release.Service }}
+        chart: {{ template "rethinkdb.chart" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["rethinkdb", "--bind", "all"]
+          ports:
+            - name: http1
+              containerPort: 28015 
+            - name: http2
+              containerPort: 29015
+            - name: http
+              containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+          volumeMounts:
+          - name: rethinkdb-data
+            mountPath: /data
+      volumes:
+      - name: rethinkdb-data
+      {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "rethinkdb.fullname" . }}
+      {{- else }}
+        emptyDir: {}
+      {{- end }}
+{{- if .Values.node }}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - {{ .Values.node }}
+{{- end }}
+
