@@ -1,0 +1,49 @@
+{{- if gt (len .Values.single.config.outputs.influxdb.urls) 0 }}
+{{- if .Values.single.enabled -}}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}-s
+  labels:
+    app: {{ template "fullname" . }}-s
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}-s
+        chart: "{{ .Chart.Name }}"
+        release: "{{ .Release.Name }}"
+        heritage: {{ .Release.Service }}
+    spec:
+      containers:
+      - name: {{ template "fullname" . }}
+        image: "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+        resources:
+{{ toYaml .Values.single.resources | indent 10 }}
+        volumeMounts:
+        - name: config
+          #mountPath: /etc/telegraf
+          mountPath: /root/go/src/github.com/influxdata/telegraf/etc/
+      volumes:
+      - name: config
+        configMap:
+          name: {{ template "fullname" . }}-s
+{{- end -}}
+{{- end -}}
+{{- if .Values.node }}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - {{ .Values.node }}
+{{- end }}
+
