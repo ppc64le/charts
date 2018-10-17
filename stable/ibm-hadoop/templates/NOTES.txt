@@ -17,10 +17,7 @@
 5. You can list the mapreduce jobs like this:
    kubectl exec -n {{ .Release.Namespace }} -it {{ template "hadoop.fullname" . }}-yarn-rm-0 -- /usr/lib/hadoop/bin/mapred job -list
 
-6. This chart can also be used with the zeppelin chart
-    helm install --namespace {{ .Release.Namespace }} --set hadoop.useConfigMap=true,hadoop.configMapName={{ template "hadoop.fullname" . }} stable/zeppelin
-
-7. You can scale the number of yarn nodes like this:
+6. You can scale the number of yarn nodes like this:
    helm upgrade {{ .Release.Name }} --set yarn.nodeManager.replicas=4 stable/hadoop
 
    Make sure to update the values.yaml if you want to make this permanent.

@@ -10,16 +10,19 @@ metadata:
     heritage: {{ .Release.Service }}
     component: hdfs-nn
 spec:
+  {{- if .Values.persistence.useDynamicProvisioning }}
+  storageClassName: {{ default nil .Values.persistence.nameNode.storageClassName | quote }}
+  {{ else }}
+  storageClassName: ""
+  {{- end }}
   accessModes:
-  - {{ .Values.persistence.nameNode.accessMode | quote }}
+    - {{ .Values.persistence.nameNode.accessMode | quote }}
   resources:
     requests:
       storage: {{ .Values.persistence.nameNode.size | quote }}
-{{- if .Values.persistence.nameNode.storageClass }}
-{{- if (eq "-" .Values.persistence.nameNode.storageClass) }}
-  storageClassName: ""
-{{- else }}
-  storageClassName: "{{ .Values.persistence.nameNode.storageClass }}"
+  {{- if .Values.persistence.useDynamicProvisioning  }}
+  selector:
+    matchLabels:
+      assign-to: "hdfs-nn"
+  {{- end }}
 {{- end }}
-{{- end }}
-{{- end -}}

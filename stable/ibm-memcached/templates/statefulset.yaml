@@ -4,7 +4,7 @@ metadata:
   name: {{ template "memcached.fullname" . }}
   labels:
     app: {{ template "memcached.fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    chart: "{{ .Chart.Name }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
@@ -14,20 +14,20 @@ spec:
     metadata:
       labels:
         app: {{ template "memcached.fullname" . }}
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        chart: "{{ .Chart.Name }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
     spec:
       affinity:
         podAntiAffinity:
-        {{- if eq .Values.AntiAffinity "hard" }}
+        {{- if eq .Values.antiAffinity "hard" }}
           requiredDuringSchedulingIgnoredDuringExecution:
           - topologyKey: "kubernetes.io/hostname"
             labelSelector:
               matchLabels:
                 app:  {{ template "memcached.fullname" . }}
                 release: {{ .Release.Name | quote }}
-        {{- else if eq .Values.AntiAffinity "soft" }}
+        {{- else if eq .Values.antiAffinity "soft" }}
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 5
             podAffinityTerm:
@@ -66,3 +66,12 @@ spec:
           timeoutSeconds: 1
         resources:
 {{ toYaml .Values.resources | indent 10 }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+
