@@ -1,5 +1,5 @@
 {{- if .Values.deployments.etcdOperator }}
----
+
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:

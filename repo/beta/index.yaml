@@ -114,14 +114,15 @@ entries:
   ibm-alertmanager:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-10-12T17:47:11.329334834-04:00
+    created: 2018-10-17T09:16:41.165842687-07:00
     description: The Alertmanager handles alerts sent by client applications such
       as the Prometheus server. It takes care of deduplicating, grouping, and routing
       them to the correct receiver integrations such as email, PagerDuty, or OpsGenie.
       It also takes care of silencing and inhibition of alerts.
-    digest: 5d0b9aa9a3069fb5d4e24d1c2f09d069aaea8185e674808b6550f97a1feaa038
+    digest: 3361d8772810af383f7868d92f4bdc2d59d91262468322bb20060cffedf0fcb4
     engine: gotpl
     home: https://prometheus.io/docs/alerting/alertmanager/
+    icon: https://github.com/ppc64le/charts/tree/master/logo/prometheus-alertmanager.jpg?sanitize=true
     keywords:
     - alertmanager
     - prometheus
@@ -137,39 +138,44 @@ entries:
     - https://github.com/prometheus/alertmanager
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-alertmanager-0.1.0.tgz
+    - ibm-alertmanager-0.1.0.tgz
     version: 0.1.0
   ibm-cadvisor:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-10-12T17:47:11.330234563-04:00
+    created: 2018-10-17T09:16:41.16670823-07:00
     description: Analyzes resource usage and performance characteristics of running
       containers.
-    digest: 8714f3f67cd499e06b106535cbeeae89c60f7e9b85ed8dfee888c98c3c4c48e2
+    digest: ef2f42da517b7d1dc15fd6d0e0c5c9d799be7f1bd149a89634d4723a623c3117
     engine: gotpl
+    home: https://prometheus.io/docs/guides/cadvisor/
+    icon: https://github.com/ppc64le/charts/tree/master/logo/cadvisor.png?sanitize=true
     keywords:
     - cadvisor
+    - analyser
     - Limited
+    - amd64
     - ppc64le
     - Tools
     - ICP
     maintainers:
-    - email: smohite@us.ibm.com
+    - email: lysannef@us.ibm.com
       name: IBM ISV Team
     name: ibm-cadvisor
     sources:
-    - https://hub.docker.com/r/ibmcom/cadvisor-ppc64le/
+    - https://github.com/google/cadvisor
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-cadvisor-0.1.0.tgz
+    - ibm-cadvisor-0.1.0.tgz
     version: 0.1.0
   ibm-chaoskube:
   - appVersion: 0.8.0
-    created: 2018-10-12T17:47:11.331128159-04:00
+    created: 2018-10-17T09:16:41.167568499-07:00
     description: Chaoskube periodically kills random pods in your Kubernetes cluster.
-    digest: 6beeac3159c18ec1b1d6a3eff65ce7a0f1fc5bbb311bb7c30f02f64117b88aea
+    digest: 7b1bcc4ee4bbaf35753fd10fcfc9c42705c0221342651cfb9ac7da47abdab2d9
     engine: gotpl
     home: https://github.com/linki/chaoskube
+    icon: https://github.com/ppc64le/charts/tree/master/logo/ibm-default-icon.svg?sanitize=true
     keywords:
     - adapter
     - chaoskube
@@ -185,15 +191,16 @@ entries:
     - https://github.com/linki/chaoskube
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-chaoskube-0.7.0.tgz
+    - ibm-chaoskube-0.7.0.tgz
     version: 0.7.0
   ibm-collectd:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-10-12T17:47:11.331932426-04:00
+    created: 2018-10-17T09:16:41.176500817-07:00
     description: Collectd-exporter
-    digest: fcc689157ff8665ba3c2944f52e164569aeaf5496453a79eab862a0f0836f739
+    digest: 28dac25f9214249bab67b8b42400b2f0b0279b09aa915913a7cc08f55a4b9a79
     engine: gotpl
+    icon: https://github.com/ppc64le/charts/tree/master/logo/collectd.png?sanitize=true
     keywords:
     - Limited
     - ppc64le
@@ -208,17 +215,18 @@ entries:
     - https://hub.docker.com/r/ibmcom/collectd-exporter-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-collectd-0.1.0.tgz
+    - ibm-collectd-0.1.0.tgz
     version: 0.1.0
   ibm-crate:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-10-12T17:47:11.332759049-04:00
+    created: 2018-10-17T09:16:41.178856331-07:00
     description: A distributed SQL DBMS built atop NoSQL storage & indexing delivers
       the best of SQL & NoSQL in one database.
-    digest: ab1b3f2d2e60a344bc0c6c3c6c4029f9d7f5fb960b57f9c21662cb345cacb2e5
+    digest: e8861473e6b3bc39e29ca8c836b1b606f0dd6fdd2c3b82085a5a514f432bbb58
     engine: gotpl
     home: https://crate.io/
+    icon: https://github.com/ppc64le/charts/tree/master/logo/crateDB.png?sanitize=true
     keywords:
     - crateDB
     - database
@@ -233,7 +241,7 @@ entries:
     - https://hub.docker.com/r/ibmcom/crate-ppc64le/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-crate-0.1.0.tgz
+    - ibm-crate-0.1.0.tgz
     version: 0.1.0
   ibm-elasticsearch-exporter:
   - apiVersion: v1
@@ -290,11 +298,11 @@ entries:
   ibm-etcd-operator:
   - apiVersion: v1
     appVersion: 0.7.0
-    created: 2018-10-12T17:47:11.335794076-04:00
+    created: 2018-10-17T09:16:41.180423307-07:00
     description: CoreOS etcd-operator Helm chart for Kubernetes
-    digest: bf2d898e55d67e0f63ca83d2afbc5f257827bd6ea6fc167e1387f9359ea22fcd
+    digest: 10bc5d169973d00baa34fc17da5d5c2d10444bc12b413e2caad476261fedc89b
     home: https://github.com/coreos/etcd-operator
-    icon: https://raw.githubusercontent.com/coreos/etcd/master/logos/etcd-horizontal-color.png
+    icon: https://github.com/ppc64le/charts/tree/master/logo/etcd-horizontal-color.png?sanitize=true
     keywords:
     - Limited
     - ppc64le
@@ -309,7 +317,7 @@ entries:
     - https://github.com/coreos/etcd-operator
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-etcd-operator-0.7.7.tgz
+    - ibm-etcd-operator-0.7.7.tgz
     version: 0.7.7
   ibm-geode:
   - apiVersion: v1
@@ -391,13 +399,13 @@ entries:
   ibm-hadoop:
   - apiVersion: v1
     appVersion: 2.7.3
-    created: 2018-10-12T17:47:11.339874407-04:00
+    created: 2018-10-17T09:16:41.182167264-07:00
     description: The Apache Hadoop software library is a framework that allows for
       the distributed processing of large data sets across clusters of computers using
       simple programming models.
-    digest: 62fe37cb5c4bab6d519f7bb1b7039c290467baa39ce47353ccb1d2e05f28121c
+    digest: 44a14f5f95f6d55708a3efbc93bf0026adfcdbe98e340e1e93074de5f0c3dcfb
     home: https://hadoop.apache.org/
-    icon: http://hadoop.apache.org/images/hadoop-logo.jpg
+    icon: https://github.com/ppc64le/charts/tree/master/logo/hadoop-logo.jpg?sanitize=true
     keywords:
     - Limited
     - ppc64le
@@ -412,7 +420,7 @@ entries:
     - https://github.com/apache/hadoop
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-hadoop-1.0.5.tgz
+    - ibm-hadoop-1.0.5.tgz
     version: 1.0.5
   ibm-heapster:
   - apiVersion: v1
@@ -443,11 +451,12 @@ entries:
     version: 0.2.10
   ibm-influxdb:
   - appVersion: "1.4"
-    created: 2018-10-12T17:47:11.342146153-04:00
+    created: 2018-10-17T09:16:41.184775127-07:00
     description: Scalable datastore for metrics, events, and real-time analytics.
-    digest: 3d420af85013ba3967edbf2551c150cbf532cb7ebdb5b92a1c51615f0348741b
+    digest: 2a4504733d64a829432af50e185c7d6b2926d961edeb576d24bef35885465946
     engine: gotpl
     home: https://www.influxdata.com/time-series-platform/influxdb/
+    icon: https://github.com/ppc64le/charts/tree/master/logo/influxdb.png?sanitize=true
     keywords:
     - influxdb
     - database
@@ -464,7 +473,7 @@ entries:
     - https://github.com/influxdata/influxdb
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-influxdb-0.10.0.tgz
+    - ibm-influxdb-0.10.0.tgz
     version: 0.10.0
   ibm-jetty:
   - apiVersion: v1
@@ -548,10 +557,11 @@ entries:
   ibm-kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.3.1
-    created: 2018-10-12T17:47:11.345759461-04:00
+    created: 2018-10-17T09:16:41.186418417-07:00
     description: Install kube-state-metrics to generate and expose cluster-level metrics
-    digest: 89019184f8368263aa0435d2a34795a63f623090c18c8f1601ae1baeb4538570
+    digest: 4874b6a718cdc0e150038e864365b1fc586fba910ac23884d4b5c94cb46dec65
     home: https://github.com/kubernetes/kube-state-metrics/
+    icon: https://github.com/ppc64le/charts/tree/master/logo/ibm-default-icon.svg?sanitize=true
     keywords:
     - metric
     - monitoring
@@ -568,7 +578,7 @@ entries:
     - https://github.com/kubernetes/kube-state-metrics/
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kube-state-metrics-0.8.1.tgz
+    - ibm-kube-state-metrics-0.8.1.tgz
     version: 0.8.1
   ibm-mariadb-dev:
   - created: 2018-10-12T17:47:11.357788494-04:00
@@ -596,13 +606,13 @@ entries:
     version: 1.1.2
   ibm-memcached:
   - appVersion: 1.5.6
-    created: 2018-10-12T17:47:11.358830446-04:00
+    created: 2018-10-17T09:16:41.187890859-07:00
     description: Free & open source, high-performance, distributed memory object caching
       system.
-    digest: 53ef9375874a096208b4416a1d56ec1f8dc7bde28e18915fd7cbe0c67630d8d7
+    digest: d985bdb985b392209f28cb5318e1c01be76aa3f64eb7b3fa12bb86177c626b9a
     engine: gotpl
     home: http://memcached.org/
-    icon: https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Memcached.svg/1024px-Memcached.svg.png
+    icon: https://github.com/ppc64le/charts/tree/master/logo/memcached.png?sanitize=true
     keywords:
     - memcached
     - cache
@@ -612,15 +622,14 @@ entries:
     - Tools
     - ICP
     maintainers:
-    - email: smohite@us.ibm.com (The original work for this helm chart is done by
-        Kubernetes Charts Greg Taylor(gtaylor@gc-taylor.com))
+    - email: smohite@us.ibm.com
       name: IBM ISV Team
     name: ibm-memcached
     sources:
     - https://github.com/docker-library/memcached
     tillerVersion: '>=2.7.2'
     urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-memcached-2.1.1.tgz
+    - ibm-memcached-2.1.1.tgz
     version: 2.1.1
   ibm-mesos:
   - apiVersion: v1
@@ -1221,4 +1230,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tomee-0.1.0.tgz
     version: 0.1.0
-generated: 2018-10-12T17:47:11.28694569-04:00
+generated: 2018-10-17T09:16:41.164596943-07:00

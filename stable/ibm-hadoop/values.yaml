@@ -71,12 +71,14 @@ node: "ppc64le"
 persistence:
   nameNode:
     enabled: false
-    storageClass: "-"
     accessMode: ReadWriteOnce
     size: 50Gi
+    storageClassName:
 
   dataNode:
     enabled: false
-    storageClass: "-"
     accessMode: ReadWriteOnce
     size: 200Gi
+    storageClassName: 
+
+  useDynamicProvisioning: false

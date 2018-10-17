@@ -33,7 +33,7 @@ node: "ppc64le"
 excludedWeekdays:
 
 # Set values for exempting specific times of day from Chaoskube Actions
-#excludedTimesOfDay:
+excludedTimesOfDay:
 
 # Set values for exempting specific days of the year from Chaoskube Actions (Dec24,Jan1)
 excludedDaysOfYear:
