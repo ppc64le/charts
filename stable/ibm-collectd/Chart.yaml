@@ -3,6 +3,7 @@ appVersion: "1.0"
 description: Collectd-exporter
 engine: gotpl
 name: ibm-collectd
+icon: https://github.com/ppc64le/charts/tree/master/logo/collectd.png?sanitize=true
 keywords:
   - Limited
   - ppc64le

@@ -4,8 +4,6 @@
 
 The original work for this helm chart is present @ [kubernetes Charts](https://github.com/kubernetes/charts/tree/master/stable/memcached) Based on the [memcached](https://github.com/bitnami/charts/tree/master/incubator/memcached) chart from the [Bitnami Charts](https://github.com/bitnami/charts) repository.
 
-## TL;DR;
-
 ```bash
 $ helm install stable/memcached
 ```

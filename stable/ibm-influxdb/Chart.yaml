@@ -2,6 +2,7 @@ name: ibm-influxdb
 version: 0.10.0
 appVersion: 1.4
 description: Scalable datastore for metrics, events, and real-time analytics.
+icon: https://github.com/ppc64le/charts/tree/master/logo/influxdb.png?sanitize=true
 keywords:
 - influxdb
 - database

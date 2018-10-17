@@ -2,10 +2,8 @@
 
 [Alert Manager](https://prometheus.io/docs/alerting/alertmanager)The Alertmanager handles alerts sent by client applications such as the Prometheus server.
 
-## TL;DR;
-
 ```console
-$ helm install stable/ibm-alertmanager
+$ helm install ibm-alertmanager
 ```
 
 ## Prerequisites
@@ -26,7 +24,7 @@ This chart bootstraps a [Alert Manager](https://github.com/prometheus/alertmanag
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm intall --name my-release stable/ibm-alertmanager
+$ helm intall --name my-release ibm-alertmanager
 ```
 
 ## Uninstalling the Chart
@@ -51,7 +49,7 @@ The following table lists the configurable parameters of the Alert Manager chart
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | A recent official alertmanager tag                      |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
 
 The above parameters map to `ibm-alertmanager` params.
@@ -61,7 +59,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml stable/ibm-alertmanager
+$ helm install --name my-release -f values.yaml ibm-alertmanager
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)

@@ -25,26 +25,26 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         ports:
         - name: api
-          containerPort: {{ .Values.config.http.bind_address }}
+          containerPort: {{ .Values.config.http.bindAddress }}
         {{ if .Values.config.admin.enabled -}}
         - name: admin
-          containerPort: {{ .Values.config.admin.bind_address }}
+          containerPort: {{ .Values.config.admin.bindAddress }}
         {{- end }}
         {{ if .Values.config.graphite.enabled -}}
         - name: graphite
-          containerPort: {{ .Values.config.graphite.bind_address }}
+          containerPort: {{ .Values.config.graphite.bindAddress }}
         {{- end }}
         {{ if .Values.config.collectd.enabled -}}
         - name: collectd
-          containerPort: {{ .Values.config.collectd.bind_address }}
+          containerPort: {{ .Values.config.collectd.bindAddress }}
         {{- end }}
         {{ if .Values.config.udp.enabled -}}
         - name: udp
-          containerPort: {{ .Values.config.udp.bind_address }}
+          containerPort: {{ .Values.config.udp.bindAddress }}
         {{- end }}
         {{ if .Values.config.opentsdb.enabled -}}
         - name: opentsdb
-          containerPort: {{ .Values.config.opentsdb.bind_address }}
+          containerPort: {{ .Values.config.opentsdb.bindAddress }}
         {{- end }}
         {{ if .Values.env }}
         env:
@@ -64,7 +64,7 @@ spec:
           timeoutSeconds: 1
         volumeMounts:
         - name: data
-          mountPath: {{ .Values.config.storage_directory }}
+          mountPath: {{ .Values.config.storageDirectory }}
         - name: config
           mountPath: /etc/influxdb
       volumes:
