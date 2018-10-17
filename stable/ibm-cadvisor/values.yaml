@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: ibmcom/cadvisor-ppc64le
-  tag: v0.27.1
+  repository: ppc64le/cadvisor
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
@@ -40,8 +40,19 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
+nodeSelector: 
+  beta.kubernetes.io/arch: "ppc64le"
 
-node: "ppc64le"
 tolerations: []
 
-affinity: {}
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: beta.kubernetes.io/arch
+          operator: In
+          values:
+          - "ppc64le"
+
+

@@ -30,33 +30,33 @@ spec:
   ports:
   {{- if .Values.config.http.enabled }}
   - name: api
-    port: {{ .Values.config.http.bind_address }}
-    targetPort: {{ .Values.config.http.bind_address }}
+    port: {{ .Values.config.http.bindAddress }}
+    targetPort: {{ .Values.config.http.bindAddress }}
   {{- end }}
   {{- if .Values.config.admin.enabled }}
   - name: admin
-    port: {{ .Values.config.admin.bind_address }}
-    targetPort: {{ .Values.config.admin.bind_address }}
+    port: {{ .Values.config.admin.bindAddress }}
+    targetPort: {{ .Values.config.admin.bindAddress }}
   {{- end }}
   {{- if .Values.config.graphite.enabled }}
   - name: graphite
-    port: {{ .Values.config.graphite.bind_address }}
-    targetPort: {{ .Values.config.graphite.bind_address }}
+    port: {{ .Values.config.graphite.bindAddress }}
+    targetPort: {{ .Values.config.graphite.bindAddress }}
   {{- end }}
   {{- if .Values.config.collectd.enabled }}
   - name: collectd
-    port: {{ .Values.config.collectd.bind_address }}
-    targetPort: {{ .Values.config.collectd.bind_address }}
+    port: {{ .Values.config.collectd.bindAddress }}
+    targetPort: {{ .Values.config.collectd.bindAddress }}
   {{- end }}
   {{- if .Values.config.udp.enabled }}
   - name: udp
-    port: {{ .Values.config.udp.bind_address }}
-    targetPort: {{ .Values.config.udp.bind_address }}
+    port: {{ .Values.config.udp.bindAddress }}
+    targetPort: {{ .Values.config.udp.bindAddress }}
   {{- end }}
   {{- if .Values.config.opentsdb.enabled }}
   - name: opentsdb
-    port: {{ .Values.config.opentsdb.bind_address }}
-    targetPort: {{ .Values.config.opentsdb.bind_address }}
+    port: {{ .Values.config.opentsdb.bindAddress }}
+    targetPort: {{ .Values.config.opentsdb.bindAddress }}
   {{- end }}
   selector:
     app: {{ template "influxdb.fullname" . }}
