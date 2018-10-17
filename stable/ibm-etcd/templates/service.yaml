@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "etcd.fullname" . }}
+  labels:
+    app: {{ template "etcd.name" . }}
+    chart: {{ template "etcd.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - port: {{ .Values.service.clientPort }}
+    name: clientport
+  - port: {{ .Values.service.peerPort }}
+    name: peerport
+  selector:
+    app: {{ template "etcd.name" . }}
+    release: {{ .Release.Name }}
