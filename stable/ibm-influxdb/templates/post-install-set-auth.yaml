@@ -12,7 +12,7 @@ metadata:
     "helm.sh/hook": post-install
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
-  activeDeadlineSeconds: {{ .Values.setDefaultUser.activeDeadlineSeconds }}
+  activeDeadlineSeconds: {{ .Values.setDefaultUser.activeDeadline }}
   template:
     metadata:
       labels:
@@ -37,7 +37,7 @@ spec:
           - "/bin/sh"
           - "-c"
           - |
-             curl -X POST http://{{ template "influxdb.fullname" . }}:{{ .Values.config.http.bind_address }}/query \
+             curl -X POST http://{{ template "influxdb.fullname" . }}:{{ .Values.config.http.bindAddress }}/query \
              --data-urlencode \
              "q=CREATE USER \"${INFLUXDB_USER}\" WITH PASSWORD '${INFLUXDB_PASSWORD}' {{ .Values.setDefaultUser.user.privileges }}"
       restartPolicy: {{ .Values.setDefaultUser.restartPolicy }}

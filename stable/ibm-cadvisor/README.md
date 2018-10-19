@@ -1,11 +1,9 @@
-# cadvisor
+# CAdvisor
 
-cadvisor Analyzes resource usage and performance characteristics of running containers..
-
-## TL;DR;
+[CAdvisor](https://github.com/google/cadvisor)Analyzes resource usage and performance characteristics of running containers.
 
 ```console
-$ helm install stable/ibm-cadvisor
+$ helm install ibm-cadvisor
 ```
 
 ## Prerequisites
@@ -18,7 +16,7 @@ The chart deploys pods consuming minimum resources as specified in the resources
 
 ## Introduction
 
-This chart bootstraps a [cadvisor](https://hub.docker.com/r/ibmcom/cadvisor-ppc64le/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [CAdvisor](https://github.com/google/cadvisor) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 
 ## Installing the Chart
@@ -26,7 +24,7 @@ This chart bootstraps a [cadvisor](https://hub.docker.com/r/ibmcom/cadvisor-ppc6
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/ibm-cadvisor
+$ helm intall --name my-release ibm-cadvisor
 ```
 
 ## Uninstalling the Chart
@@ -40,18 +38,18 @@ $ helm delete my-release
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
 ## Chart Details
-This chart bootstraps a [cadvisor](https://hub.docker.com/r/ibmcom/cadvisor-ppc64le/) deployment on a [Kubernetes](http://kubernetes.io) cluster
+This chart bootstraps a [CAdvisor](https://hub.docker.com/r/ppc64le/cadvisor/ ) deployment on a [Kubernetes](http://kubernetes.io) cluster
 
 
 ## Configuration
 
-The following table lists the configurable parameters of the cadvisor chart and their default values.
+The following table lists the configurable parameters of the CAdvisor chart and their default values.
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official cadvisor tag                             |
+| `image`                   | The image to pull and run       | A recent official CAdvisor tag                          |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
 
 The above parameters map to `ibm-cadvisor` params.

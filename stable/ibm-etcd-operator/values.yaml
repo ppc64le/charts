@@ -52,6 +52,7 @@ etcdOperator:
   ## Node labels for etcd-operator pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   nodeSelector: {}
+  tolerations: []
   ## additional command arguments go here; will be translated to `--key=value` form
   ## e.g., analytics: true
   commandArgs: {}
@@ -86,6 +87,7 @@ backupOperator:
     s3:
       s3Bucket:
       awsSecret:
+  tolerations: []
   ## Node labels for etcd pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   nodeSelector: {}
@@ -117,6 +119,7 @@ restoreOperator:
   ## additional command arguments go here; will be translated to `--key=value` form
   ## e.g., analytics: true
   commandArgs: {}
+  tolerations: []
 
 ## etcd-cluster specific values
 etcdCluster:
