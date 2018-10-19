@@ -1,27 +1,6 @@
 apiVersion: v1
 entries:
-  bps-db2:
-  - apiVersion: v1
-    created: 2018-10-12T17:47:11.324027683-04:00
-    description: IBM Db2 Developer-C Edition 11.1.2.2 iFix002
-    digest: fdaaf3124d2073b47a1251412ba5bd18a65d6df2c93dee6b61a7e756043d7397
-    engine: gotpl
-    home: https://www.ibm.com/analytics/us/en/db2/
-    icon: https://na.cumulusrepo.com/assetswithkey/ba5345023eb40c21d01ad81bc927a36f/db2logoicp-01.png/v1
-    keywords:
-    - db2
-    - database
-    - sql
-    maintainers:
-    - name: IBM Analytics
-    name: bps-db2
-    sources:
-    - https://github.com/IBM/charts/tree/master/stable
-    tillerVersion: '>=2.4.0'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/bps-db2-1.1.1.tgz
-    version: 1.1.1
-  bps-mongodbpp-hc:
+   bps-mongodbpp-hc:
   - apiVersion: v1
     created: 2018-10-12T17:47:11.324997083-04:00
     description: A self-describing Node.js sample application
@@ -554,6 +533,31 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kaazinggateway-0.1.0.tgz
     version: 0.1.0
+  ibm-kibana:
+  - appVersion: 6.3.1
+    created: 2018-09-27T18:05:58.219498808+05:30
+    description: Kibana is an open source data visualization plugin for Elasticsearch
+    digest: 0fd956b93772758ae5a428eb86f5f8edb917edf90fe9ea40f20a5d3c09dabee3
+    engine: gotpl
+    home: https://www.elastic.co/products/kibana
+    icon: https://raw.githubusercontent.com/elastic/kibana/master/src/ui/public/icons/kibana-color.svg
+    keywords:
+    - elasticsearch
+    - kibana
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-kibana
+    sources:
+    - https://github.com/elastic/kibana
+    tillerVersion: '>=2.7.2'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-kibana-0.10.0.tgz
+    version: 0.10.0
   ibm-kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.3.1
@@ -580,6 +584,7 @@ entries:
     urls:
     - ibm-kube-state-metrics-0.8.1.tgz
     version: 0.8.1
+=======
   ibm-mariadb-dev:
   - created: 2018-10-12T17:47:11.357788494-04:00
     description: MariaDB is developed as open source software and as a relational
@@ -595,15 +600,6 @@ entries:
     - ppc64le
     - Tools
     - ICP
-    maintainers:
-    - name: IBM Analytics
-    name: ibm-mariadb-dev
-    sources:
-    - https://github.com/IBM/charts/tree/master/stable
-    tillerVersion: '>=2.4.0'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-mariadb-dev-1.1.2.tgz
-    version: 1.1.2
   ibm-memcached:
   - appVersion: 1.5.6
     created: 2018-10-17T09:16:41.187890859-07:00
@@ -915,6 +911,36 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-postgresql-0.11.0.tgz
     version: 0.11.0
+  ibm-prometheus:
+  - appVersion: 2.3.2
+    created: 2018-09-27T18:05:58.2242799+05:30
+    description: Prometheus is a monitoring system and time series database.
+    digest: 9e632d1be0176c1521e1090cfb4751f766f9c280f21922e495827d4998d467f8
+    engine: gotpl
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - Limited
+    - ppc64le
+    - Tools
+    - ICP
+    - alertmanager
+    - prometheus
+    - pushgateway
+    maintainers:
+    - email: smohite@us.ibm.com
+      name: IBM ISV Team
+    name: ibm-prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    tillerVersion: '>=2.7.3'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-7.0.0.tgz
+    version: 7.0.0
   ibm-prometheus-adapter:
   - appVersion: 0.2.1
     created: 2018-10-12T17:47:11.378029158-04:00
@@ -965,269 +991,3 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-prometheus-pushgateway-0.1.2.tgz
     version: 0.1.2
-  ibm-rabbitmq-ha:
-  - apiVersion: v1
-    appVersion: 3.7.4
-    created: 2018-10-12T17:47:11.384951901-04:00
-    description: Highly available RabbitMQ cluster, the open source message broker
-      software that implements the Advanced Message Queuing Protocol (AMQP).
-    digest: bbade8baf8c520dbca410074d7f7fbc09ba662be3311f3fad0f6096a25a92516
-    home: https://www.rabbitmq.com
-    icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
-    keywords:
-    - rabbitmq
-    - message queue
-    - AMQP
-    - AMQPS
-    - MQTT
-    - STOMP
-    - Limited
-    - ppc64le
-    - Tools
-    - ICP
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-rabbitmq-ha
-    sources:
-    - https://github.com/rabbitmq/rabbitmq
-    - https://github.com/docker-library/rabbitmq
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-rabbitmq-ha-1.6.3.tgz
-    version: 1.6.3
-  ibm-redis-ha:
-  - appVersion: 4.0.8-r0
-    created: 2018-10-12T17:47:11.387834978-04:00
-    description: Highly available Redis cluster with multiple sentinels and standbys.
-    digest: 5e7cae874ab922ba6d2f637f4aa0957a914e40f4f1bc03d0d8f64e3ccf626f8a
-    engine: gotpl
-    home: http://redis.io/
-    icon: https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png
-    keywords:
-    - redis
-    - keyvalue
-    - database
-    - Limited
-    - ppc64le
-    - Tools
-    - ICP
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-redis-ha
-    sources:
-    - https://github.com/smileisak/docker-images/tree/master/redis
-    - https://github.com/diegocn/docker-images/tree/master/redis
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-redis-ha-2.2.1.tgz
-    version: 2.2.1
-  ibm-rethinkdb:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-10-12T17:47:11.39024693-04:00
-    description: A Helm chart for Kubernetes
-    digest: 96005a609dacd8f54aade524a380f573cd148639c3d6f5acdbd94ffe54bc65e6
-    keywords:
-    - Limited
-    - ppc64le
-    - Tools
-    - ICP
-    - database
-    - rethinkdb
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-rethinkdb
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-rethinkdb-0.1.0.tgz
-    version: 0.1.0
-  ibm-rstudio:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-10-12T17:47:11.392229477-04:00
-    description: RStudio is an integrated development environment (IDE) for R
-    digest: 87f63716242d4cc37dc6724420a5d25d4043309d34867499da501a5bfc6b8f14
-    engine: gotpl
-    home: https://www.rstudio.com/
-    keywords:
-    - rstudio
-    - R
-    - IDE
-    - Limited
-    - ppc64le
-    - ICP
-    maintainers:
-    - email: lysannef@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-rstudio
-    sources:
-    - https://hub.docker.com/r/ppc64le/rstudio/
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-rstudio-0.1.0.tgz
-    version: 0.1.0
-  ibm-strongloop:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-10-12T17:47:11.394334818-04:00
-    description: Open-source solutions for the API developer community
-    digest: fa27c71176a80859dc234c3eee65bc0a62a7f5f14eadf3d566761562c204212f
-    engine: gotpl
-    home: https://strongloop.com/
-    keywords:
-    - strongloop
-    - IBM
-    - Limited
-    - ppc64le
-    - Tools
-    - ICP
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-strongloop
-    sources:
-    - https://github.com/docker-library/memcached
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-strongloop-0.1.0.tgz
-    version: 0.1.0
-  ibm-telegraf:
-  - appVersion: "1.5"
-    created: 2018-10-12T17:47:11.397377111-04:00
-    deprecated: true
-    description: Telegraf is an agent written in Go for collecting, processing, aggregating,
-      and writing metrics.
-    digest: 4394cb7724174ba5689cd2e19e5077c41a1341fcde222e7aa7e7ec3a1decfa98
-    engine: gotpl
-    home: https://www.influxdata.com/time-series-platform/telegraf/
-    keywords:
-    - telegraf
-    - collector
-    - timeseries
-    - influxdata
-    - Limited
-    - ppc64le
-    - Tools
-    - ICP
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-telegraf
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-telegraf-0.3.3.tgz
-    version: 0.3.3
-  ibm-tensorflow-notebook:
-  - apiVersion: v1
-    appVersion: 1.6.0
-    created: 2018-10-12T17:47:11.399536796-04:00
-    description: A Helm chart for tensorflow notebook and tensorboard
-    digest: 9179fc00f85eb389342dd8d8cb52d68cfdd7d9af086b45efde25f3c81baaae1f
-    home: https://www.tensorflow.org
-    keywords:
-    - tenserflow
-    - adapter
-    - Limited
-    - ppc64le
-    - Tools
-    - ICP
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-tensorflow-notebook
-    sources:
-    - https://github.com/tensorflow/tensorflow
-    - https://github.com/jupyter
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tensorflow-notebook-0.1.1.tgz
-    version: 0.1.1
-  ibm-tidb:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-10-12T17:47:11.40190329-04:00
-    description: TiDB is a distributed NewSQL database compatible with MySQL protocol
-    digest: fe52105e26e7cf53823cd69ca67bcf6a809b027bf86a97f72efded0d008893ef
-    engine: gotpl
-    keywords:
-    - TiDB
-    - database
-    - MySQLProtocol
-    - Limited
-    - amd64
-    - ppc64le
-    - Tools
-    - ICP
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-tidb
-    sources:
-    - https://hub.docker.com/r/ibmcom/tidb-ppc64le/
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tidb-0.1.0.tgz
-    version: 0.1.0
-  ibm-tomcat:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-10-12T17:47:11.404155834-04:00
-    description: Apache Tomcat, often referred to as Tomcat Server, is an open-source
-      Java Servlet Container
-    digest: 64327cb742126b8e33f6eb47ea94f774ecbe24450416fe5d8411407230e0d707
-    engine: gotpl
-    home: http://tomcat.apache.org/
-    keywords:
-    - apache
-    - tomcat
-    - deploy
-    - server
-    - Limited
-    - amd64
-    - ppc64le
-    - s390x
-    - Tools
-    - ICP
-    maintainers:
-    - email: lysannef@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-tomcat
-    sources:
-    - https://hub.docker.com/_/tomcat/
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tomcat-0.1.0.tgz
-    version: 0.1.0
-  ibm-tomee:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2018-10-12T17:47:11.406310564-04:00
-    description: Apache TomEE, pronounced "Tommy", is an all-Apache Java EE Web Profile
-      certified stack where Apache Tomcat is top dog. Apache TomEE is assembled from
-      a vanilla Apache Tomcat zip file. We start with Apache Tomcat, add our jars
-      and zip up the rest. The result is Tomcat with added EE features - TomEE
-    digest: fc7e4eac2cc27930d07b7ec00cbb360668daea0f0b1ed9266e3b713b3e50417c
-    engine: gotpl
-    home: http://tomee.apache.org/
-    keywords:
-    - tomee
-    - apache
-    - Limited
-    - ICP
-    - ppc64le
-    - amd64
-    - Tools
-    maintainers:
-    - email: smohite@us.ibm.com
-      name: IBM ISV Team
-    name: ibm-tomee
-    sources:
-    - https://hub.docker.com/r/ppc64le/tomee/
-    tillerVersion: '>=2.7.2'
-    urls:
-    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tomee-0.1.0.tgz
-    version: 0.1.0
-generated: 2018-10-17T09:16:41.164596943-07:00
