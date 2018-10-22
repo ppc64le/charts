@@ -5,7 +5,9 @@
 {{- end }}
 {{- else if contains "NodePort" .Values.service.type }}
   export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ template "etcd.fullname" . }})
-  echo curl -L http://127.0.0.1:$NODE_PORT/v2/keys/mykey -XPUT -d value=\"Testing\"  [ Run the command on the Node ]
+  curl -L http://127.0.0.1:$NODE_PORT/v2/keys/mykey -XPUT -d value=\"Testing\"  [ Run the command on the Node ]
+  [To check the entered key ]
+  curl -L http://127.0.0.1:$NODE_PORT/v2/keys/mykey -XGET -d value=\"Testing\"
 {{- else if contains "LoadBalancer" .Values.service.type }}
   NOTE: not implemeneted 
 {{- else if contains "ClusterIP" .Values.service.type }}

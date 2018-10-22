@@ -3,6 +3,8 @@ appVersion: "1.0"
 description: Apache Tomcat, often referred to as Tomcat Server, is an open-source Java Servlet Container
 engine: gotpl
 home: http://tomcat.apache.org/
+icon: https://github.com/ppc64le/charts/blob/master/logo/tomcat.png
+
 keywords:
 - apache
 - tomcat

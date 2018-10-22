@@ -3,6 +3,7 @@ appVersion: "1.0"
 description: Open-source solutions for the API developer community
 engine: gotpl
 home: https://strongloop.com/
+icon: https://github.com/ppc64le/charts/blob/master/logo/strongloop.png
 
 keywords:
 - strongloop

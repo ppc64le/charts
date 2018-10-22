@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: Analyzes resource usage and performance characteristics of running containers.
 engine: gotpl
 home: https://prometheus.io/docs/guides/cadvisor/
-icon: https://github.com/ppc64le/charts/tree/master/logo/cadvisor.png?sanitize=true
+icon: https://github.com/ppc64le/charts/tree/master/logo/cadvisor.png
 keywords:
 - cadvisor
 - analyser

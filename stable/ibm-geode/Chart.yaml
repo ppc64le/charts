@@ -3,6 +3,8 @@ appVersion: "1.0"
 description: Apache Geode provides a database-like consistency model, reliable transaction processing and a shared-nothing architecture to maintain very low latency performance with high concurrency processing.
 engine: gotpl
 home: http://geode.apache.org/
+icon: https://github.com/ppc64le/charts/blob/master/logo/geode.png
+
 keywords:
 - apache 
 - geode

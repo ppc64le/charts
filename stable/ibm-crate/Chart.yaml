@@ -4,7 +4,7 @@ description: A distributed SQL DBMS built atop NoSQL storage & indexing delivers
   best of SQL & NoSQL in one database.
 engine: gotpl
 home: https://crate.io/
-icon: https://github.com/ppc64le/charts/tree/master/logo/crateDB.png?sanitize=true
+icon: https://github.com/ppc64le/charts/tree/master/logo/crateDB.png
 keywords:
 - crateDB
 - database
