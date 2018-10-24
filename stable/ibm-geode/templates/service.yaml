@@ -14,7 +14,6 @@ spec:
       path: /pulse
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
-      name: {{ .Values.service.name }}
   selector:
     app: {{ template "geode.name" . }}
     release: {{ .Release.Name }}

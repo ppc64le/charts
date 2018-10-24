@@ -4,6 +4,8 @@ description: A visual tool for wiring the Internet of Things
   system.
 engine: gotpl
 home: http://nodered.org/
+icon: https://github.com/ppc64le/charts/tree/master/logo/node-red.png
+
 keywords:
 - node-red
 - IOT

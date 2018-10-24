@@ -3,7 +3,7 @@ description: Free & open source, high-performance, distributed memory object cac
   system.
 engine: gotpl
 home: http://memcached.org/
-icon: https://github.com/ppc64le/charts/tree/master/logo/memcached.png?sanitize=true
+icon: https://github.com/ppc64le/charts/tree/master/logo/memcached.png
 keywords:
 - memcached
 - cache
