@@ -22,6 +22,10 @@ spec:
       - name: {{ template "fullname" . }}
         image: "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
         resources:
 {{ toYaml .Values.daemonset.resources | indent 10 }}
         env:
@@ -42,7 +46,7 @@ spec:
           readOnly: true
         - name: docker-socket
           mountPath: /var/run/docker.sock
-          # readOnly: true
+          readOnly: true
         - name: varrunutmpro
           mountPath: /var/run/utmp
           readOnly: true

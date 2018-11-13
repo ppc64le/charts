@@ -13,9 +13,9 @@ service:
   type: NodePort
   port: 8080
 
-port:
-  port1: 80
-  port2: 443
+#port:
+#  port1: 8080
+#  port2: 443
 
 ingress:
   enabled: false
@@ -44,8 +44,18 @@ resources: {}
 
 nodeSelector:
     beta.kubernetes.io/arch: "ppc64le"
-#nodeSelector: {}
+
 
 tolerations: []
 
-affinity: {}
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: beta.kubernetes.io/arch
+          operator: In
+          values:
+          - "ppc64le"
+
+

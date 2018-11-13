@@ -17,13 +17,13 @@ We truncate at 24 chars because some Kubernetes name fields are limited to this 
 
 {{/*
   CUSTOM TEMPLATES: This section contains templates that make up the different parts of the telegraf configuration file.
-  - global_tags section
+  - globalTags section
   - agent section
 */}}
 
-{{- define "global_tags" -}}
+{{- define "globalTags" -}}
 {{- if . -}}
-[global_tags]
+[globalTags]
   {{- range $key, $val := . }}
       {{ $key }} = {{ $val | quote }}
   {{- end }}

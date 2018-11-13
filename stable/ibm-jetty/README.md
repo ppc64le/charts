@@ -2,8 +2,6 @@
 
 [Jetty](https://www.eclipse.org/jetty)Eclipse Jetty® - Web Container & Clients - supports HTTP/2, HTTP/1.1, HTTP/1.0, websocket, servlets, and more.
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-jetty
 ```

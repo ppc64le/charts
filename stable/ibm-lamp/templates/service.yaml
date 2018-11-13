@@ -14,7 +14,7 @@ spec:
   type: {{ .Values.service.type }}
   {{- end }}
   ports:
-  - port: {{ .Values.service.HTTPPort }}
+  - port: {{ .Values.service.httpPort }}
     targetPort: 80
     protocol: TCP
     name: httpd

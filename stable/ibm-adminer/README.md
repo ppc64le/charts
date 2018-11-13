@@ -2,8 +2,6 @@
 
 [Adminer](https://www.adminer.org/)A database management in a single PHP file
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-adminer
 ```

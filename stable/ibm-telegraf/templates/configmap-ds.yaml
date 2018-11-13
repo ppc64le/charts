@@ -11,7 +11,7 @@ metadata:
     heritage: "{{ .Release.Service }}"
 data:
   telegraf.conf: |+
-    {{ template "global_tags" .Values.daemonset.config.global_tags }}
+    {{ template "globalTags" .Values.daemonset.config.globalTags }}
     {{ template "agent" .Values.daemonset.config.agent }}
     {{ template "outputs" .Values.daemonset.config.outputs }}
     {{ template "inputs" .Values.daemonset.config.inputs -}}

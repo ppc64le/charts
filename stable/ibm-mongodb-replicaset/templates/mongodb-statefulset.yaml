@@ -9,7 +9,7 @@ metadata:
 {{- if .Values.extraLabels }}
 {{ toYaml .Values.extraLabels | indent 4 }}
 {{- end }}
-  name: {{ template "mongodb-replicaset.fullname" . }}
+  name: {{ template "mongodb-replicaset.fullname" . }}-test
 spec:
   selector:
     matchLabels:
@@ -322,20 +322,23 @@ spec:
           {{ $key }}: {{ $value }}
         {{- end }}
       spec:
-        accessModes:
-        {{- range .Values.persistentVolume.accessModes }}
-          - {{ . | quote }}
+        {{- if .Values.persistentVolume.useDynamicProvisioning }}
+        storageClassName: {{ default nil .Values.persistentVolume.storageClass | quote }}
+        {{ else }}
+        storageClassName: ""
         {{- end }}
+        accessModes:
+          {{- range .Values.persistentVolume.accessModes }}
+          - {{ . | quote }}
+          {{- end }}
         resources:
           requests:
             storage: {{ .Values.persistentVolume.size | quote }}
-      {{- if .Values.persistentVolume.storageClass }}
-      {{- if (eq "-" .Values.persistentVolume.storageClass) }}
-        storageClassName: ""
-      {{- else }}
-        storageClassName: "{{ .Values.persistentVolume.storageClass }}"
-      {{- end }}
-      {{- end }}
+        {{- if .Values.persistentVolume.useDynamicProvisioning  }}
+        selector:
+          matchLabels:
+            assign-to: "mongodb-replicaset"
+        {{- end }}
 {{- else }}
         - name: datadir
           emptyDir: {}

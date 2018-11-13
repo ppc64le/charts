@@ -2,8 +2,6 @@
 
 [CrateDB](https://crate.io/)A distributed SQL DBMS built atop NoSQL storage & indexing delivers the best of SQL & NoSQL in one database. 
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-crate
 ```

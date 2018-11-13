@@ -42,7 +42,7 @@ serverAffinity: |
       topologyKey: kubernetes.io/hostname
 
 ## Redis image version
-redis_image: redis:4.0.10
+redisImage: redis:4.0.10
 ## replicas number for each component
 replicas:
   servers: 3
@@ -69,4 +69,4 @@ auth: false
 ## Defaults to a random 10-character alphanumeric string if not set and auth is true
 ## ref: https://github.com/kubernetes/charts/blob/master/stable/redis-ha/templates/redis-auth-secret.yaml
 ##
-## redisPassword:
+redisPassword:

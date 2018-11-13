@@ -28,26 +28,15 @@ spec:
           ports:
             - name: http
               containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-          ports:
-            - name: http1
-              containerPort: 8443
-        #  livenessProbe:
-        #    httpGet:
-        #      path: /
-        #      port: http
-        #  readinessProbe:
-        #    httpGet:
-        #      path: /
-        #      port: http
-
+              protocol: TCP
+#          livenessProbe:
+#            httpGet:
+#              path: /
+#              port: http
+#          readinessProbe:
+#            httpGet:
+#              path: /
+#              port: http
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

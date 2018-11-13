@@ -6,6 +6,8 @@
 ## Note 
 The original work for this helm chart is present @ [Helm Charts]( https://github.com/helm/charts) Based on the [chaoskube]( https://github.com/helm/charts/tree/master/stable/chaoskube) chart
 
+## TL;DR;
+
 ```console
 $ helm install stable/chaoskube
 ```

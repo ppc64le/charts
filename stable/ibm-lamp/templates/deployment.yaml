@@ -238,7 +238,7 @@ spec:
         - name: init
           mountPath: /init
         env:
-        {{- if .Values.wordpress.develop.delete_uploads }}
+        {{- if .Values.wordpress.develop.deleteUploads }}
         - name: DELETE_UPLOADS
           value: "1"
         {{- end }}
@@ -252,7 +252,7 @@ spec:
         {{- end }}
         {{- if and .Values.ingress.htpasswdString ( not .Values.ingress.enabled ) }}
         - name: HTACCESS_AUTH
-          value: {{ .Values.htpasswdString }}
+          value: {{ .Values.ingress.htpasswdString }}
         {{- end }}
         {{- if .Values.svn.allowOverwrite }}
         - name: ALLOW_OVERWRITE

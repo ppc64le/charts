@@ -1,4 +1,4 @@
-nodeSele  or:
+nodeSelector.beta.kubernetes.io/arch:
    __metadata:
      name: "Node Selector"
      label: "nodeSelector"

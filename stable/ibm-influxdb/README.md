@@ -82,7 +82,7 @@ The chart mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/pers
 
 ## Starting with authentication
 
-In `values.yaml` change `.Values.config.http.authEnabled` to `true`.
+In `values.yaml` change `.Values.config.http.auth_enabled` to `true`.
 
 Influxdb requires also a user to be set in order for authentication to be enforced. See more details [here](https://docs.influxdata.com/influxdb/v1.2/query_language/authentication_and_authorization/#set-up-authentication).
 

@@ -1,4 +1,4 @@
-{{- if .Values.persistence.enabled -}}
+{{ if .Values.persistence.enabled -}}
 {{- if not .Values.persistence.tmpdata.existingClaim -}}
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -11,18 +11,23 @@ metadata:
     heritage: {{ .Release.Service }}
 
 spec:
+  {{- if .Values.persistence.useDynamicProvisioning }}
+  storageClassName: {{ default nil .Values.persistence.mesos.storageClass | quote }}
+  {{ else }}
+  storageClassName: ""
+  {{- end }}
   accessModes:
     - {{ .Values.persistence.mesos.accessMode | quote }}
   resources:
     requests:
       storage: {{ .Values.persistence.mesos.size | quote }}
-{{- if .Values.persistence.mesos.storageClass }}
-{{- if (eq "-" .Values.persistence.mesos.storageClass) }}
-  storageClassName: ""
-{{- else }}
-  storageClassName: "{{ .Values.persistence.mesos.storageClass }}"
+  {{- if .Values.persistence.useDynamicProvisioning  }}
+  selector:
+    matchLabels:
+      assign-to: "mesos"
+  {{- end }}
 {{- end }}
 {{- end }}
-{{- end -}}
-{{- end -}}
+
+
 

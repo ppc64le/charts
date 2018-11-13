@@ -14,28 +14,28 @@ spec:
   ports:
   {{- range $key, $value := .Values.single.config.inputs }}
     {{- if eq $key "http_listener" }}
-  - port: {{ trimPrefix ":" $value.service_address | int64 }}
-    targetPort: {{ trimPrefix ":" $value.service_address | int64 }}
-    name: "http-listener"
+  - port: {{ trimPrefix ":" $value.serviceAddress | int64 }}
+    targetPort: {{ trimPrefix ":" $value.serviceAddress | int64 }}
+    name: "httpListener"
     {{- end }}
     {{- if eq $key "statsd" }}
-  - port: {{ trimPrefix ":" $value.service_address | int64 }}
-    targetPort: {{ trimPrefix ":" $value.service_address | int64 }}
+  - port: {{ trimPrefix ":" $value.serviceAddress | int64 }}
+    targetPort: {{ trimPrefix ":" $value.serviceAddress | int64 }}
     name: "statsd"
     {{- end }}
     {{- if eq $key "tcp-listener" }}
-  - port: {{ trimPrefix ":" $value.service_address | int64 }}
-    targetPort: {{ trimPrefix ":" $value.service_address | int64 }}
+  - port: {{ trimPrefix ":" $value.serviceAddress | int64 }}
+    targetPort: {{ trimPrefix ":" $value.serviceAddress | int64 }}
     name: "tcp_listener"
     {{- end }}
     {{- if eq $key "udp-listener" }}
-  - port: {{ trimPrefix ":" $value.service_address | int64 }}
-    targetPort: {{ trimPrefix ":" $value.service_address | int64 }}
+  - port: {{ trimPrefix ":" $value.serviceAddress | int64 }}
+    targetPort: {{ trimPrefix ":" $value.serviceAddress | int64 }}
     name: "udp_listener"
     {{- end }}
     {{- if eq $key "webhooks" }}
-  - port: {{ trimPrefix ":" $value.service_address | int64 }}
-    targetPort: {{ trimPrefix ":" $value.service_address | int64 }}
+  - port: {{ trimPrefix ":" $value.serviceAddress | int64 }}
+    targetPort: {{ trimPrefix ":" $value.serviceAddress | int64 }}
     name: "webhooks"
     {{- end }}
   {{- end }}

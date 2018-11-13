@@ -44,26 +44,26 @@ ingress:
   ## Enable Ingress.
   ##
   enabled: false
-
+  path: /
     ## Annotations.
     ##
-    # annotations:
+  annotations:
     #   kubernetes.io/ingress.class: nginx
     #   kubernetes.io/tls-acme: 'true'
 
     ## Hostnames.
     ## Must be provided if Ingress is enabled.
     ##
-    # hosts:
-    #   - pushgateway.domain.com
+  hosts:
+    - pushgateway.domain.com
 
     ## TLS configuration.
     ## Secrets must be manually created in the namespace.
     ##
-    # tls:
-    #   - secretName: pushgateway-tls
-    #     hosts:
-    #       - pushgateway.domain.com
+  tls:
+    - secretName: pushgateway-tls
+      hosts:
+        - pushgateway.domain.com
 
 tolerations: {}
   # - effect: NoSchedule

@@ -2,8 +2,6 @@
 
 ibm-kaazinggateway Analyzes resource usage and performance characteristics of running containers..
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-kaazinggateway
 ```

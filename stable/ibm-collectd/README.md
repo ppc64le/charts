@@ -1,5 +1,6 @@
 # collectd-exporter
-An exporter for collectd. It accepts collectd's binary network protocol as sent by collectd's network plugin and metrics in JSON format via HTTP POST as sent by collectd's write http plugin, and transforms and exposes them for consumption by Prometheus.
+
+collectd-exporter
 
 ```console
 $ helm install stable/ibm-collectd

@@ -25,15 +25,15 @@ env:
 #  LDAP_TLS: "true"
 #  LDAP_TLS_ENFORCE: "false"
 #  LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
-   DOMAIN: "myldap.org"
-   PASSWORD: "admin"
-   ORGANIZATION: "MyLDAP Inc"
+   domain: "myldap.org"
+   password: "admin"
+   organisation: "MyLDAP Inc"
 
 # Default Passwords to use, stored as a secret. If unset, passwords are auto-generated.
 # You can override these at install time with
 # helm install openldap --set openldap.adminPassword=<passwd>,openldap.configPassword=<passwd>
 adminPassword: admin
-# configPassword: config
+configPassword: config
 
 # Custom openldap configuration files used to override default settings
 customLdifFiles:
@@ -42,6 +42,7 @@ customLdifFiles:
 
 ## Persist data to a persitent volume
 persistence:
+  useDynamicProvisioning: false
   enabled: false
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
@@ -50,7 +51,8 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # storageClass: "-"
+  existingClaim:
+  storageClass: "-"
   accessMode: ReadWriteOnce
   size: 8Gi
 

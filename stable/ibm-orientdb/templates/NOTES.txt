@@ -15,6 +15,6 @@ Get the application URL by running these commands:
      NOTE: It may take a few minutes for the LoadBalancer IP to be available.
            You can watch the status of by running 'kubectl get svc -w {{ template "orientdb.fullname" . }}'
   export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "orientdb.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-  echo http://$SERVICE_IP:{{ .Values.service.port }}/studio/index.html
+  echo http://$SERVICE_IP:{{ .Values.port.port1 }}/studio/index.html
 
 {{- end }}

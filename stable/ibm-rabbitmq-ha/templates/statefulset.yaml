@@ -224,20 +224,23 @@ spec:
           {{ $key }}: {{ $value }}
         {{- end }}
       spec:
+        {{- if .Values.persistentVolume.useDynamicProvisioning }}
+        storageClassName: {{ default nil .Values.persistentVolume.storageClassName | quote }}
+        {{ else }}
+        storageClassName: ""
+        {{- end }}
         accessModes:
-        {{- range .Values.persistentVolume.accessModes }}
+          {{- range .Values.persistentVolume.accessModes }}
           - {{ . | quote }}
         {{- end }}
         resources:
           requests:
             storage: {{ .Values.persistentVolume.size | quote }}
-      {{- if .Values.persistentVolume.storageClass }}
-      {{- if (eq "-" .Values.persistentVolume.storageClass) }}
-        storageClassName: ""
-      {{- else }}
-        storageClassName: "{{ .Values.persistentVolume.storageClass }}"
-      {{- end }}
-      {{- end }}
+        {{- if .Values.persistentVolume.useDynamicProvisioning  }}
+        selector:
+          matchLabels:
+            assign-to: "rabbitmq-ha"
+        {{- end }}
 {{- else }}
         - name: data
           emptyDir: {}

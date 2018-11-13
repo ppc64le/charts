@@ -18,6 +18,8 @@ spec:
       labels:
         app: {{ template "prometheus-pushgateway.name" . }}
         release: {{ .Release.Name }}
+        chart: {{ template "prometheus-pushgateway.chart" . }}
+        heritage: {{ .Release.Service }}
       annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}        
     spec:

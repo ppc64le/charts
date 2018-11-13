@@ -2,8 +2,6 @@
 
 Basic gerrit server.
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-gerrit
 ```

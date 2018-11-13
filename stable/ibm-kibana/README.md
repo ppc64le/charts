@@ -2,8 +2,6 @@
 
 [kibana](https://github.com/elastic/kibana) is your window into the Elastic Stack. Specifically, it's an open source (Apache Licensed), browser-based analytics and search dashboard for Elasticsearch.
 
-## TL;DR;
-
 ```console
 $ helm install stable/kibana
 ```

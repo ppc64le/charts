@@ -33,7 +33,7 @@ spec:
 {{ tpl .Values.serverAffinity . | indent 8 }}
       containers:
       - name: redis
-        image: {{ .Values.redis_image }}
+        image: {{ .Values.redisImage }}
         resources:
 {{ toYaml .Values.resources.server | indent 10 }}
         env:

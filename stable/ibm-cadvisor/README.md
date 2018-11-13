@@ -3,7 +3,7 @@
 [CAdvisor](https://github.com/google/cadvisor)Analyzes resource usage and performance characteristics of running containers.
 
 ```console
-$ helm install ibm-cadvisor
+$ helm install stable/ibm-cadvisor
 ```
 
 ## Prerequisites
@@ -24,7 +24,7 @@ This chart bootstraps a [CAdvisor](https://github.com/google/cadvisor) deploymen
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm intall --name my-release ibm-cadvisor
+$ helm intall --name my-release stable/ibm-cadvisor
 ```
 
 ## Uninstalling the Chart
@@ -49,7 +49,7 @@ The following table lists the configurable parameters of the CAdvisor chart and 
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | A recent official CAdvisor tag                          |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
 
 The above parameters map to `ibm-cadvisor` params.

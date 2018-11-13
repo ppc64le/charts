@@ -18,6 +18,8 @@ spec:
       labels:
         app: {{ template "openldap.name" . }}
         release: {{ .Release.Name }}
+        chart: {{ template "openldap.chart" . }}
+        heritage: {{ .Release.Service }}
     spec:
       containers:
         - name: {{ .Values.containerName | quote }}
@@ -30,11 +32,11 @@ spec:
               containerPort: 636
           env:
             - name: DOMAIN
-              value : {{ .Values.env.DOMAIN | quote }}
+              value : {{ .Values.env.domain | quote }}
             - name: PASSWORD
-              value : {{ .Values.env.PASSWORD | quote }}
+              value : {{ .Values.env.password | quote }}
             - name: ORGANIZATION
-              value : {{ .Values.env.ORGANIZATION | quote }}
+              value : {{ .Values.env.organisation | quote }}
           volumeMounts:
             - name: data
               mountPath: /var/lib/ldap

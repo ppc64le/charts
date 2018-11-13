@@ -7,7 +7,7 @@ init:
     release: false
     ## init.clone.hostPath If the release to clone uses hostPath instead of PVC, set
     ## it here. This will only work if both releases are deployed on the same node
-    # hostPath: /path/to/volume
+    hostPath: /path/to/volume
 
   manually:
     ## init.manually.enabled Enables container for manual initialization
@@ -27,10 +27,10 @@ php:
   version: "7"
 
   ## php.repository If not empty, repository is chosen over default php repo
-  # repository: php
+  repository: php
 
   ## php.tag Repository tag
-  # tag: fpm
+  tag: fpm
 
   ## php.pullPolicy Image pull policy
   pullPolicy: Always
@@ -38,17 +38,18 @@ php:
   ## php.fpmEnabled Enables docker FPM repository, be sure to disable if working with
   ## a custom repository based on the apache tag
   fpmEnabled: true
-
+  
+  envVars:
   ## php.sockets If FPM is enabled, enables communication between HTTPD and PHP via
   ## sockets instead of TCP
   sockets: true
 
   ## php.oldHTTPRoot Additionally mounts the webroot at `php.oldHTTPRoot` to compensate
   ## for absolute path file links
-  # oldHTTPRoot: /var/www/html
+  oldHTTPRoot: /var/www/html
 
   ## php.ini additional PHP config values, see examples on how to use
-  # ini: |
+  ini: |
   #   short_open_tag=On
 
   ## php.copyRoot if true, copies the containers web root `/var/www/html` into
@@ -82,16 +83,16 @@ httpd:
 
 mysql:
   ## mysql.rootPassword Sets the MySQL root password, enables MySQL service if not empty
-  # rootPassword: root_password
+  rootPassword: root_password
 
   ## mysql.user MySQL user
-  # user: user
-
+  user: user
+  pullPolicy:
   ## mysql.password MySQL user password
-  # password: user_password
+  password: user_password
 
   ## mysql.database MySQL user database
-  # database: database
+  database: database
 
   ## mysql.repository MySQL repository - choose one of the official images
   ##     [mysql](https://hub.docker.com/_/mysql/)
@@ -122,13 +123,13 @@ sftp:
   port: 22
 
   ## sftp.nodePort  Port to advertise service in Ingress mode
-  # nodePort: 30111
+  nodePort: 30111
 
   ## sftp.user SFTP User
-  # user: user
+  user: user
 
   ## sftp.password SFTP Password
-  # password: password
+  password: password
 
   ## sftp.resources resource requests/limits
   resources: false
@@ -147,10 +148,10 @@ webdav:
   subdomain: webdav
 
   ## webdav.user WebDAV User
-  # user:
+  user:
 
   ## webdav.password WebDAV Password
-  # password:
+  password:
 
   ## webdav.resources resource requests/limits
   ##resources: false
@@ -163,7 +164,7 @@ git:
   enabled: false
 
   ## git.repoURL Git Repository URL
-  # repoURL:
+  repoURL:
 
   ## git.branch Repository branch to sync
   branch: master
@@ -185,13 +186,13 @@ svn:
   enabled: false
 
   ## svn.user SVN User
-  # user: user
+  user: user
 
   ## svn.password SVN Password
-  # password: password
+  password: password
 
   ## svn.repoURL SVN Repository URL
-  # repoURL:
+  repoURL:
 
   ## svn.allowOverwrite if disabled and files already exist in the web folder will
   ## not create working clone or sync files
@@ -249,7 +250,7 @@ persistence:
 
   ## persistence.size PVC Size
   size: 5Gi
-
+  useDynamicProvisioning: false
   ## persistence.storageClass PVC Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -260,7 +261,7 @@ persistence:
   storageClass: "-"
 
   ## persistence.hostPath if specified, used as persistent storage instead of PVC
-  # hostPath: /path/to/volume
+  hostPath: /path/to/volume
 
 
 ### NETWORKING ###
@@ -270,7 +271,7 @@ service:
   type: LoadBalancer
 
   ## service.HTTPPort Port to advertise the main web service in LoadBalancer mode
-  HTTPPort: 80
+  httpPort: 80
 
 
 ingress:
@@ -279,24 +280,24 @@ ingress:
 
   ## ingress.domain domain to advertise the services - A records need to point to
   ## ingress controllers IP
-  # domain: example.com
+  domain: example.com
 
   ## ingress.subdomainWWW enables www subdomain and 301 redirect from domain
   ## > NOTE: Requires nginx ingress controller
-  # subdomainWWW: false
+  subdomainWWW: false
 
   ## ingress.ssl Enables [lego](https://github.com/jetstack/kube-lego) letsencrypt
   ## ssl support - working lego container necessary
   ## > NOTE: Requires nginx ingress controller
-  # ssl: false
+  ssl: false
 
   ## ingress.htpasswdString if specified main web service requires authentication.
   ## Format: _user:$apr1$F..._
   ## > NOTE: Requires nginx ingress controller
-  # htpasswdString: "user:$apr1$FfVI2PRr$f9MW8rsr5RmmxbdV0Iipk1"
+  htpasswdString: "user:$apr1$FfVI2PRr$f9MW8rsr5RmmxbdV0Iipk1"
 
   ## ingress.annotations specify custom ingress annotations such as e.g.
-  # annotations:
+  annotations:
   #   ingress.kubernetes.io/proxy-body-size: "50m"
   #   kubernetes.io/ingress.class: nginx
 
@@ -309,14 +310,14 @@ wordpress:
 
   ## wordpress.gdriveRToken gdrive rtoken for authentication used for downloading
   ## InfiniteWP backup from gdrive
-  # gdriveRToken:
+  gdriveRToken:
 
   ## wordpress.gdriveFolder gdrive backup folder - the latest backup inside of the
   ## folder where the name includes the string `_full` will be downloaded
-  # gdriveFolder: example.com
+  gdriveFolder: example.com
 
   ## wordpress.domain wordpress domain used in dev mode to be search replaced
-  # domain: "example.com"
+  domain: "example.com"
 
   develop:
     ## wordpress.develop.enabled enables develop mode
@@ -324,11 +325,11 @@ wordpress:
 
     ## wordpress.develop.deleteUploads deletes `wp_content/uploads` folder and links
     ## to live site within htaccess
-    ##deleteUploads: false
+    deleteUploads: false
 
     ## wordpress.develop.devDomain used to search replace `wordpress.domain` to
     ## `fullname of template`.`develop.devDomain` e.g `mysite-com-lamp.dev.example.com`
-    # devDomain: dev.example.com
+    devDomain: dev.example.com
 
 ### OTHER ###
 

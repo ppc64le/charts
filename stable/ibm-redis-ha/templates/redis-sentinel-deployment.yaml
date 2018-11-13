@@ -29,7 +29,7 @@ spec:
 {{ tpl .Values.sentinelAffinity . | indent 8 }}
       containers:
       - name: sentinel
-        image: {{ .Values.redis_image }}
+        image: {{ .Values.redisImage }}
         resources:
 {{ toYaml .Values.resources.sentinel | indent 10 }}
         env:

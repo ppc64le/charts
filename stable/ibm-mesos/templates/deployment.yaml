@@ -25,7 +25,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["sh","-c","set PATH=$PATH:/opt/ibm/mesos/sbin;MESOS_SYSTEMD_ENABLE_SUPPORT=false; mesos-master --registry=in_memory"]
+          command: ["sh","-c","set PATH=$PATH:/opt/ibm/mesos/sbin;MESOS_SYSTEMD_ENABLE_SUPPORT=false;mesos-master --registry=in_memory" ]
           ports:
           - name: http 
             containerPort: 5050

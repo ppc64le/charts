@@ -14,18 +14,22 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "prometheus.alertmanager.fullname" . }}
+
 spec:
-  accessModes:
-{{ toYaml .Values.alertmanager.persistentVolume.accessModes | indent 4 }}
-{{- if .Values.alertmanager.persistentVolume.storageClass }}
-{{- if (eq "-" .Values.alertmanager.persistentVolume.storageClass) }}
+  {{- if .Values.alertmanager.persistentVolume.useDynamicProvisioning }}
+  storageClassName: {{ default nil .Values.alertmanager.persistentVolume.storageClass | quote }}
+  {{ else }}
   storageClassName: ""
-{{- else }}
-  storageClassName: "{{ .Values.alertmanager.persistentVolume.storageClass }}"
-{{- end }}
-{{- end }}
+  {{- end }}
+  accessModes:
+  
   resources:
     requests:
-      storage: "{{ .Values.alertmanager.persistentVolume.size }}"
-{{- end -}}
-{{- end -}}
+      storage: {{ .Values.alertmanager.persistentVolume.size | quote }}
+  {{- if .Values.alertmanager.persistentVolume.useDynamicProvisioning  }}
+  selector:
+    matchLabels:
+      assign-to: "alertmanager"
+  {{- end }}
+{{- end }}
+{{- end }}

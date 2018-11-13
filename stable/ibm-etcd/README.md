@@ -2,8 +2,6 @@
 
 [Etcd](https://coreos.com/etcd/)Distributed reliable key-value store for the most critical data of a distributed system.
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-etcd
 ```

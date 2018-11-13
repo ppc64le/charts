@@ -2,8 +2,6 @@
 
 [Glassfish](https://javaee.github.io/glassfish/) GlassFish is an open-source application server project started by Sun Microsystems for the Java EE platform and now sponsored by Oracle Corporation.  
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-glassfish
 ```

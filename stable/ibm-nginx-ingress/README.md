@@ -7,8 +7,6 @@ To use, add the `kubernetes.io/ingress.class: nginx` annotation to your Ingress 
 ## Note 
 The original work for this helm chart is present @ [Helm Charts]( https://github.com/helm/charts) Based on the [nginx-ingress]( https://github.com/helm/charts/tree/master/stable/nginx-ingress) chart
 
-## TL;DR;
-
 ```console
 $ helm install stable/nginx-ingress
 ```

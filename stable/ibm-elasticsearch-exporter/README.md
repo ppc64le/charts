@@ -7,8 +7,6 @@ Learn more: https://github.com/justwatchcom/elasticsearch_exporter
 ## Note 
 The original work for this helm chart is present @ [Helm Charts Charts]( https://github.com/helm/charts) Based on the [elasticsearch-exporter]( https://github.com/helm/charts/tree/master/stable/elasticsearch-exporter) chart
 
-## TL;DR;
-
 ```bash
 $ helm install stable/elasticsearch-exporter
 ```

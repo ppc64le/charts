@@ -21,7 +21,7 @@ spec:
     - ReadWriteOnce
   storageClassName:
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   hostPath:
     path: /var/data/mesos
 

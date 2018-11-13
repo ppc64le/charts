@@ -109,6 +109,7 @@ rbac:
   ## Ignored if rbac.create is true
   ##
   serviceAccountName: default
+  ## serviceAccountName: cert-manager
 
 ## eventer can send the kubernetes event logs to a remote destination
 ## it uses the same image as heapster but has its own resizer nanny pod
