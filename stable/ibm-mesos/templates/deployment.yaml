@@ -64,11 +64,16 @@ spec:
       nodeSelector:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.affinity }}
-      affinity:
+    {{- with .Values.tolerations }}
+      tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
     {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
+{{- if .Values.node }}
+      affinity:
+        {{- include "nodeaffinity" . | indent 6 }}
+{{- end }}
+

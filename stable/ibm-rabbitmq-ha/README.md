@@ -1,13 +1,11 @@
-## Chart Details
 # RabbitMQ High Available
 
+## Chart Details
 [RabbitMQ](https://www.rabbitmq.com) is an open source message broker software
 that implements the Advanced Message Queuing Protocol (AMQP).
 
-## TL;DR;
-
 ```bash
-$ helm install stable/rabbitmq-ha
+$ helm install stable/ibm-rabbitmq-ha
 ```
 
 ## Introduction
@@ -18,22 +16,19 @@ deployment on a [Kubernetes](http://kubernetes.io) cluster using the
 
 ## Prerequisites
 
-- Kubernetes 1.5+ with Beta APIs enabled
+- Kubernetes 1.7+ 
 - PV provisioner support in the underlying infrastructure
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
-
-## Prerequisites
--Kubernetes 1.7+ with Beta APIs enabled
--Tiller 2.6.0 or later
 
 ## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/rabbitmq-ha
+$ helm install --name my-release stable/ibm-rabbitmq-ha
 ```
 
 The command deploys RabbitMQ on the Kubernetes cluster in the default
@@ -49,10 +44,10 @@ of the `rabbitmqErlangCookie` amongst the releases. If you didn't define it at
 the first place, you can upgrade using the following command:
 
 ```
-$ export ERLANGCOOKIE=$(kubectl get secrets -n <NAMESPACE> <HELM_RELEASE_NAME>-rabbitmq-ha -o jsonpath="{.data.rabbitmq-erlang-cookie}" | base64 --decode)
+$ export ERLANGCOOKIE=$(kubectl get secrets -n <NAMESPACE> <HELM_RELEASE_NAME>-ibm-rabbitmq-ha -o jsonpath="{.data.rabbitmq-erlang-cookie}" | base64 --decode)
 $ helm upgrade \
     --set rabbitmqErlangCookie=$ERLANGCOOKIE \
-    <HELM_RELEASE_NAME> stable/rabbitmq-ha
+    <HELM_RELEASE_NAME> stable/ibm-rabbitmq-ha
 ```
 
 ## Uninstalling the Chart
@@ -77,7 +72,7 @@ and their default values.
 | `existingSecret`      | Use an existing secret for password & erlang cookie                 | `""`                                                       |
 | `image.pullPolicy`                 | Image pull policy                                               | `Always` if `image` tag is `latest`, else `IfNotPresent` |
 | `image.repository`                 | RabbitMQ container image repository                             | `rabbitmq`                                               |
-| `image.tag`                        | RabbitMQ container image tag                                    | `3.7-alpine`                                             |
+| `image.tag`                        | RabbitMQ container image tag                                    | `3.7.5-alpine`                                             |
 | `nodeSelector`                     | Node labels for pod assignment                                  | `{}`                                                     |
 | `persistentVolume.accessMode`      | Persistent volume access modes                                  | `[ReadWriteOnce]`                                        |
 | `persistentVolume.annotations`     | Persistent volume annotations                                   | `{}`                                                     |
@@ -143,7 +138,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```bash
 $ helm install --name my-release \
   --set rabbitmqUsername=admin,rabbitmqPassword=secretpassword,rabbitmqErlangCookie=secretcookie \
-    stable/rabbitmq-ha
+    stable/ibm-rabbitmq-ha
 ```
 
 The above command sets the RabbitMQ admin username and password to `admin` and
@@ -154,10 +149,10 @@ Alternatively, a YAML file that specifies the values for the parameters can be
 provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml stable/rabbitmq-ha
+$ helm install --name my-release -f values.yaml stable/ibm-rabbitmq-ha
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ### Custom ConfigMap
 
@@ -173,7 +168,7 @@ Example of using RabbitMQ definition to setup users, permissions or policies:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my-release-rabbitmq-ha
+  name: my-release-ibm-rabbitmq-ha
 data:
   enabled_plugins: |
     [
@@ -199,7 +194,7 @@ data:
 Then, install the chart with the above configuration:
 
 ```
-$ helm install --name my-release --set customConfigMap=true stable/rabbitmq-ha
+$ helm install --name my-release --set customConfigMap=true stable/ibm-rabbitmq-ha
 ```
 
 ### Custom Secret

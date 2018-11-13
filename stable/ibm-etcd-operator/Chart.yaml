@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: 0.7.0
 description: CoreOS etcd-operator Helm chart for Kubernetes
 home: https://github.com/coreos/etcd-operator
-icon: https://github.com/ppc64le/charts/tree/master/logo/etcd-horizontal-color.png
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/etcd-horizontal-color.png?sanitize=true
 keywords:
 - Limited
 - ppc64le

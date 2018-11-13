@@ -66,10 +66,10 @@ spec:
           timeoutSeconds: 1
         resources:
 {{ toYaml .Values.resources | indent 10 }}
-    {{- with .Values.affinity }}
+{{- if .Values.node }}
       affinity:
-{{ toYaml . | indent 8 }}
-    {{- end }}
+        {{- include "nodeaffinity" . | indent 6 }}
+{{- end }}
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}

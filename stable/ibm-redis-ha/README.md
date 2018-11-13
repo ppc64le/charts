@@ -1,9 +1,6 @@
-## Chart Details
 # Redis
-
+## Chart Details
 [Redis](http://redis.io/) is an advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
-
-## TL;DR;
 
 ```bash
 $ helm install stable/redis-ha
@@ -20,7 +17,7 @@ The chart deploys pods consuming minimum resources as specified in the resources
 
 ## Prerequisites
 
-- Kubernetes 1.5+ with Beta APIs enabled
+- Kubernetes 1.7+                          
 - PV provisioner support in the underlying infrastructure
 
 ## Installing the Chart

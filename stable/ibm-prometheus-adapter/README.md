@@ -1,5 +1,5 @@
-## Introduction
 # Prometheus Adapter
+## Introduction
 
 Installs the [Prometheus Adapter](https://github.com/DirectXMan12/k8s-prometheus-adapter) for the Custom Metrics API. Custom metrics are used in Kubernetes by [Horizontal Pod Autoscalers](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) to scale workloads based upon your own metric pulled from an external metrics provider like Prometheus. This chart complements the [metrics-server](https://github.com/helm/charts/tree/master/stable/metrics-server) chart that provides resource only metrics.
 
@@ -8,8 +8,8 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
 
 ## Prerequisites
 
-Kubernetes 1.9+
-Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -22,7 +22,7 @@ This chart prometheus adaptor deployment on a Kubernetes cluster
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/prometheus-adapter
+$ helm install --name my-release stable/ibm-prometheus-adapter
 ```
 
 This command deploys the prometheus adapter with the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -48,7 +48,7 @@ The following table lists the configurable parameters of the Prometheus Adapter 
 | Parameter                       | Description                                                                     | Default                                     |
 | ------------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------|
 | `affinity`                      | Node affinity                                                                   | `{}`                                        |
-| `image.repository`              | Image repository                                                                | `directxman12/k8s-prometheus-adapter-amd64` |
+| `image.repository`              | Image repository                                                                | `directxman12/k8s-prometheus-adapter-ppc64le` |
 | `image.tag`                     | Image tag                                                                       | `v0.2.1`                                    |
 | `image.pullPolicy`              | Image pull policy                                                               | `IfNotPresent`                              |
 | `logLevel`                      | Log level                                                                       | `4`                                         |
@@ -76,12 +76,12 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 $ helm install --name my-release \
   --set logLevel=1 \
- stable/prometheus-adapter
+ stable/ibm-prometheus-adapter
 ```
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name my-release -f values.yaml stable/prometheus-adapter
+$ helm install --name my-release -f values.yaml stable/ibm-prometheus-adapter
 ```
 ## Limitations

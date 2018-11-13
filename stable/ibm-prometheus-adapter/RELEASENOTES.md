@@ -1,6 +1,6 @@
 # Release Notes
 
-## What's new in Chart Version 
+## What's new in Chart Version 0.1.0
 - Initial version
 
 ## Fixes

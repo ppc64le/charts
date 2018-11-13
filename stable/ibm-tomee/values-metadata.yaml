@@ -1,4 +1,4 @@
-nodeSele  or:
+node:
    __metadata:
      name: "Node Selector"
      label: "nodeSelector"

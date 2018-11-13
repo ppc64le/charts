@@ -24,8 +24,7 @@ podAnnotations: {}
 ## Node labels for pod assignment
 ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
 ##
-nodeSelector: 
-  beta.kubernetes.io/arch: "ppc64le"
+nodeSelector: {}
 
 node: "ppc64le"
 

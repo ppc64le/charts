@@ -3,6 +3,7 @@ appVersion: "1.0"
 description: OrientDB is the most versatile DBMS supporting Graph, Document, Reactive, Full-Text, Geospatial and Key-Value models in one Multi-Model product.
 engine: gotpl
 home: http://orientdb.com/
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/Orientdb.png?sanitize=true
 keywords:
 - orientdb
 - DBMS

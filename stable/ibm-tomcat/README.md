@@ -2,7 +2,6 @@
 
 [Tomcat](http://tomcat.apache.org/)Apache Tomcat, often referred to as Tomcat Server, is an open-source Java Servlet Container
 
-## TL;DR;
 
 ```console
 $ helm install stable/ibm-tomcat
@@ -10,8 +9,8 @@ $ helm install stable/ibm-tomcat
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -49,9 +48,9 @@ The following table lists the configurable parameters of the Tomcat chart and th
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official tomcat tag                            |
+| `image`                   | The image to pull and run       |  ppc64le/tomcat:8.0                           |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
 
 The above parameters map to `ibm-tomcat` params.
@@ -64,6 +63,6 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 $ helm install --name my-release -f values.yaml stable/ibm-tomcat
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Limitations

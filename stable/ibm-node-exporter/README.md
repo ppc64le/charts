@@ -1,8 +1,6 @@
 # Node Exporter
 
-[Node Exporter](https://prometheus.io/)An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.
-
-## TL;DR;
+[Node Exporter](https://prometheus.io/) An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.
 
 ```console
 $ helm install stable/ibm-node-exporter
@@ -10,8 +8,8 @@ $ helm install stable/ibm-node-exporter
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -49,7 +47,7 @@ The following table lists the configurable parameters of the Node Exporter chart
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official node-exporter tag                     |
+| `image`                   | The image to pull and run       | ibmcom/node-exporter-ppc64le:v0.15.2                    |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
 | `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 

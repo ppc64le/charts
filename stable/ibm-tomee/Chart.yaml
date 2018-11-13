@@ -4,7 +4,7 @@ description: Apache TomEE, pronounced "Tommy", is an all-Apache Java EE Web Prof
 
 engine: gotpl
 home: http://tomee.apache.org/
-
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/tomee.png?sanitize=true
 keywords:
 - tomee
 - apache

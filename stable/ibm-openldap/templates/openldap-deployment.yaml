@@ -87,12 +87,5 @@ spec:
         {{- end -}}
 {{- if .Values.node }}
       affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - {{ .Values.node }}
+        {{- include "nodeaffinity" . | indent 6 }}
 {{- end }}

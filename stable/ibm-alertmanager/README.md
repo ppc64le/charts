@@ -8,8 +8,8 @@ $ helm install ibm-alertmanager
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -47,7 +47,7 @@ The following table lists the configurable parameters of the Alert Manager chart
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official alertmanager tag                      |
+| `image`                   | The image to pull and run       | default ex. ibmcom/alertmanager-ppc64le:v0.13.0         |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
 | `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
@@ -62,6 +62,6 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 $ helm install --name my-release -f values.yaml ibm-alertmanager
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Limitations

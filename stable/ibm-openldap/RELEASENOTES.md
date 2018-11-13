@@ -14,4 +14,4 @@
 
 | Chart | Date | Kubernetes Version Required | Breaking Changes | Details |
 | ----- | ---- | --------------------------- | ---------------- | ------- |
-| 0.1.0 | September 4, 2018 | >= 1.7 | None | Initial version |
+| 0.1.1 | September 4, 2018 | >= 1.7 | None | Initial version |

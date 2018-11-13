@@ -2,16 +2,14 @@
 
 [Open Liberty](http://openliberty.io) is a highly composable, fast to start, dynamic application server runtime environment.
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-open-liberty
 ```
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)

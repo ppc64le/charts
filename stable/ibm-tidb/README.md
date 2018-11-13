@@ -1,7 +1,6 @@
 # TiDB
 
 TiDB is a distributed NewSQL database compatible with [MySQL protocol] (https://pingcap.com) 
-## TL;DR;
 
 ```console
 $ helm install stable/ibm-tidb
@@ -9,8 +8,8 @@ $ helm install stable/ibm-tidb
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -48,7 +47,7 @@ The following table lists the configurable parameters of the TiDB chart and thei
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official TiDB tag                             |
+| `image`                   | The image to pull and run       |  ibmcom/tidb-ppc64le:latest                         |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
 | `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
@@ -63,6 +62,6 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 $ helm install --name my-release -f values.yaml stable/ibm-tidb
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Limitations

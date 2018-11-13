@@ -3,7 +3,7 @@ appVersion: 3.7.4
 description: Highly available RabbitMQ cluster, the open source message broker software
   that implements the Advanced Message Queuing Protocol (AMQP).
 home: https://www.rabbitmq.com
-icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/rabbitmq.png?sanitize=true
 keywords:
 - rabbitmq
 - message queue

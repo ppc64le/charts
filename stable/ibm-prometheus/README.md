@@ -2,14 +2,10 @@
 
 [Prometheus](https://prometheus.io/), a [Cloud Native Computing Foundation](https://cncf.io/) project, is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts if some condition is observed to be true.
 
-## TL;DR;
-
 ```console
 $ helm install stable/prometheus
 ```
 ## Chart Details
-
-## Introduction
 
 This chart bootstraps a [Prometheus](https://prometheus.io/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
@@ -18,7 +14,8 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
 
 ## Prerequisites
 
-- Kubernetes 1.3+ with Beta APIs enabled
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -28,7 +25,7 @@ The chart deploys pods consuming minimum resources as specified in the resources
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/prometheus
+$ helm install --name my-release stable/ibm-prometheus
 ```
 
 The command deploys Prometheus on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -101,8 +98,8 @@ Parameter | Description | Default
 --------- | ----------- | -------
 `alertmanager.enabled` | If true, create alertmanager | `true`
 `alertmanager.name` | alertmanager container name | `alertmanager`
-`alertmanager.image.repository` | alertmanager container image repository | `prom/alertmanager`
-`alertmanager.image.tag` | alertmanager container image tag | `v0.15.1`
+`alertmanager.image.repository` | alertmanager container image repository | `ibmcom/alertmanager-ppc64le`
+`alertmanager.image.tag` | alertmanager container image tag | `v0.13.0`
 `alertmanager.image.pullPolicy` | alertmanager container image pull policy | `IfNotPresent`
 `alertmanager.prefixURL` | The prefix slug at which the server can be accessed | ``
 `alertmanager.baseURL` | The external url at which the server can be accessed | `/`
@@ -138,22 +135,22 @@ Parameter | Description | Default
 `alertmanager.service.type` | type of alertmanager service to create | `ClusterIP`
 `alertmanagerFiles.alertmanager.yml` | Prometheus alertmanager configuration | example configuration
 `configmapReload.name` | configmap-reload container name | `configmap-reload`
-`configmapReload.image.repository` | configmap-reload container image repository | `jimmidyson/configmap-reload`
-`configmapReload.image.tag` | configmap-reload container image tag | `v0.2.2`
+`configmapReload.image.repository` | configmap-reload container image repository | `ibmcom/configmap-reload-ppc64le`
+`configmapReload.image.tag` | configmap-reload container image tag | `v0.1`
 `configmapReload.image.pullPolicy` | configmap-reload container image pull policy | `IfNotPresent`
 `configmapReload.extraArgs` | Additional configmap-reload container arguments | `{}`
 `configmapReload.extraConfigmapMounts` | Additional configmap-reload configMap mounts | `[]`
 `configmapReload.resources` | configmap-reload pod resource requests & limits | `{}`
 `initChownData.enabled`  | If false, don't reset data ownership at startup | true
 `initChownData.name` | init-chown-data container name | `init-chown-data`
-`initChownData.image.repository` | init-chown-data container image repository | `busybox`
-`initChownData.image.tag` | init-chown-data container image tag | `latest`
+`initChownData.image.repository` | init-chown-data container image repository | `ppc64le/busybox`
+`initChownData.image.tag` | init-chown-data container image tag | `1.28.1`
 `initChownData.image.pullPolicy` | init-chown-data container image pull policy | `IfNotPresent`
 `initChownData.resources` | init-chown-data pod resource requests & limits | `{}`
 `kubeStateMetrics.enabled` | If true, create kube-state-metrics | `true`
 `kubeStateMetrics.name` | kube-state-metrics container name | `kube-state-metrics`
-`kubeStateMetrics.image.repository` | kube-state-metrics container image repository| `quay.io/coreos/kube-state-metrics`
-`kubeStateMetrics.image.tag` | kube-state-metrics container image tag | `v1.3.1`
+`kubeStateMetrics.image.repository` | kube-state-metrics container image repository| `ibmcom/kube-state-metrics-ppc64le`
+`kubeStateMetrics.image.tag` | kube-state-metrics container image tag | `v1.2.0`
 `kubeStateMetrics.image.pullPolicy` | kube-state-metrics container image pull policy | `IfNotPresent`
 `kubeStateMetrics.args` | kube-state-metrics container arguments | `{}`
 `kubeStateMetrics.nodeSelector` | node labels for kube-state-metrics pod assignment | `{}`
@@ -173,8 +170,8 @@ Parameter | Description | Default
 `kubeStateMetrics.service.type` | type of kube-state-metrics service to create | `ClusterIP`
 `nodeExporter.enabled` | If true, create node-exporter | `true`
 `nodeExporter.name` | node-exporter container name | `node-exporter`
-`nodeExporter.image.repository` | node-exporter container image repository| `prom/node-exporter`
-`nodeExporter.image.tag` | node-exporter container image tag | `v0.16.0`
+`nodeExporter.image.repository` | node-exporter container image repository| `ibmcom/node-exporter-ppc64le`
+`nodeExporter.image.tag` | node-exporter container image tag | `v0.15.2`
 `nodeExporter.image.pullPolicy` | node-exporter container image pull policy | `IfNotPresent`
 `nodeExporter.extraArgs` | Additional node-exporter container arguments | `{}`
 `nodeExporter.extraHostPathMounts` | Additional node-exporter hostPath mounts | `[]`
@@ -195,8 +192,8 @@ Parameter | Description | Default
 `nodeExporter.service.type` | type of node-exporter service to create | `ClusterIP`
 `pushgateway.enabled` | If true, create pushgateway | `true`
 `pushgateway.name` | pushgateway container name | `pushgateway`
-`pushgateway.image.repository` | pushgateway container image repository | `prom/pushgateway`
-`pushgateway.image.tag` | pushgateway container image tag | `v0.5.2`
+`pushgateway.image.repository` | pushgateway container image repository | `machi029/pushgateway-ppc64le`
+`pushgateway.image.tag` | pushgateway container image tag | `latest`
 `pushgateway.image.pullPolicy` | pushgateway container image pull policy | `IfNotPresent`
 `pushgateway.extraArgs` | Additional pushgateway container arguments | `{}`
 `pushgateway.ingress.enabled` | If true, pushgateway Ingress will be created | `false`
@@ -218,8 +215,8 @@ Parameter | Description | Default
 `pushgateway.service.type` | type of pushgateway service to create | `ClusterIP`
 `rbac.create` | If true, create & use RBAC resources | `true`
 `server.name` | Prometheus server container name | `server`
-`server.image.repository` | Prometheus server container image repository | `prom/prometheus`
-`server.image.tag` | Prometheus server container image tag | `v2.3.2`
+`server.image.repository` | Prometheus server container image repository | `ibmcom/prometheus-ppc64le`
+`server.image.tag` | Prometheus server container image tag | `v2.1.0`
 `server.image.pullPolicy` | Prometheus server container image pull policy | `IfNotPresent`
 `server.enableAdminApi` |  If true, Prometheus administrative HTTP API will be enabled. Please note, that you should take care of administrative API access protection (ingress or some frontend Nginx with auth) before enabling it. | `false`
 `server.global.scrape_interval` | How frequently to scrape targets by default | `1m`
@@ -282,14 +279,14 @@ Parameter | Description | Default
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
-$ helm install stable/prometheus --name my-release \
+$ helm install stable/ibm-prometheus --name my-release \
     --set server.terminationGracePeriodSeconds=360
 ```
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install stable/prometheus --name my-release -f values.yaml
+$ helm install stable/ibm-prometheus --name my-release -f values.yaml
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)

@@ -50,8 +50,8 @@ persistence:
     accessMode: ReadWriteOnce
     size: 2Gi
 
-nodeSelector: 
-  beta.kubernetes.io/arch: "ppc64le"
+nodeSelector: {}
+node: "ppc64le"
 
 tolerations: []
 

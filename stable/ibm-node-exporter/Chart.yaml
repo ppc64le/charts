@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors.
 engine: gotpl
 home: https://prometheus.io/
-icon: https://github.com/ppc64le/charts/tree/master/logo/ibm-default-icon.svg
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/ibm-default-icon.svg?sanitize=true
 
 keywords:
 - node-exporter

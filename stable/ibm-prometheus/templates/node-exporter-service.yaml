@@ -34,7 +34,7 @@ spec:
   {{- end }}
 {{- end }}
   ports:
-    - name: metrics
+    - name: nodeExporterMetrics
       port: {{ .Values.nodeExporter.service.servicePort }}
       protocol: TCP
       targetPort: 9100

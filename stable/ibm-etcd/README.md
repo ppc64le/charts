@@ -1,8 +1,6 @@
 # Etcd
 
-[Etcd](https://coreos.com/etcd/)Distributed reliable key-value store for the most critical data of a distributed system.
-
-## TL;DR;
+[Etcd](https://coreos.com/etcd/) Distributed reliable key-value store for the most critical data of a distributed system.
 
 ```console
 $ helm install stable/ibm-etcd
@@ -10,8 +8,8 @@ $ helm install stable/ibm-etcd
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -49,7 +47,7 @@ The following table lists the configurable parameters of the Etcd chart and thei
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official etcd tag                              |
+| `image`                   | The image to pull and run       | ibmcom/etcd-ppc64le:v3.2.14                             |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
 | `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
@@ -64,6 +62,6 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 $ helm install --name my-release -f values.yaml stable/ibm-etcd
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Limitations

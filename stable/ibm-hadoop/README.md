@@ -1,21 +1,19 @@
-## Introduction
 # Hadoop Chart
+##Introduction
 
 [Hadoop](https://hadoop.apache.org/) is a framework for running large scale distributed applications.
 
 This chart is primarily intended to be used for YARN and MapReduce job execution where HDFS is just used as a means to transport small artifacts within the framework and not for a distributed filesystem. Data should be read from cloud based datastores such as Google Cloud Storage, S3 or Swift.
 
 ## Chart Details
-
-## Note
 The original work for this helm chart is present @ [Helm Charts]( https://github.com/helm/charts) Based on the [hadoop]( https://github.com/helm/charts/tree/master/stable/hadoop) chart
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
 
 ## Prerequisites
--Kubernetes 1.7+ with Beta APIs enabled
--Tiller 2.6.0 or later
+-Kubernetes 1.7+
+-Tiller 2.7.2 or later
 
 ## Installing the Chart
 
@@ -39,7 +37,7 @@ $ helm install --name hadoop $(stable/hadoop/tools/calc_resources.sh 50) \
   --set persistence.nameNode.storageClass=standard \
   --set persistence.dataNode.enabled=true \
   --set persistence.dataNode.storageClass=standard \
-  stable/hadoop
+  stable/ibm-hadoop
 ```
 
 > Change the value of `storageClass` to match your volume driver. `standard` works for Google Container Engine clusters.
@@ -50,7 +48,7 @@ The following table lists the configurable parameters of the Hadoop chart and th
 
 | Parameter                                         | Description                                                                        | Default                                                          |
 | ------------------------------------------------- | -------------------------------                                                    | ---------------------------------------------------------------- |
-| `image`                                           | Hadoop image ([source](https://github.com/Comcast/kube-yarn/tree/master/image))    | `danisla/hadoop:{VERSION}`                                       |
+| `image`                                           | Hadoop image                                                                       | `ynwa/ubuntu-apache-hadoop-ppc64le` |                            |
 | `imagePullPolicy`                                 | Pull policy for the images                                                         | `IfNotPresent`                                                   |
 | `hadoopVersion`                                   | Version of hadoop libraries being used                                              | `{VERSION}`                                                      |
 | `antiAffinity`                                    | Pod antiaffinity, `hard` or `soft`                                                 | `hard`                                                           |

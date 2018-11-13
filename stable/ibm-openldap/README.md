@@ -1,9 +1,7 @@
-## Introduction
-
-OpenLDAP Helm Chart
+# OpenLDAP Helm Chart
 
 ## Prerequisites 
-* Kubernetes 1.8+
+* Kubernetes 1.7+
 * PV support on the underlying infrastructure
 
 ## Resources Required
@@ -22,20 +20,20 @@ This chart will do the following:
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/openldap
+$ helm install --name my-release stable/ibm-openldap
 ```
 
 ## Configuration
 
 We use the docker images provided by https://github.com/osixia/docker-openldap. The docker image is highly configurable and well documented. Please consult to documentation for the docker image for more information.
 
-The following table lists the configurable parameters of the openldap chart and their default values.
+The following table lists the configurable parameters of the ibm-openldap chart and their default values.
 
 | Parameter                       | Description                                                   | Default            |
 | ------------------------------- | ------------------------------------------------------------- | -------------------|
 | `replicas`                      | How many replicas to schedule                                 | `1`                |
-| `image.repository`              | Container image repository                                    | `osixia/openldap`  |
-| `image.tag`                     | Container image tag                                           | `1.1.10`           |
+| `image.repository`              | Container image repository                                    | `siji/openldap-ppc64le`  |
+| `image.tag`                     | Container image tag                                           | `2.4.42`           |
 | `image.pullPolicy`              | Container pull policy                                         | `IfNotPresent`     |
 | `containerName`                 | Name of the container in the Pod                              | `slapd`            |
 | `service.type`                  | Service type                                                  | `ClusterIP`        |
@@ -59,10 +57,10 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml stable/openldap
+$ helm install --name my-release -f values.yaml stable/ibm-openldap
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 
 ## Cleanup orphaned Persistent Volumes
@@ -72,7 +70,7 @@ Deleting the Deployment will not delete associated Persistent Volumes if persist
 Do the following after deleting the chart release to clean up orphaned Persistent Volumes.
 
 ```bash
-$ kubectl delete pvc -l app=${RELEASE-NAME}-openldap
+$ kubectl delete pvc -l app=${RELEASE-NAME}-ibm-openldap
 ```
 
 ## Testing
@@ -81,8 +79,8 @@ Helm tests are included and they confirm the first three cluster members have qu
 
 ```bash
 helm test <RELEASE_NAME>
-RUNNING: foolish-mouse-openldap-service-test-akmms
-PASSED: foolish-mouse-openldap-service-test-akmms
+RUNNING: foolish-mouse-ibm-openldap-service-test-akmms
+PASSED: foolish-mouse-ibm-openldap-service-test-akmms
 ```
 
 It will confirm that we can do an ldapsearch with the default credentials

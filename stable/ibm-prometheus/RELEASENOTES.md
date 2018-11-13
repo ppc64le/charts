@@ -1,7 +1,7 @@
 # Release Notes
 
 ## What's new in Chart Version 7.0.0
-
+- Initial Release
 
 ## Fixes
 

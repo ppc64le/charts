@@ -1,12 +1,9 @@
-## Chart Details
 # LAMP
-
+## Chart Details
 Ever wanted to deploy a [LAMP Stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) on Kubernetes?
 
-## TL;DR;
-
 ```console
-$ helm install stable/lamp
+$ helm install stable/ibm-lamp
 ```
 ## Note 
 The original work for this helm chart is present @ [Helm Charts Charts]( https://github.com/helm/charts) Based on the [lamp]( https://github.com/helm/charts/tree/master/stable/lamp) chart.
@@ -40,7 +37,7 @@ Official containers are used wherever possible ( namingly [php](https://hub.dock
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/lamp
+$ helm install --name my-release stable/ibm-lamp
 ```
 
 The command deploys the LAMP chart on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -62,7 +59,7 @@ The command removes all the Kubernetes components associated with the chart and 
 To try out one of the [examples](examples/). you can run, e.g. for wordpress:
 
 ```console
-$ helm install -f examples/wordpress.yaml --name wordpress stable/lamp
+$ helm install -f examples/wordpress.yaml --name wordpress stable/ibm-lamp
 ```
 
 Currently you can try the following examples:
@@ -84,16 +81,16 @@ You can specify each of the parameters using the `--set key=value[,key=value]` a
 
 ```console
 $ helm install --name my-release \
-  --set init.clone.release=my-first-release-lamp,php.sockets=false,php.oldHTTPRoot=/var/www/my-website.com \
-    stable/lamp
+  --set init.clone.release=my-first-release-ibm-lamp,php.sockets=false,php.oldHTTPRoot=/var/www/my-website.com \
+    stable/ibm-lamp
 ```
 
-The above command sets up the chart to create its persistent contents by cloning its content from `my-first-release-lamp`, sets PHP socket communication to `false` and sets an old http root to compensate for absolute path file links
+The above command sets up the chart to create its persistent contents by cloning its content from `my-first-release-ibm-lamp`, sets PHP socket communication to `false` and sets an old http root to compensate for absolute path file links
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name my-release -f values.yaml stable/lamp
+$ helm install --name my-release -f values.yaml stable/ibm-lamp
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml) file as a template

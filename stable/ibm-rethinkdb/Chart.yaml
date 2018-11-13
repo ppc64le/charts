@@ -1,6 +1,8 @@
 apiVersion: v1
 appVersion: "1.0"
-description: A Helm chart for Kubernetes
+description: RethinkDB is an open-source scalable database built for realtime applications. It exposes a new database access model -- instead of polling for changes, the developer can tell the database to continuously push updated query results to applications in realtime. RebirthDB allows developers to build scalable realtime apps in a fraction of the time with less effort
+
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/rethinkdb.svg?sanitize=true
 name: ibm-rethinkdb
 keywords:
 - Limited

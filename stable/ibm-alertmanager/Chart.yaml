@@ -6,7 +6,7 @@ description: The Alertmanager handles alerts sent by client applications such as
   takes care of silencing and inhibition of alerts.
 engine: gotpl
 home: https://prometheus.io/docs/alerting/alertmanager/
-icon: https://github.com/ppc64le/charts/tree/master/logo/prometheus-alertmanager.jpg
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/prometheus-alertmanager.jpg?sanitize=true
 keywords:
 - alertmanager
 - prometheus

@@ -2,7 +2,7 @@ appVersion: "3.6"
 description: NoSQL document-oriented database that stores JSON-like documents with
   dynamic schemas, simplifying the integration of data in content-driven applications.
 home: https://github.com/mongodb/mongo
-icon: https://webassets.mongodb.com/_com_assets/cms/mongodb-logo-rgb-j6w271g1xn.jpg
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/mongodb.png?sanitize=true
 keywords:
 - Limited
 - ppc64le

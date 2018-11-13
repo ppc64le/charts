@@ -2,7 +2,7 @@ appVersion: 4.0.8-r0
 description: Highly available Redis cluster with multiple sentinels and standbys.
 engine: gotpl
 home: http://redis.io/
-icon: https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/redis.png?sanitize=true
 keywords:
 - redis
 - keyvalue

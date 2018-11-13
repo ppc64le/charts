@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: RStudio is an integrated development environment (IDE) for R 
 engine: gotpl
 home: https://www.rstudio.com/
-icon: https://github.com/ppc64le/charts/blob/master/logo/rstudio.png
+icon:  https://raw.githubusercontent.com/ppc64le/charts/master/logo/rstudio.png?sanitize=true
 
 keywords:
 - rstudio

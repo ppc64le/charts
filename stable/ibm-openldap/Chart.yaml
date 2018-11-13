@@ -2,7 +2,7 @@ appVersion: 2.4.44
 description: Community developed LDAP software
 engine: gotpl
 home: https://www.openldap.org
-icon: http://www.openldap.org/images/headers/LDAPworm.gif
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/OpenLDAP.png?sanitize=true
 keywords:
 - ldap
 - openldap

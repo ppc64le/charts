@@ -1,8 +1,6 @@
 # Pd Server
 
-[Pd Server](https://github.com/pingcap/pd)PD is the abbreviation for Placement Driver. It is used to manage and schedule the TiKV cluster.
-
-## TL;DR;
+[Pd Server](https://github.com/pingcap/pd) PD is the abbreviation for Placement Driver. It is used to manage and schedule the TiKV cluster.
 
 ```console
 $ helm install stable/ibm-pdserver
@@ -10,8 +8,8 @@ $ helm install stable/ibm-pdserver
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -49,9 +47,9 @@ The following table lists the configurable parameters of the Pd Server chart and
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official pdserver tag                          |
+| `image`                   | The image to pull and run       | ibmcom/pd-server-ppc64le:latest                         |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
 
 The above parameters map to `ibm-pdserver` params.
@@ -64,6 +62,6 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 $ helm install --name my-release -f values.yaml stable/ibm-pdserver
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Limitations

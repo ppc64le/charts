@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: The Jupyter notebook is a web-based notebook environment for interactive computing.
 engine: gotpl
 home: https://jupyter-notebook.readthedocs.io/
-
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/jupyter-notebook.png?sanitize=true
 keywords:
 - jupyter-notebook
 - Limited

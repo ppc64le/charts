@@ -1,4 +1,4 @@
-nodeSelector.beta.kubernetes.io/arch: 
+node: 
    __metadata:
      name: "Node"
      label: "node"
