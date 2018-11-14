@@ -58,16 +58,9 @@ spec:
       tolerations:
 {{ toYaml .Values.restoreOperator.tolerations | indent 8 }}
     {{- end }}
-{{- end }}
+{{- end }
 {{- if .Values.node }}
       affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - {{ .Values.node }}
+        {{- include "nodeaffinity" . | indent 6 }}
 {{- end }}
-
+{{- end }}

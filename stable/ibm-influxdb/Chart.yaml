@@ -2,6 +2,10 @@ name: ibm-influxdb
 version: 0.10.0
 appVersion: 1.4
 description: Scalable datastore for metrics, events, and real-time analytics.
+engine: gotpl
+home: https://www.influxdata.com/time-series-platform/influxdb/
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/influxdb.png
+
 keywords:
 - influxdb
 - database

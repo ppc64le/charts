@@ -2,7 +2,7 @@ name: ibm-kibana
 version: 0.10.0
 appVersion: 6.3.1
 description: Kibana is an open source data visualization plugin for Elasticsearch
-icon: https://raw.githubusercontent.com/elastic/kibana/master/src/ui/public/icons/kibana-color.svg
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/kibana.png
 keywords:
 - elasticsearch
 - kibana

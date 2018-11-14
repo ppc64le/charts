@@ -55,8 +55,8 @@ persistence:
     existingClaim:
     storageClass: ""
 
-nodeSelector: 
-  beta.kubernetes.io/arch: "ppc64le"
+nodeSelector: {}
+node: "ppc64le"
 
 tolerations: []
 

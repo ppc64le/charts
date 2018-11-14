@@ -3,6 +3,7 @@ appVersion: "1.0"
 description: Database management in a single PHP file
 engine: gotpl
 home: https://www.adminer.org/
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/adminer.png
 keywords:
 - Database management
 - database

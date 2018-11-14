@@ -42,8 +42,9 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-nodeSelector:
-    beta.kubernetes.io/arch: "ppc64le"
+
+node: "ppc64le"
+nodeSelector: {}
 
 
 tolerations: []

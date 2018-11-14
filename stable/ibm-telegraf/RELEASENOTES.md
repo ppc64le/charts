@@ -1,8 +1,7 @@
 # Release Notes
 
 ## What's new in Chart Version 0.3.3
-
-
+- Initial Release
 ## Fixes
 
 

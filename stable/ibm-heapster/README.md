@@ -1,6 +1,6 @@
-## Introduction
 # Heapster
 
+## Introduction
 [Heapster](https://github.com/kubernetes/heapster) enables Container Cluster Monitoring and Performance Analysis. It collects and interprets various signals like compute resource usage, lifecycle events, etc, and exports cluster metrics via REST endpoints.
 The Chart can also enable eventer, which can send the kubernetes event logs to a remote location.
 
@@ -14,7 +14,8 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
 
 ## Prerequisites
-Kubernetes 1.7+ with Beta APIs enabled -Tiller 2.6.0 or later
+Kubernetes 1.7+  
+-Tiller 2.7.2 or later
 
 ## Note 
 
@@ -23,7 +24,7 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
 ## QuickStart
 
 ```bash
-$ helm install stable/heapster
+$ helm install stable/ibm-heapster
 ```
 
 ## Installing the Chart
@@ -31,7 +32,7 @@ $ helm install stable/heapster
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/heapster
+$ helm install --name my-release stable/ibm-heapster
 ```
 
 ## Uninstalling the Chart
@@ -50,8 +51,8 @@ The default configuration values for this chart are listed in `values.yaml`.
 
 | Parameter                             | Description                                                  | Default                                           |
 |---------------------------------------|-------------------------------------                         |---------------------------------------------------|
-| `image.repository`                    | Repository for container image                               | k8s.gcr.io/heapster                 |
-| `image.tag`                           | Container image tag                                          | v1.3.0                                            |
+| `image.repository`                    | Repository for container image                               | ibmcom/heapster-ppc64le             |
+| `image.tag`                           | Container image tag                                          | v1.4.0                                            |
 | `image.pullPolicy`                    | Image pull policy                                            | IfNotPresent                                      |
 | `service.name`                        | Service port name                                            | api                                               |
 | `service.type`                        | Type for the service                                         | ClusterIP                                         |
@@ -72,10 +73,10 @@ The table below is only applicable if `resizer.enabled` is `true`. More informat
 
 | Parameter                             | Description                         | Default                                           |
 |---------------------------------------|-------------------------------------|---------------------------------------------------|
-| `resizer.image.repository`            | Repository for container image      | k8s.gcr.io/addon-resizer            |
-| `resizer.image.tag`                   | Container image tag                 | 1.7                                               |
+| `resizer.image.repository`            | Repository for container image      | k8s.gcr.io/addon-resizer                          |
+| `resizer.image.tag`                   | Container image tag                 | 2.1                                               |
 | `resizer.image.pullPolicy`            | Image pull policy                   | IfNotPresent                                      |
-| `resizer.resources.limits`            | Server resource  limits             | limits: {cpu: 50m, memory: 90Mi}                |
+| `resizer.resources.limits`            | Server resource  limits             | limits: {cpu: 50m, memory: 90Mi}                  |
 | `resizer.resources.requests`          | Server resource requests            | requests: {cpu: 50m, memory: 90Mi}                |
 | `resizer.flags`                       | Flags for pod nanny command         | Defaults set in values.yaml                       |
 

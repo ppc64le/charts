@@ -8,8 +8,6 @@
 
 ## Prerequisites
 
-- No changes
-
 ## Version History
 
 | Chart | Date | Kubernetes Version Required | Breaking Changes | Details |

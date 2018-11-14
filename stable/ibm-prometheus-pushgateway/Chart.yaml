@@ -4,6 +4,7 @@ description: A Helm chart for prometheus pushgateway
 name: ibm-prometheus-pushgateway
 version: 0.1.2
 home: https://github.com/prometheus/pushgateway
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/ibm-default-icon.svg?sanitize=true
 sources:
 - https://github.com/prometheus/pushgateway
 keywords:

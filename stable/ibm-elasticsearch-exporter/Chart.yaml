@@ -4,6 +4,7 @@ name: ibm-elasticsearch-exporter
 version: 0.2.2
 appVersion: 1.0.2
 home: https://github.com/justwatchcom/elasticsearch_exporter
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/elasticsearch_exporter.png
 sources:
   - https://github.com/justwatchcom/elasticsearch_exporter
 keywords:

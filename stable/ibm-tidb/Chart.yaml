@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: TiDB is a distributed NewSQL database compatible with MySQL protocol
 engine: gotpl
 name: ibm-tidb
-icon: https://github.com/ppc64le/charts/blob/master/logo/tidb.png
+icon:  https://raw.githubusercontent.com/ppc64le/charts/master/logo/tidb.png
 
 keywords:
 - TiDB
