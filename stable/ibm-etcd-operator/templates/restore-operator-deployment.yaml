@@ -58,9 +58,8 @@ spec:
       tolerations:
 {{ toYaml .Values.restoreOperator.tolerations | indent 8 }}
     {{- end }}
-{{- end }
+{{- end }}
 {{- if .Values.node }}
       affinity:
         {{- include "nodeaffinity" . | indent 6 }}
-{{- end }}
 {{- end }}

@@ -1,7 +1,5 @@
 # kube-state-metrics Helm Chart
 ## Introduction
-
-## Note
 The original work for this helm chart is present @ [Helm Charts Charts]( https://github.com/helm/charts) Based on the [kube-state-metrics]( https://github.com/helm/charts/tree/master/stable/kube-state-metrics) chart
 
 ## Chart Details
@@ -11,8 +9,8 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
 
 ## Prerequisites
--Kubernetes 1.7+ 
--Tiller 2.7.2 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Limitations
 ## Installing the Chart
