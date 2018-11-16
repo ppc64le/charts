@@ -7,7 +7,8 @@ init:
     release: false
     ## init.clone.hostPath If the release to clone uses hostPath instead of PVC, set
     ## it here. This will only work if both releases are deployed on the same node
-    hostPath: /path/to/volume
+    hostPath:
+     ##/path/to/volume
 
   manually:
     ## init.manually.enabled Enables container for manual initialization
@@ -46,7 +47,8 @@ php:
 
   ## php.oldHTTPRoot Additionally mounts the webroot at `php.oldHTTPRoot` to compensate
   ## for absolute path file links
-  oldHTTPRoot: /var/www/html
+  oldHTTPRoot:
+    ##/var/www/html
 
   ## php.ini additional PHP config values, see examples on how to use
   ini: |
@@ -261,7 +263,8 @@ persistence:
   storageClass: "-"
 
   ## persistence.hostPath if specified, used as persistent storage instead of PVC
-  hostPath: /path/to/volume
+  hostPath: 
+   ## path/to/volume
 
 
 ### NETWORKING ###
