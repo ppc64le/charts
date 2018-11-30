@@ -49,7 +49,7 @@ The following table lists the configurable parameters of the Mesos chart and the
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | default ex. ibmcom/mesos-ppc64le:1.1.0                  |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  |             `ppc64le`                                    |
 
 
 The above parameters map to `ibm-mesos` params.
@@ -78,3 +78,6 @@ If `persistence` is enabled, PVC's will be used to store the web root and the db
 | `persistence.hostPath` | if specified, used as persistent storage instead of PVC | _empty_ |
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

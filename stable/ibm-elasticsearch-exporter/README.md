@@ -90,3 +90,6 @@ $ helm install --name my-release -f values.yaml stable/ibm-elasticsearch-exporte
 > **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

@@ -19,6 +19,7 @@ The chart deploys pods consuming minimum resources as specified in the resources
 
 - Kubernetes 1.7+                          
 - PV provisioner support in the underlying infrastructure
+- Tiller 2.7.2 or later
 
 ## Installing the Chart
 

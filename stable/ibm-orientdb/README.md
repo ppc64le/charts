@@ -49,7 +49,7 @@ The following table lists the configurable parameters of the OrientDB chart and 
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | default ex. ibmcom/orientdb-ppc64le:2.2.15              |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  |            `ppc64le`                                    |
 
 
 The above parameters map to `ibm-orientdb` params.
@@ -65,3 +65,6 @@ $ helm install --name my-release -f values.yaml stable/ibm-orientdb
 > **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE 
+This chart has been validated on ppc64le.

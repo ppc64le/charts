@@ -94,3 +94,6 @@ The table below is only applicable if `eventer.enabled` is `true`. More informat
 | `eventer.resizer.resources.requests`  | Server resource requests                 | requests: {}                                      |
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

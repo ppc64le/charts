@@ -18,6 +18,7 @@ This chart bootstraps [PostgreSQL](https://postgresql.org) deployment on a [Kube
 
 - Kubernetes 1.7+ 
 - PV provisioner support in the underlying infrastructure (Only when persisting data)
+- Tiller 2.7.2 or later
 
 ## Resources Required 
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -147,3 +148,6 @@ only allow pods with the generated client label to connect to PostgreSQL.
 This label will be displayed in the output of a successful install.
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

@@ -77,3 +77,6 @@ If `persistence` is enabled, PVC's will be used to store the web root and the db
 
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

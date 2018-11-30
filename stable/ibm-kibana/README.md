@@ -92,3 +92,6 @@ $ helm install stable/ibm-kibana --name my-release -f values.yaml
 > **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

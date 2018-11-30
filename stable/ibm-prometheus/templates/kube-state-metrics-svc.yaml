@@ -34,7 +34,7 @@ spec:
   {{- end }}
 {{- end }}
   ports:
-    - name: kubeStateMetrics
+    - name: kube-state-metrics
       port: {{ .Values.kubeStateMetrics.service.servicePort }}
       protocol: TCP
       targetPort: 8080

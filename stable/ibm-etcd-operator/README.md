@@ -23,6 +23,7 @@ Deploys etcd cluster on kubernetes cluster
 
 - Kubernetes 1.7+ 
 - __Suggested:__ PV provisioner support in the underlying infrastructure to support backups
+- Tiller 2.7.2 or later
 
 ## Installing the Chart
 
@@ -162,3 +163,6 @@ By default the RBAC resources are generated with the "v1beta1" apiVersion. To us
 $ helm install --name my-release stable/etcd-operator --set rbac.install=true,rbac.apiVersion=v1alpha1
 ```
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

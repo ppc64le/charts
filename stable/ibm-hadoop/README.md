@@ -85,3 +85,6 @@ helm install --set hadoop.useConfigMap=true stable/zeppelin
 - Original K8S Hadoop adaptation this chart was derived from: https://github.com/Comcast/kube-yarn
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

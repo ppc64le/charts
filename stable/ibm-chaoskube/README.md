@@ -85,3 +85,6 @@ $ helm install \
     - --excludedDaysOfYear="Apr1,Dec24"
 ```
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

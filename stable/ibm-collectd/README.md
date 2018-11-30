@@ -48,7 +48,7 @@ The following table lists the configurable parameters of the collectd chart and 
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | ibmcom/collectd-exporter-ppc64le:latest                 |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  | `ppc64le`                                               |
 
 
 The above parameters map to `ibm-collectd` params.
@@ -64,3 +64,6 @@ $ helm install --name my-release -f values.yaml stable/ibm-collectd
 > **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

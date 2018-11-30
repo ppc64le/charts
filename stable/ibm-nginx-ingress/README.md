@@ -1,4 +1,4 @@
-# nginx-ingress
+# Nginx-Ingress
 
 [nginx-ingress](https://github.com/kubernetes/ingress-nginx) is an Ingress controller that uses ConfigMap to store the nginx configuration.
 
@@ -259,3 +259,6 @@ controller:
 ```
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

@@ -53,3 +53,7 @@ $ helm install stable/ibm-kube-state-metrics
 | `collectors.resourcequotas`           | Enable the resourcequotas collector.                    | true                                        |
 | `collectors.services`                 | Enable the services collector.                          | true                                        |
 | `collectors.statefulsets`             | Enable the statefulsets collector.                      | true                                        |
+
+
+## NOTE
+This chart has been validated on ppc64le.

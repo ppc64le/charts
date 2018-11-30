@@ -188,7 +188,7 @@ alertmanager:
   service:
     annotations: {}
     labels: {}
-    clusterIP: ""
+#    clusterIP: ""
 
     ## Enabling peer mesh service end points for enabling the HA alert manager
     ## Ref: https://github.com/prometheus/alertmanager/blob/master/README.md
@@ -203,7 +203,7 @@ alertmanager:
     loadBalancerSourceRanges: []
     servicePort: 80
     nodePort: 30000
-    type: ClusterIP
+    type: NodePort
 
 ## Monitors ConfigMap changes and POSTs to a URL
 ## Ref: https://github.com/jimmidyson/configmap-reload

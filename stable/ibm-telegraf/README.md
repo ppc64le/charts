@@ -181,3 +181,6 @@ There are a couple of additional plugins that could/should possibly be supported
   - [`zfs`](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/zfs)
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

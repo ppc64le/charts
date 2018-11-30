@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ppc64le/jetty
+  repository: jetty
   tag: 9.2.24
   pullPolicy: IfNotPresent
 
@@ -49,14 +49,5 @@ nodeSelector: {}
 
 tolerations: []
 
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: beta.kubernetes.io/arch
-          operator: In
-          values:
-          - "ppc64le"
-
+affinity: {}
 

@@ -49,7 +49,7 @@ The following table lists the configurable parameters of the Adminer chart and t
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | default ex. adminer:4.6.2-standalone                    |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  |  `amd64` or `ppc64le`                                   |
 
 
 The above parameters map to `ibm-adminer` params.

@@ -105,3 +105,6 @@ chart and their default values.
 | `service.type` | service type | `LoadBalancer` |
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

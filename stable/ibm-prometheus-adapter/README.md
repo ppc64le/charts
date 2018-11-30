@@ -85,3 +85,6 @@ Alternatively, a YAML file that specifies the values for the above parameters ca
 $ helm install --name my-release -f values.yaml stable/ibm-prometheus-adapter
 ```
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

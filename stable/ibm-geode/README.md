@@ -2,7 +2,6 @@
 
 [Geode](http://geode.apache.org/) Apache Geode provides a database-like consistency model, reliable transaction processing and a shared-nothing architecture to maintain very low latency performance with high concurrency processing.
 
-
 ```console
 $ helm install stable/ibm-geode
 ```
@@ -50,7 +49,7 @@ The following table lists the configurable parameters of the Geode chart and the
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | ppc64le/geode:latest                                    |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  | ppc64le`                                                |
 
 
 The above parameters map to `ibm-geode` params.
@@ -66,3 +65,6 @@ $ helm install --name my-release -f values.yaml stable/ibm-geode
 > **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

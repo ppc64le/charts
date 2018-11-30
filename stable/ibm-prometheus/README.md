@@ -349,3 +349,6 @@ If NetworkPolicy is enabled for Prometheus' scrape targets, you may also need
 to manually create a networkpolicy which allows it.
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

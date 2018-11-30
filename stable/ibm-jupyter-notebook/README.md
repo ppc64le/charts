@@ -49,7 +49,7 @@ The following table lists the configurable parameters of the Jupyter Notebook ch
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | ppc64le/jupyter-base-notebook:latest                    |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `nodeSelector`            | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `nodeSelector`            | Specify what architecture Node  | `ppc64le`                                               |
 
 
 The above parameters map to `ibm-jupyter-notebook` params.
@@ -65,3 +65,6 @@ $ helm install --name my-release -f values.yaml stable/ibm-jupyter-notebook
 > **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

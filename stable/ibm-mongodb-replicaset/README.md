@@ -360,3 +360,6 @@ connecting to: mongodb://127.0.0.1:27017
 Scaling should be managed by `helm upgrade`, which is the recommended way.
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

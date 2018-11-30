@@ -49,7 +49,7 @@ The following table lists the configurable parameters of the RStudio chart and t
 |---------------------------|---------------------------------|---------------------------------------------------------|
 | `image`                   | The image to pull and run       | `ppc64le/rstudio:0.99`                                  |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
-| `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
+| `node`                    | Specify what architecture Node  |            `ppc64le`                                    |
 
 
 The above parameters map to `ibm-rstudio` params.
@@ -65,3 +65,6 @@ $ helm install --name my-release -f values.yaml stable/ibm-rstudio
 > **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE 
+This chart has been validated on ppc64le.

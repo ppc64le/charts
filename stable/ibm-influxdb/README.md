@@ -27,6 +27,7 @@ The chart deploys pods consuming minimum resources as specified in the resources
 
 - Kubernetes 1.7+
 - PV provisioner support in the underlying infrastructure (optional)
+- Tiller 2.7.2 or later
 
 ## Installing the Chart
 
@@ -72,7 +73,7 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 $ helm install --name my-release -f values.yaml stable/ibm-influxdb
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Persistence
 
@@ -91,3 +92,6 @@ To handle this setup on startup, a job can be enabled in `values.yaml` by settin
 Make sure to uncomment or configure the job settings after enabling it. If a password is not set, a random password will be generated.
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

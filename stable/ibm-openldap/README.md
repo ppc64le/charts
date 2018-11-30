@@ -3,6 +3,7 @@
 ## Prerequisites 
 * Kubernetes 1.7+
 * PV support on the underlying infrastructure
+* Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -86,3 +87,6 @@ PASSED: foolish-mouse-ibm-openldap-service-test-akmms
 It will confirm that we can do an ldapsearch with the default credentials
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

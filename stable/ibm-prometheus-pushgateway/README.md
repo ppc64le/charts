@@ -22,7 +22,7 @@ The chart deploys pods consuming minimum resources as specified in the resources
 - Tiller 2.7.2 or later
 
 ## Chart Details
-Installs prometheus [pushgateway]
+Installs prometheus [pushgateway](https://github.com/prometheus/pushgateway)
 
 ## Installing the Chart
 
@@ -85,3 +85,6 @@ $ helm install --name my-release -f values.yaml stable/ibm-prometheus-pushgatewa
 ```
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

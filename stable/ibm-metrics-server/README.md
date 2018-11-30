@@ -1,4 +1,4 @@
-# metric-server
+# Metric-Server
 ## Introduction
 
 Metrics Server is a cluster-wide aggregator of resource usage data.
@@ -33,3 +33,6 @@ Parameter | Description | Default
 
 ## Limitations
 
+
+## NOTE 
+This chart has been validated on ppc64le.

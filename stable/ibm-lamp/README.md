@@ -31,6 +31,7 @@ Official containers are used wherever possible ( namingly [php](https://hub.dock
 
 - Kubernetes 1.7+
 - LoadBalancer support or Ingress Controller
+- Tiller 2.7.2 or later
 
 ## Installing the Chart
 
@@ -322,3 +323,6 @@ In development mode everything that gets executed in normal mode will also get e
 | `replicaCount` | > 1 will corrupt your database if one is used. Future releases might enable elastic scaling via galeradb | 1 |
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.
