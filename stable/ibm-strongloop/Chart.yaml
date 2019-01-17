@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: Open-source solutions for the API developer community
 engine: gotpl
 home: https://strongloop.com/
-icon: https://github.com/ppc64le/charts/blob/master/logo/strongloop.png
+icon:  https://raw.githubusercontent.com/ppc64le/charts/master/logo/strongloop.png
 
 keywords:
 - strongloop
@@ -19,6 +19,6 @@ maintainers:
 
 name: ibm-strongloop
 sources:
-- https://github.com/docker-library/memcached
+- https://hub.docker.com/r/ibmcom/strongloop-ppc64le/
 tillerVersion: '>=2.7.2'
 version: 0.1.0

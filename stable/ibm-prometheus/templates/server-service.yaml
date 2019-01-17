@@ -33,7 +33,7 @@ spec:
   {{- end }}
 {{- end }}
   ports:
-    - name: http
+    - name: server
       port: {{ .Values.server.service.servicePort }}
       protocol: TCP
       targetPort: 9090

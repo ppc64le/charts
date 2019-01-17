@@ -1,6 +1,5 @@
-## Chart Details
 # MariaDB
-
+## Chart Details
 [MariaDB](https://www.mariadb.org/) is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
 
 ## Introduction
@@ -36,7 +35,7 @@ To install the chart with the release name `my-release`:
 $ helm install --name my-release stable/ibm-mariadb-dev
 ```
 
-The command deploys MariaDB on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+The command deploys MariaDB on the Kubernetes cluster in the default configuration. The configuration section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
 
@@ -70,7 +69,7 @@ The following tables lists the configurable parameters of the IBM PostgreSQL cha
 | `arch.amd64`                  | `Amd64 worker node scheduler preference in a hybrid cluster` | `2 - No preference` - worker node is chosen by scheduler       |
 | `arch.ppc64le`                | `Ppc64le worker node scheduler preference in a hybrid cluster` | `2 - No preference` - worker node is chosen by scheduler       |
 | `arch.s390x`                  | `S390x worker node scheduler preference in a hybrid cluster` | `2 - No preference` - worker node is chosen by scheduler       |
-| `image`                              | `mariadb` image repository                      | `mariadb`                                                  |
+| `image`                              | `mariadb` image repository                      | `ibmcom/mariadb`                                                  |
 | `imageTag`                           | `mariadb` image tag                             | `10.2.10`                                                  |
 | `imagePullPolicy`                    | Image pull policy                               | `Always` if `imageTag` is `latest`, else `IfNotPresent`    |
 | `persistence.enabled`                | Use a PVC to persist data                       | `true`                                                     |
@@ -91,7 +90,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Architecture
 

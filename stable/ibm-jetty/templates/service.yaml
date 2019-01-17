@@ -10,12 +10,9 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.port.port1 }}
+    - port: {{ .Values.service.port }}
       targetPort: http
       name: http
-    - port: {{ .Values.port.port2 }}
-      targetPort: http1
-      name: http1
 
   selector:
     app: {{ template "jetty.name" . }}

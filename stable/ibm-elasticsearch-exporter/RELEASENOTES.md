@@ -1,6 +1,6 @@
 # Release Notes
 
-- Initial version of prometheus adaptor helm chart for ppc64le
+- Initial version of elasticsearch-exporter  helm chart for ppc64le
 
 ## What's new in Chart Version 
 

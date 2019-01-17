@@ -2,16 +2,14 @@
 
 [RethinkDB](https://github.com/rethinkdb/rethinkdb) Open-source database for building realtime web applications.
 
-## TL;DR;
-
 ```console
 $ helm install stable/ibm-rethinkdb
 ```
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the values.yaml file (default: Memory: 200Mi, CPU: 100m)
@@ -48,7 +46,7 @@ The following table lists the configurable parameters of the rethinkdb chart and
 
 |      Parameter            |          Description            |                         Default                         |
 |---------------------------|---------------------------------|---------------------------------------------------------|
-| `image`                   | The image to pull and run       | A recent official rethinkdb tag                         |
+| `image`                   | The image to pull and run       | `ibmcom/rethinkdb-ppc64le:2.3.6`                        |
 | `imagePullPolicy`         | Image pull policy               | `Always` if `imageTag` is `latest`, else `IfNotPresent` |
 | `node`                    | Specify what architecture Node  | `amd64` or `ppc64le`                                    |
 
@@ -63,6 +61,22 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 $ helm install --name my-release -f values.yaml stable/ibm-rethinkdb
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
+
+### Persistence
+
+If `persistence` is enabled, PVC's will be used to store the web root and the db root. If a pod then is redeployed to another node, it will restart within seconds with the old state prevailing. If it is disabled, `EmptyDir` is used, which would lead to deletion of the persistent storage once the pod is moved. Also cloning a chart with `persistence` disabled will not work. Therefor persistence is enabled by default and should only be disabled in a testing environment. In environments where no PVCs are available you can use `persistence.hostPath` instead. This will store the charts persistent data on the node it is running on.
+
+| Parameter | Description | Default |
+| - | - | - |
+| `persistence.enabled` | Enables persistent volume - PV provisioner support necessary | true |
+| `persistence.keep` | Keep persistent volume after helm delete | false |
+| `persistence.accessMode` | PVC Access Mode | ReadWriteOnce |
+| `persistence.size` | PVC Size | 5Gi |
+| `persistence.storageClass` | PVC Storage Class | _empty_ |
+
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

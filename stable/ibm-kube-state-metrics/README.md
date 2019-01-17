@@ -1,20 +1,16 @@
-## Introduction
 # kube-state-metrics Helm Chart
-
-* Installs the [kube-state-metrics agent](https://github.com/kubernetes/kube-state-metrics).
-
-## Note
+## Introduction
 The original work for this helm chart is present @ [Helm Charts Charts]( https://github.com/helm/charts) Based on the [kube-state-metrics]( https://github.com/helm/charts/tree/master/stable/kube-state-metrics) chart
 
 ## Chart Details
- Installs the kube-state-metrics agent
+* Installs the [kube-state-metrics agent](https://github.com/kubernetes/kube-state-metrics).
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
 
 ## Prerequisites
--Kubernetes 1.7+ with Beta APIs enabled
--Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Limitations
 ## Installing the Chart
@@ -22,14 +18,14 @@ The chart deploys pods consuming minimum resources as specified in the resources
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install stable/kube-state-metrics
+$ helm install stable/ibm-kube-state-metrics
 ```
 
 ## Configuration
 
 | Parameter                             | Description                                             | Default                                     |
 |---------------------------------------|---------------------------------------------------------|---------------------------------------------|
-| `image.repository`                    | The image repository to pull from                       | ibmcom/kube-state-metrics-ppc64le           |
+| `image.repository`                    | The image repository to pull from                       | quay.io/coreos/kube-state-metrics           |
 | `image.tag`                           | The image tag to pull from                              | `<latest version>`                          |
 | `image.pullPolicy`                    | Image pull policy                                       | IfNotPresent                                |
 | `service.port`                        | The port of the container                               | 8080                                        |
@@ -57,3 +53,7 @@ $ helm install stable/kube-state-metrics
 | `collectors.resourcequotas`           | Enable the resourcequotas collector.                    | true                                        |
 | `collectors.services`                 | Enable the services collector.                          | true                                        |
 | `collectors.statefulsets`             | Enable the statefulsets collector.                      | true                                        |
+
+
+## NOTE
+This chart has been validated on ppc64le.

@@ -3,19 +3,18 @@ appVersion: "1.0"
 description: Database management in a single PHP file
 engine: gotpl
 home: https://www.adminer.org/
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/adminer.png
 keywords:
 - Database management
 - database
-- PHP 
+- PHP
 - Limited
 - amd64
 - ppc64le
 - ICP
-
 maintainers:
-- email: lysannef@us.ibm.com 
+- email: lysannef@us.ibm.com
   name: IBM ISV Team
-
 name: ibm-adminer
 sources:
 - https://hub.docker.com/_/adminer/

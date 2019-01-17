@@ -42,16 +42,21 @@ resources:
     memory: 1028Mi
 
 persistence:
+  useDynamicProvisioning: false
   enabled: true
   tmpdata:
     accessMode: ReadWriteOnce
     size: 1Gi
+    existingClaim:
+    storageClass: ""
   mesos:
     accessMode: ReadWriteOnce
     size: 2Gi
+    existingClaim:
+    storageClass: ""
 
-nodeSelector: 
-  beta.kubernetes.io/arch: "ppc64le"
+nodeSelector: {}
+node: "ppc64le"
 
 tolerations: []
 

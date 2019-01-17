@@ -3,6 +3,7 @@ appVersion: "5.7"
 description: Modular and transparent LAMP stack chart supporting PHP-FPM, Release
   Cloning, LoadBalancer, Ingress, SSL and lots more!
 home: https://github.com/lead4good/helm-lamp-stack
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/lamp.png
 keywords:
 - Limited
 - ppc64le

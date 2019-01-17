@@ -34,7 +34,7 @@ spec:
   {{- end }}
 {{- end }}
   ports:
-    - name: http
+    - name: alertmanager
       port: {{ .Values.alertmanager.service.servicePort }}
       protocol: TCP
       targetPort: 9093

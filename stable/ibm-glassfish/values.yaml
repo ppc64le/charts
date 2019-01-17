@@ -40,9 +40,19 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-nodeSelector: 
-  beta.kubernetes.io/arch: "ppc64le"
+nodeSelector: {}
+node: "ppc64le"
 
 tolerations: []
 
-affinity: {}
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: beta.kubernetes.io/arch
+          operator: In
+          values:
+          - "ppc64le"
+
+

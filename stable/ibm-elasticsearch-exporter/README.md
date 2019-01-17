@@ -7,10 +7,8 @@ Learn more: https://github.com/justwatchcom/elasticsearch_exporter
 ## Note 
 The original work for this helm chart is present @ [Helm Charts Charts]( https://github.com/helm/charts) Based on the [elasticsearch-exporter]( https://github.com/helm/charts/tree/master/stable/elasticsearch-exporter) chart
 
-## TL;DR;
-
 ```bash
-$ helm install stable/elasticsearch-exporter
+$ helm install stable/ibm-elasticsearch-exporter
 ```
 
 ## Introduction
@@ -26,14 +24,15 @@ This chart installs Prometheus exporter
 
 ## Prerequisites
 
-- Kubernetes 1.8+ with Beta APIs enabled
-- Tiller 2.6.0 or later
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
+
 ## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/elasticsearch-exporter
+$ helm install --name my-release stable/ibm-elasticsearch-exporter
 ```
 
 The command deploys Elasticsearch-Exporter on the Kubernetes cluster using the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -55,7 +54,7 @@ Parameter | Description | Default
 --- | --- | ---
 `replicaCount` | desired number of pods | `1`
 `restartPolicy` | container restart policy | `Always`
-`image.repository` | container image repository | `justwatch/elasticsearch_exporter`
+`image.repository` | container image repository | `ibmcom/elasticsearch-exporter-ppc64le`
 `image.tag` | container image tag | `1.0.2`
 `image.pullPolicy` | container image pull policy | `IfNotPresent`
 `resources` | resource requests & limits | `{}`
@@ -78,16 +77,19 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```bash
 $ helm install --name my-release \
     --set key_1=value_1,key_2=value_2 \
-    stable/elasticsearch-exporter
+    stable/ibm-elasticsearch-exporter
 ```
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
 # example for staging
-$ helm install --name my-release -f values.yaml stable/elasticsearch-exporter
+$ helm install --name my-release -f values.yaml stable/ibm-elasticsearch-exporter
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

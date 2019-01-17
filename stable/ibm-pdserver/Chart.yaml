@@ -4,7 +4,7 @@ description: Placement driver for TiKV.
 
 engine: gotpl
 home: https://github.com/pingcap/pd
-
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/ibm-default-icon.svg?sanitize=true
 keywords:
 - placement 
 - driver

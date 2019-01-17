@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ppc64le/jetty
+  repository: jetty
   tag: 9.2.24
   pullPolicy: IfNotPresent
 
@@ -13,9 +13,9 @@ service:
   type: NodePort
   port: 8080
 
-port:
-  port1: 80
-  port2: 443
+#port:
+#  port1: 8080
+#  port2: 443
 
 ingress:
   enabled: false
@@ -42,10 +42,12 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-nodeSelector:
-    beta.kubernetes.io/arch: "ppc64le"
-#nodeSelector: {}
+
+node: "ppc64le"
+nodeSelector: {}
+
 
 tolerations: []
 
 affinity: {}
+

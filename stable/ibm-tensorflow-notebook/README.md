@@ -8,7 +8,8 @@ TensorFlow is an open source software library for numerical computation using da
 
 ## Prerequisites
 
-- Kubernetes cluster v1.8+ 
+- Kubernetes cluster v1.7+ 
+- Tiller 2.7.2 or later
 
 ## Resources Required
 
@@ -33,13 +34,13 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
 * To install the chart with the release name `notebook`:
 
   ```bash
-  $ helm install --name notebook stable/tensorflow-notebook
+  $ helm install --name notebook stable/ibm-tensorflow-notebook
   ```
 
 * To install with custom values via file :
   
   ```
-  $ helm install  --values values.yaml  --name notebook  stable/tensorflow-notebook
+  $ helm install  --values values.yaml  --name notebook  stable/ibm-tensorflow-notebook
   ```
   
   Below is an example of the custom value file values.yaml with GPU support.
@@ -47,8 +48,8 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
   ```
   jupyter:
     image:
-      repository: tensorflow/tensorflow
-      tag: 1.6.0-devel-gpu
+      repository: ibmcom/ibm-tensorflow-ppc64le
+      tag: 1.3.1-gpu
       pullPolicy: IfNotPresent
     password: tensorflow
     resources:
@@ -58,8 +59,8 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
         nvidia.com/gpu: 1
   tensorboard: 
     image:   
-      repository: tensorflow/tensorflow
-      tag: 1.6.0-devel
+      repository: ibmcom/tensorflow-ppc64le 
+      tag: 1.3.1-gpu
       pullPolicy: IfNotPresent
   service:
     type: LoadBalancer
@@ -93,14 +94,17 @@ chart and their default values.
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `jupyter.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` |
-| `jupyter.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` |
+| `jupyter.image.repository` | TensorFlow Development image repository | `ibmcom/tensorflow-ppc64le` |
+| `jupyter.image.tag` | TensorFlow Development image tag | `1.3.1-gpu` |
 | `jupyter.password` | The password to access jupyter | `mytest` |
 | `jupyter.image.pullPolicy` | image pullPolicy for the  jupyter | `IfNotPresent` |
-| `tensorboard.image.repository` | TensorFlow Development image repository | `tensorflow/tensorflow` |
-| `tensorboard.image.tag` | TensorFlow Development image tag | `1.5.0-devel-gpu` |
+| `tensorboard.image.repository` | TensorFlow Development image repository | `ibmcom/tensorflow-ppc64le` |
+| `tensorboard.image.tag` | TensorFlow Development image tag | `1.3.1-gpu` |
 | `tensorboard.image.pullPolicy` | image pullPolicy for the  tensorboard | `IfNotPresent` |
 | `resources` | Set the resource to be allocated and allowed for the Pods | `{}` |
 | `service.type` | service type | `LoadBalancer` |
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

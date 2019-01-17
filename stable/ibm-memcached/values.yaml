@@ -35,18 +35,7 @@ resources:
     memory: 64Mi
     cpu: 50m
 ## Select ppc64le for deploying chart on power and select amd64 for deploying chart on Intel
-#node: "ppc64le"
+node: "ppc64le"
 
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: beta.kubernetes.io/arch
-          operator: In
-          values:
-          - "ppc64le"
-
-nodeSelector:
-    beta.kubernetes.io/arch: "ppc64le"
-
+affinity: {}
+nodeSelector: {}

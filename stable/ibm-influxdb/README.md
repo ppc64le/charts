@@ -10,7 +10,7 @@ The original work for this helm chart is present @ [Helm Charts]( https://github
 ## QuickStart
 
 ```bash
-$ helm install stable/influxdb --name foo --namespace bar
+$ helm install stable/ibm-influxdb --name foo --namespace bar
 ```
 
 ## Introduction
@@ -25,15 +25,16 @@ The chart deploys pods consuming minimum resources as specified in the resources
  
 ## Prerequisites
 
-- Kubernetes 1.4+
+- Kubernetes 1.7+
 - PV provisioner support in the underlying infrastructure (optional)
+- Tiller 2.7.2 or later
 
 ## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/influxdb
+$ helm install --name my-release stable/ibm-influxdb
 ```
 
 The command deploys InfluxDB on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -61,7 +62,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```bash
 $ helm install --name my-release \
   --set persistence.enabled=true,persistence.size=200Gi \
-    stable/influxdb
+    stable/ibm-influxdb
 ```
 
 The above command enables persistence and changes the size of the requested data volume to 200GB.
@@ -69,10 +70,10 @@ The above command enables persistence and changes the size of the requested data
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml stable/influxdb
+$ helm install --name my-release -f values.yaml stable/ibm-influxdb
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Persistence
 
@@ -82,7 +83,7 @@ The chart mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/pers
 
 ## Starting with authentication
 
-In `values.yaml` change `.Values.config.http.authEnabled` to `true`.
+In `values.yaml` change `.Values.config.http.auth_enabled` to `true`.
 
 Influxdb requires also a user to be set in order for authentication to be enforced. See more details [here](https://docs.influxdata.com/influxdb/v1.2/query_language/authentication_and_authorization/#set-up-authentication).
 
@@ -91,3 +92,6 @@ To handle this setup on startup, a job can be enabled in `values.yaml` by settin
 Make sure to uncomment or configure the job settings after enabling it. If a password is not set, a random password will be generated.
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

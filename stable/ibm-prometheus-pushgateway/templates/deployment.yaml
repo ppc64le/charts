@@ -18,6 +18,8 @@ spec:
       labels:
         app: {{ template "prometheus-pushgateway.name" . }}
         release: {{ .Release.Name }}
+        chart: {{ template "prometheus-pushgateway.chart" . }}
+        heritage: {{ .Release.Service }}
       annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}        
     spec:
@@ -62,13 +64,6 @@ spec:
     {{- end }}
 {{- if .Values.node }}
       affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - {{ .Values.node }}
+        {{- include "nodeaffinity" . | indent 6 }}
 {{- end }}
 

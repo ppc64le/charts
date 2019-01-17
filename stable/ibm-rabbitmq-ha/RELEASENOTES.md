@@ -2,6 +2,7 @@
 
 ## What's new in Chart Version 
 
+- Initial Release
 
 ## Fixes
 

@@ -21,8 +21,9 @@ The chart deploys pods consuming minimum resources as specified in the resources
 Deploys etcd cluster on kubernetes cluster
 ## Prerequisites
 
-- Kubernetes 1.4+ with Beta APIs enabled
+- Kubernetes 1.7+ 
 - __Suggested:__ PV provisioner support in the underlying infrastructure to support backups
+- Tiller 2.7.2 or later
 
 ## Installing the Chart
 
@@ -69,8 +70,8 @@ The following table lists the configurable parameters of the etcd-operator chart
 | `customResources.createRestoreCRD`                | Create an a custom resource: EtcdRestore                             | `false`                                        |
 | `etcdOperator.name`                               | Etcd Operator name                                                   | `etcd-operator`                                |
 | `etcdOperator.replicaCount`                       | Number of operator replicas to create (only 1 is supported)          | `1`                                            |
-| `etcdOperator.image.repository`                   | etcd-operator container image                                        | `quay.io/coreos/etcd-operator`                 |
-| `etcdOperator.image.tag`                          | etcd-operator container image tag                                    | `v0.7.0`                                       |
+| `etcdOperator.image.repository`                   | etcd-operator container image                                        | `ibmcom/etcd-ppc64le`                 |
+| `etcdOperator.image.tag`                          | etcd-operator container image tag                                    | `v3.2.14`                                      |
 | `etcdOperator.image.pullpolicy`                   | etcd-operator container image pull policy                            | `Always`                                       |
 | `etcdOperator.resources.cpu`                      | CPU limit per etcd-operator pod                                      | `100m`                                         |
 | `etcdOperator.resources.memory`                   | Memory limit per etcd-operator pod                                   | `128Mi`                                        |
@@ -78,8 +79,8 @@ The following table lists the configurable parameters of the etcd-operator chart
 | `etcdOperator.commandArgs`                        | Additional command arguments                                         | `{}`                                           |
 | `backupOperator.name`                             | Backup operator name                                                 | `etcd-backup-operator`                         |
 | `backupOperator.replicaCount`                     | Number of operator replicas to create (only 1 is supported)          | `1`                                            |
-| `backupOperator.image.repository`                 | Operator container image                                             | `quay.io/coreos/etcd-operator`                 |
-| `backupOperator.image.tag`                        | Operator container image tag                                         | `v0.7.0`                                       |
+| `backupOperator.image.repository`                 | Operator container image                                             | `ibmcom/etcd-ppc64le`                 |
+| `backupOperator.image.tag`                        | Operator container image tag                                         | `v3.2.14`                                       |
 | `backupOperator.image.pullpolicy`                 | Operator container image pull policy                                 | `Always`                                       |
 | `backupOperator.resources.cpu`                    | CPU limit per etcd-operator pod                                      | `100m`                                         |
 | `backupOperator.resources.memory`                 | Memory limit per etcd-operator pod                                   | `128Mi`                                        |
@@ -90,8 +91,8 @@ The following table lists the configurable parameters of the etcd-operator chart
 | `backupOperator.commandArgs`                      | Additional command arguments                                         | `{}`                                           |
 | `restoreOperator.name`                            | Restore operator name                                                | `etcd-backup-operator`                         |
 | `restoreOperator.replicaCount`                    | Number of operator replicas to create (only 1 is supported)          | `1`                                            |
-| `restoreOperator.image.repository`                | Operator container image                                             | `quay.io/coreos/etcd-operator`                 |
-| `restoreOperator.image.tag`                       | Operator container image tag                                         | `v0.7.0`                                       |
+| `restoreOperator.image.repository`                | Operator container image                                             | `ibmcom/etcd-ppc64le`                 |
+| `restoreOperator.image.tag`                       | Operator container image tag                                         | `v3.2.14`                                       |
 | `restoreOperator.image.pullpolicy`                | Operator container image pull policy                                 | `Always`                                       |
 | `restoreOperator.resources.cpu`                   | CPU limit per etcd-operator pod                                      | `100m`                                         |
 | `restoreOperator.resources.memory`                | Memory limit per etcd-operator pod                                   | `128Mi`                                        |
@@ -102,8 +103,8 @@ The following table lists the configurable parameters of the etcd-operator chart
 | `etcdCluster.name`                                | etcd cluster name                                                    | `etcd-cluster`                                 |
 | `etcdCluster.size`                                | etcd cluster size                                                    | `3`                                            |
 | `etcdCluster.version`                             | etcd cluster version                                                 | `3.2.10`                                       |
-| `etcdCluster.image.repository`                    | etcd container image                                                 | `quay.io/coreos/etcd-operator`                 |
-| `etcdCluster.image.tag`                           | etcd container image tag                                             | `v3.2.10`                                      |
+| `etcdCluster.image.repository`                    | etcd container image                                                 | `ibmcom/etcd-ppc64le`                 |
+| `etcdCluster.image.tag`                           | etcd container image tag                                             | `v3.2.14`                                      |
 | `etcdCluster.image.pullPolicy`                    | etcd container image pull policy                                     | `Always`                                       |
 | `etcdCluster.enableTLS`                           | Enable use of TLS                                                    | `false`                                        |
 | `etcdCluster.tls.static.member.peerSecret`        | Kubernetes secret containing TLS peer certs                          | `etcd-peer-tls`                                |
@@ -162,3 +163,6 @@ By default the RBAC resources are generated with the "v1beta1" apiVersion. To us
 $ helm install --name my-release stable/etcd-operator --set rbac.install=true,rbac.apiVersion=v1alpha1
 ```
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

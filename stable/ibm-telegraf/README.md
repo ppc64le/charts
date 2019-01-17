@@ -1,14 +1,12 @@
-## Chart Details
 # Telegraf
+## Chart Details
 
 Please use the telegraf-s and telegraf-ds charts instead.*
 
 [Telegraf](https://github.com/influxdata/telegraf) is a plugin-driven server agent written by the folks over at [InfluxData](https://influxdata.com) for collecting & reporting metrics.
 
-## TL;DR
-
 ```console
-$ helm install stable/telegraf
+$ helm install stable/ibm-telegraf
 ```
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in values.yaml file.
@@ -22,14 +20,15 @@ The original work for this helm chart is present @ [Helm Charts Charts]( https:/
 
 ## Prerequisites
 
-- Kubernetes 1.4+ with Beta APIs enabled
+- Kubernetes 1.7+ 
+- Tiller 2.7.2 or later
 
 ## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/telegraf
+$ helm install --name my-release stable/ibm-telegraf
 ```
 
 The command deploys Telegraf on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -53,7 +52,7 @@ The default configuration parameters are listed in `values.yaml`. To change the 
 ```console
 $ helm install --name my-release \
   --set single.enabled=false \
-    stable/telegraf
+    stable/ibm-telegraf
 ```
 
 The above command prevents the single telegraf instance from deploying.
@@ -61,10 +60,10 @@ The above command prevents the single telegraf instance from deploying.
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name my-release -f values.yaml stable/telegraf
+$ helm install --name my-release -f values.yaml stable/ibm-telegraf
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Telegraf Configuration
 
@@ -182,3 +181,6 @@ There are a couple of additional plugins that could/should possibly be supported
   - [`zfs`](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/zfs)
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

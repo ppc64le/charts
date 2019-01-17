@@ -14,18 +14,22 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   name: {{ template "prometheus.server.fullname" . }}
+
 spec:
+  {{- if .Values.server.persistentVolume.useDynamicProvisioning }}
+  storageClassName: {{ default nil .Values.server.persistentVolume.storageClass | quote }}
+  {{ else }}
+  storageClassName: ""
+  {{- end }}
   accessModes:
 {{ toYaml .Values.server.persistentVolume.accessModes | indent 4 }}
-{{- if .Values.server.persistentVolume.storageClass }}
-{{- if (eq "-" .Values.server.persistentVolume.storageClass) }}
-  storageClassName: ""
-{{- else }}
-  storageClassName: "{{ .Values.server.persistentVolume.storageClass }}"
-{{- end }}
-{{- end }}
   resources:
     requests:
-      storage: "{{ .Values.server.persistentVolume.size }}"
-{{- end -}}
-{{- end -}}
+      storage: {{ .Values.server.persistentVolume.size | quote }}
+  {{- if .Values.server.persistentVolume.useDynamicProvisioning  }}
+  selector:
+    matchLabels:
+      assign-to: "server"
+  {{- end }}
+{{- end }}
+{{- end }}

@@ -1,4 +1,4 @@
-# nginx-ingress
+# Nginx-Ingress
 
 [nginx-ingress](https://github.com/kubernetes/ingress-nginx) is an Ingress controller that uses ConfigMap to store the nginx configuration.
 
@@ -7,36 +7,34 @@ To use, add the `kubernetes.io/ingress.class: nginx` annotation to your Ingress 
 ## Note 
 The original work for this helm chart is present @ [Helm Charts]( https://github.com/helm/charts) Based on the [nginx-ingress]( https://github.com/helm/charts/tree/master/stable/nginx-ingress) chart
 
-## TL;DR;
-
 ```console
-$ helm install stable/nginx-ingress
+$ helm install stable/ibm-nginx-ingress
 ```
 
 ## Introduction
 
-This chart bootstraps an nginx-ingress deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps an ibm-nginx-ingress deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Chart Details
 
-This chart bootstraps an nginx-ingress
+This chart bootstraps an ibm-nginx-ingress
 
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
 
 ## Prerequisites
-  - Kubernetes 1.6+
-  - Tiller 2.6.0 or later
+  - Kubernetes 1.7+
+  - Tiller 2.7.2 or later
 
 ## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/nginx-ingress
+$ helm install --name my-release stable/ibm-nginx-ingress
 ```
 
-The command deploys nginx-ingress on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+The command deploys ibm-nginx-ingress on the Kubernetes cluster in the default configuration. The `configuration` section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
 
@@ -52,13 +50,13 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-The following table lists the configurable parameters of the nginx-ingress chart and their default values.
+The following table lists the configurable parameters of the ibm-nginx-ingress chart and their default values.
 
 Parameter | Description | Default
 --- | --- | ---
 `controller.name` | name of the controller component | `controller`
-`controller.image.repository` | controller container image repository | `quay.io/kubernetes-ingress-controller/nginx-ingress-controller`
-`controller.image.tag` | controller container image tag | `0.18.0`
+`controller.image.repository` | controller container image repository | `ibmcom/nginx-ingress-controller-ppc64le`
+`controller.image.tag` | controller container image tag | `0.9.0-beta.13`
 `controller.image.pullPolicy` | controller container image pull policy | `IfNotPresent`
 `controller.config` | nginx ConfigMap entries | none
 `controller.hostNetwork` | If the nginx deployment / daemonset should run on the host's network namespace. Do not set this when `controller.service.externalIPs` is set and `kube-proxy` is used as there will be a port-conflict for port `80` | false
@@ -168,21 +166,21 @@ Parameter | Description | Default
 `udp` | UDP service key:value pairs | `{}`
 
 ```console
-$ helm install stable/nginx-ingress --name my-release \
+$ helm install stable/ibm-nginx-ingress --name my-release \
     --set controller.stats.enabled=true
 ```
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install stable/nginx-ingress --name my-release -f values.yaml
+$ helm install stable/ibm-nginx-ingress --name my-release -f values.yaml
 ```
 
 A useful trick to debug issues with ingress is to increase the logLevel
 as described [here](https://github.com/kubernetes/ingress-nginx/blob/master/docs/troubleshooting.md#debug)
 
 ```console
-$ helm install stable/nginx-ingress --set controller.extraArgs.v=2
+$ helm install stable/ibm-nginx-ingress --set controller.extraArgs.v=2
 ```
 
 ## PodDisruptionBudget
@@ -194,7 +192,7 @@ else it would make it impossible to evacuate a node. See [gh issue #7127](https:
 The Nginx ingress controller can export Prometheus metrics. In order for this to work, the VTS dashboard must be enabled as well.
 
 ```console
-$ helm install stable/nginx-ingress --name my-release \
+$ helm install stable/ibm-nginx-ingress --name my-release \
     --set controller.stats.enabled=true \
     --set controller.metrics.enabled=true
 ```
@@ -261,3 +259,6 @@ controller:
 ```
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

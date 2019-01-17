@@ -31,5 +31,5 @@ spec:
       - path: /
         backend:
           serviceName: {{ template "lamp.fullname" . }}
-          servicePort: {{ .Values.service.HTTPPort }}
+          servicePort: {{ .Values.service.httpPort }}
 {{- end }}

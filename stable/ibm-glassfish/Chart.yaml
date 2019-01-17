@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: The Open Source Java EE Reference Implementation 
 engine: gotpl
 home: https://javaee.github.io/glassfish/
-
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/glassfish.png
 keywords:
 - glassfish
 - deploy

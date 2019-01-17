@@ -11,17 +11,21 @@ metadata:
     heritage: {{ .Release.Service }}
 
 spec:
+  {{- if .Values.persistence.useDynamicProvisioning }}
+  storageClassName: {{ default nil .Values.persistence.tmpdata.storageClass | quote }}
+  {{ else }}
+  storageClassName: ""
+  {{- end }}
   accessModes:
     - {{ .Values.persistence.tmpdata.accessMode | quote }}
   resources:
     requests:
       storage: {{ .Values.persistence.tmpdata.size | quote }}
-{{- if .Values.persistence.tmpdata.storageClass }}
-{{- if (eq "-" .Values.persistence.tmpdata.storageClass) }}
-  storageClassName: ""
-{{- else }}
-  storageClassName: "{{ .Values.persistence.tmpdata.storageClass }}"
+  {{- if .Values.persistence.useDynamicProvisioning  }}
+  selector:
+    matchLabels:
+      assign-to: "tmpdata"
+  {{- end }}
 {{- end }}
 {{- end }}
-{{- end -}}
-{{- end -}}
+

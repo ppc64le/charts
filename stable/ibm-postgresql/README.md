@@ -2,10 +2,9 @@
 
 [PostgreSQL](https://postgresql.org) is a powerful, open source object-relational database system. It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness.
 
-## TL;DR;
 
 ```bash
-$ helm install stable/postgresql
+$ helm install stable/ibm-postgresql
 ```
 
 ## Introduction
@@ -17,8 +16,9 @@ This chart bootstraps [PostgreSQL](https://postgresql.org) deployment on a [Kube
 
 ## Prerequisites
 
-- Kubernetes 1.4+ with Beta APIs enabled
+- Kubernetes 1.7+ 
 - PV provisioner support in the underlying infrastructure (Only when persisting data)
+- Tiller 2.7.2 or later
 
 ## Resources Required 
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -28,7 +28,7 @@ The chart deploys pods consuming minimum resources as specified in the resources
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/postgresql
+$ helm install --name my-release stable/ibm-postgresql
 ```
 
 The command deploys PostgreSQL on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -51,8 +51,8 @@ The following table lists the configurable parameters of the PostgreSQL chart an
 
 | Parameter                  | Description                                     | Default                                                    |
 | -----------------------    | ---------------------------------------------   | ---------------------------------------------------------- |
-| `image`                    | `postgres` image repository                     | `postgres`                                                 |
-| `imageTag`                 | `postgres` image tag                            | `9.6.2`                                                    |
+| `image`                    | `postgres` image repository                     | `ibmcom/postgresql`                                        |
+| `imageTag`                 | `postgres` image tag                            | `9.6.6`                                                    |
 | `imagePullPolicy`          | Image pull policy                               | `Always` if `imageTag` is `latest`, else `IfNotPresent`    |
 | `imagePullSecrets`         | Image pull secrets                              | `nil`                                                      |
 | `postgresUser`             | Username of new user to create.                 | `postgres`                                                 |
@@ -94,7 +94,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```bash
 $ helm install --name my-release \
   --set postgresUser=my-user,postgresPassword=secretpassword,postgresDatabase=my-database \
-    stable/postgresql
+    stable/ibm-postgresql
 ```
 
 The above command creates a PostgreSQL user named `my-user` with password `secretpassword`. Additionally it creates a database named `my-database`.
@@ -102,10 +102,10 @@ The above command creates a PostgreSQL user named `my-user` with password `secre
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml stable/postgresql
+$ helm install --name my-release -f values.yaml stable/ibm-postgresql
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default `values.yaml`
 
 ## Persistence
 
@@ -119,7 +119,7 @@ The chart mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/pers
 1. Create the PersistentVolumeClaim
 1. Install the chart
 ```bash
-$ helm install --set persistence.existingClaim=PVC_NAME postgresql
+$ helm install --set persistence.existingClaim=PVC_NAME ibm-postgresql
 ```
 
 The volume defaults to mount at a subdirectory of the volume instead of the volume root to avoid the volume's hidden directories from interfering with `initdb`.  If you are upgrading this chart from before version `0.4.0`, set `persistence.subPath` to `""`.
@@ -148,3 +148,6 @@ only allow pods with the generated client label to connect to PostgreSQL.
 This label will be displayed in the output of a successful install.
 
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

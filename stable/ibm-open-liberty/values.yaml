@@ -8,7 +8,7 @@ image:
 # service specification
 service:
   type: NodePort
-
+  port: 9080
 #Resource specification
 resources:
   requests:

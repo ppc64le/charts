@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ppc64le/tomcat
+  repository: tomcat
   tag: 8.0
   pullPolicy: IfNotPresent
 
@@ -40,18 +40,11 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-nodeSelector: 
-  beta.kubernetes.io/arch: "ppc64le"
+nodeSelector: {}
 
 tolerations: []
 
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: beta.kubernetes.io/arch
-          operator: In
-          values:
-          - "ppc64le"
+affinity: {}
+
+node: "ppc64le"
 

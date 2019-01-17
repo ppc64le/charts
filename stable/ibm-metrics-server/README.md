@@ -1,5 +1,5 @@
+# Metric-Server
 ## Introduction
-# metric-server
 
 Metrics Server is a cluster-wide aggregator of resource usage data.
 
@@ -13,7 +13,8 @@ The chart deploys pods consuming minimum resources as specified in the resources
 The Chart is used to deploy Metrics Server.
 
 ## Prerequisites
--Tiller 2.6.0 or later 
+- Kubernetes 1.7+
+- Tiller 2.7.2 or later 
 
 ## Installing the Chart
 To install the chart
@@ -26,9 +27,12 @@ Parameter | Description | Default
 `serviceAccount.create` | If `true`, create a new service account | `true`
 `serviceAccount.name` | Service account to be used. If not set and `serviceAccount.create` is `true`, a name is generated using the fullname template | ``
 `apiService.create` | Create the v1beta1.metrics.k8s.io API service | `true`
-`image.repository` | Image repository | `gcr.io/google_containers/metrics-server-amd64`
+`image.repository` | Image repository | default ex.`ibmcom/metrics-server-ppc64le`
 `image.tag` | Image tag | `v0.2.1`
 `image.pullPolicy` | Image pull policy | `IfNotPresent`
 
 ## Limitations
 
+
+## NOTE 
+This chart has been validated on ppc64le.

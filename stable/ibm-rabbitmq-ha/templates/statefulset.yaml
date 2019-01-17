@@ -224,33 +224,29 @@ spec:
           {{ $key }}: {{ $value }}
         {{- end }}
       spec:
+        {{- if .Values.persistentVolume.useDynamicProvisioning }}
+        storageClassName: {{ default nil .Values.persistentVolume.storageClassName | quote }}
+        {{ else }}
+        storageClassName: ""
+        {{- end }}
         accessModes:
-        {{- range .Values.persistentVolume.accessModes }}
+          {{- range .Values.persistentVolume.accessModes }}
           - {{ . | quote }}
         {{- end }}
         resources:
           requests:
             storage: {{ .Values.persistentVolume.size | quote }}
-      {{- if .Values.persistentVolume.storageClass }}
-      {{- if (eq "-" .Values.persistentVolume.storageClass) }}
-        storageClassName: ""
-      {{- else }}
-        storageClassName: "{{ .Values.persistentVolume.storageClass }}"
-      {{- end }}
-      {{- end }}
+        {{- if .Values.persistentVolume.useDynamicProvisioning  }}
+        selector:
+          matchLabels:
+            assign-to: "rabbitmq-ha"
+        {{- end }}
 {{- else }}
         - name: data
           emptyDir: {}
 {{- end }}
 {{- if .Values.node }}
       affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - {{ .Values.node }}
+        {{- include "nodeaffinity" . | indent 6 }}
 {{- end }}
            

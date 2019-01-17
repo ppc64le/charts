@@ -40,8 +40,8 @@ spec:
             - containerPort: 9091
           readinessProbe:
             httpGet:
-            {{- if (index .Values "pushgateway" "extraArgs" "web.route-prefix") }}
-              path: /{{ index .Values "pushgateway" "extraArgs" "web.route-prefix" }}/#/status
+            {{- if (index .Values "pushgateway" "extraArgs" "web.routePrefix") }}
+              path: /{{ index .Values "pushgateway" "extraArgs" "web.routePrefix" }}/#/status
             {{- else }}
               path: /#/status
             {{- end }}
@@ -69,13 +69,6 @@ spec:
 {{- end }}
 {{- if .Values.node }}
       affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - {{ .Values.node }}
+        {{- include "nodeaffinity" . | indent 6 }}
 {{- end }}
 

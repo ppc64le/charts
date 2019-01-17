@@ -4,7 +4,7 @@ appVersion: "1.0"
 description: Apache Mesos abstracts CPU, memory, storage, and other compute resources away from machines (physical or virtual), enabling fault-tolerant and elastic distributed systems to easily be built and run effectively.
 engine: gotpl
 home: http://mesos.apache.org/
-
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/mesos.png
 
 keywords:
 - mesos

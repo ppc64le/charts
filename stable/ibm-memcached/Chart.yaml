@@ -3,7 +3,8 @@ description: Free & open source, high-performance, distributed memory object cac
   system.
 engine: gotpl
 home: http://memcached.org/
-icon: https://github.com/ppc64le/charts/tree/master/logo/memcached.png
+icon: https://raw.githubusercontent.com/ppc64le/charts/master/logo/memcached.png
+
 keywords:
 - memcached
 - cache
@@ -12,9 +13,12 @@ keywords:
 - ppc64le
 - Tools
 - ICP
+
+# The original work for this helm chart is done by Kubernetes  Charts Greg Taylor(gtaylor@gc-taylor.com)
 maintainers:
-- email: smohite@us.ibm.com
+- email: smohite@us.ibm.com 
   name: IBM ISV Team
+
 name: ibm-memcached
 sources:
 - https://github.com/docker-library/memcached

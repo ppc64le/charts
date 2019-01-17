@@ -26,7 +26,7 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{- define "open-liberty.serviceIP" -}}
-{{- if eq .Values.serviceType "ClusterIP" -}}
+{{- if eq .Values.service.type "ClusterIP" -}}
 127.0.0.1
 {{- else -}}
 {{- index .Values (printf "%sLoadBalancerIP" .Chart.Name) | default "" -}}

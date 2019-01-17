@@ -1,13 +1,13 @@
-## Introduction
 # Chaoskube Helm Chart
 
+## Introduction
 [chaoskube](https://github.com/linki/chaoskube) periodically kills random pods in your Kubernetes cluster.
 
 ## Note 
 The original work for this helm chart is present @ [Helm Charts]( https://github.com/helm/charts) Based on the [chaoskube]( https://github.com/helm/charts/tree/master/stable/chaoskube) chart
 
 ```console
-$ helm install stable/chaoskube
+$ helm install stable/ibm-chaoskube
 ```
 ## Resources Required
 The chart deploys pods consuming minimum resources as specified in the resources configuration parameter (default: Memory: 200Mi, CPU: 100m)
@@ -16,17 +16,18 @@ The chart deploys pods consuming minimum resources as specified in the resources
 Chaoskube Helm Chart which periodically kills random pods in your Kubernetes cluster.
 
 ## Prerequisites 
--Tiller 2.6.0 or later
+- Kubernetes 1.7+
+- Tiller 2.7.2 or later
  
 ## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/chaoskube
+$ helm install --name my-release stable/ibm-chaoskube
 ```
 
-The command deploys chaoskube on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+The command deploys chaoskube on the Kubernetes cluster in the default configuration. The configuration section lists the parameters that can be configured during installation.
 
 ## Uninstalling the Chart
 
@@ -44,14 +45,14 @@ By default `chaoskube` runs in dry-run mode so it doesn't actually kill anything
 If you're sure you want to use it run `helm` with:
 
 ```console
-$ helm install stable/chaoskube --set dryRun=false
+$ helm install stable/ibm-chaoskube --set dryRun=false
 ```
 
 | Parameter                 | Description                                         | Default                           |
 |---------------------------|-----------------------------------------------------|-----------------------------------|
 | `name`                    | container name                                      | chaoskube                         |
-| `image`                   | docker image                                        | quay.io/linki/chaoskube           |
-| `imageTag`                | docker image tag                                    | v0.8.0                            |
+| `image`                   | docker image                                        | hchenxa1986/chaoskube-ppc64le     |
+| `imageTag`                | docker image tag                                    | latest                            |
 | `replicas`                | number of replicas to run                           | 1                                 |
 | `interval`                | interval between pod terminations                   | 10m                               |
 | `labels`                  | label selector to filter pods by                    | "" (matches everything)           |
@@ -73,7 +74,7 @@ Setting label and namespaces selectors from the shell can be tricky but is possi
 ```console
 $ helm install \
   --set labels='app=mate\,stage!=prod',namespaces='!kube-system\,!production' \
-  stable/chaoskube --debug --dry-run | grep -A7 args
+  stable/ibm-chaoskube --debug --dry-run | grep -A7 args
     args:
     - --interval=10m
     - --labels=app=foo,stage!=prod
@@ -84,3 +85,6 @@ $ helm install \
     - --excludedDaysOfYear="Apr1,Dec24"
 ```
 ## Limitations
+
+## NOTE
+This chart has been validated on ppc64le.

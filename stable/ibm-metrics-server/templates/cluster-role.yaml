@@ -2,7 +2,8 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: system:{{ template "metrics-server.fullname" . }}
+  name: {{ template "metrics-server.name" . }}
+  system: {{ template "metrics-server.fullname" . }}
   labels:
     app: {{ template "metrics-server.name" . }}
     chart: {{ template "metrics-server.chart" . }}
@@ -10,7 +11,7 @@ metadata:
     heritage: {{ .Release.Service }}
 rules:
   - apiGroups:
-    - ""
+      - ""
     resources:
       - pods
       - nodes
