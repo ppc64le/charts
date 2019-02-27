@@ -1296,4 +1296,27 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/beta/ibm-tomee-0.1.0.tgz
     version: 0.1.0
-generated: 2019-02-11T14:56:49.890926798-05:00
+  knative:
+  - apiVersion: v1
+    appVersion: 0.2.0
+    created: 2019-02-27T03:07:31.951319536-08:00
+    description: A Helm chart for Kubernetes
+    digest: 7e366ba8ce5263a9900cfbaf2cb913283addfae07282a5882395a80cf0c92a37
+    icon: https://raw.githubusercontent.com/knative/docs/master/images/logo/rgb/knative-logo-rgb.jpg
+    keywords:
+    - ppc64le
+    - build
+    - ci
+    - DevOps
+    - deploy
+    - framework
+    - ICP
+    - OpenSource
+    - Pipeline
+    kubeVersion: '>=1.10.3'
+    name: knative
+    tillerVersion: '>=2.9.1'
+    urls:
+    - https://raw.githubusercontent.com/ppc64le/charts/master/repo/stable/knative-0.1.1.tgz
+    version: 0.1.1
+generated: 2019-02-27T03:07:31.94092111-08:00
