@@ -26,10 +26,7 @@ This chart is a subchart of Knative Monitoring. It installs Prometheus metrics. 
 - Knative requires a Kubernetes cluster v1.10 or newer with the
 [MutatingAdmissionWebhook admission controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#how-do-i-turn-on-an-admission-controller)
 enabled.
-- Istio - You should have Istio installed on your Kubernetes cluster. If you do not have it installed already you can do so by running the following command:
-```bash
-$ kubectl apply --filename https://raw.githubusercontent.com/knative/serving/v0.2.3/third_party/istio-1.0.2/istio.yaml
-```
+- Istio - You should have Istio installed on your Kubernetes cluster. If you do not have it installed already you can do so by following the steps mentioned here https://github.com/IBM/charts/tree/master/stable/ibm-istio
 
 ## Installing the Chart
 
@@ -39,7 +36,7 @@ To install the chart using helm cli:
 
 Install Prometheus
 ```
-$ helm install ./knative/serving/charts/monitoring/charts/prometheus
+$ helm install ./knative/serving/charts/monitoring/charts/prometheus [--tls]
 ```
 
 ### Configuration

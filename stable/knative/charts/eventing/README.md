@@ -27,13 +27,8 @@ In its default configuration, this chart will create the following Kubernetes re
 - Requires kubectl v1.10+.
 - Knative requires a Kubernetes cluster v1.10 or newer with the
 [MutatingAdmissionWebhook admission controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#how-do-i-turn-on-an-admission-controller)
+- Istio - You should have Istio installed on your Kubernetes cluster. If you do not have it installed already you can do so by following the steps mentioned here https://github.com/IBM/charts/tree/master/stable/ibm-istio
 enabled.
-- Istio - You should have Istio installed on your Kubernetes cluster. If you do not have it installed already you can do so by running the following command:
-```bash
-$ kubectl apply --filename https://raw.githubusercontent.com/knative/serving/v0.2.3/third_party/istio-1.0.2/istio.yaml
-```
-or by following these steps:
-[Installing Istio](https://github.com/knative/docs/blob/master/install/Knative-with-any-k8s.md#installing-istio)
 
 ## Installing the Chart
 
@@ -60,7 +55,7 @@ kafka-provisioner:
 
 Install eventing:
 ```bash
-$ helm install ./knative/eventing
+$ helm install ./knative/eventing [--tls]
 ```
 
 ### Configuration
@@ -85,7 +80,7 @@ $ helm delete <my-release> --purge [--tls]
 
 To uninstall/delete the crds:
 ```bash
-$ kubectl delete --filename https://raw.githubusercontent.com/IBM/charts/master/community/knative/all-crds.yaml
+$ kubectl delete --filename knative/all-crds.yaml
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
