@@ -1,0 +1,44 @@
+global:
+  istio:
+    namespace: "istio-system"
+
+elasticsearch:
+  replicas: 2
+  serviceAccount:
+    name: "elasticsearch-logging"
+  image:
+    repo: "docker.io" #"k8s.gcr.io"
+    name: "ibmcom/elasticsearch-ppc64le" #"elasticsearch"
+    tag: "latest" #"v5.6.4"
+  mountPath: "/data"
+  initContainer:
+    image:
+      name: "alpine"
+      tag: 3.6
+
+kibana:
+  name: "kibana-logging"
+  port: 5601
+  type: "NodePort"
+  replicas: 1
+  image:
+    repo: "docker.io" #"docker.elastic.co"
+    name: "ibmcom/kibana-ppc64le" #"kibana/kibana"
+    tag: 5.6.10 #5.6.4
+
+fluentd:
+  name: "fluentd-ds"
+  port: 24224
+  image:
+    repo: "docker.io" #"k8s.gcr.io"
+    name: "ibmcom/fluentd-elasticsearch-ppc64le" #"fluentd-elasticsearch"
+    tag: "latest" #"v2.0.4"
+  hostPath:
+    varlogcontainers: "/var/log/containers"
+    varlogpods: "/var/log/pods"
+    varlibdockercontainers: "/var/lib/docker/containers"
+    libsystemddir: "/usr/lib64"
+  logHandlerName: "requestloghandler"
+  logEntryName: "requestlog"
+  serviceAccount:
+    name: "fluentd-ds"
