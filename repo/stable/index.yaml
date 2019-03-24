@@ -3,9 +3,9 @@ entries:
   dai-cpu:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-22T10:09:54.967246335-04:00
+    created: 2019-03-24T16:24:59.66392837-04:00
     description: DriverlessAI distribution for Kubernetes
-    digest: 6e3c275ca566e2d38a957d2ca403ada740fad086d947059baa5b5349d4e30878
+    digest: 186bb96e7b6ec815a40a85e21dfc12a1c0f7871917552daedeabf44bfeceda8c
     icon: http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_static/favicon.ico
     keywords:
     - ppc64le
@@ -21,7 +21,7 @@ entries:
   dai-gpu:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-22T10:09:54.968250583-04:00
+    created: 2019-03-24T16:24:59.664815336-04:00
     description: DriverlessAI distribution for Kubernetes
     digest: 981c8a3ca0ee43bb5f516522e019251d246f8299e35f4797e31ade0c54daeeb8
     icon: http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/_static/favicon.ico
@@ -36,4 +36,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ppc64le/charts/master/repo/stable/dai-gpu-1.1.4.tgz
     version: 1.1.4
-generated: 2019-03-22T10:09:54.965728949-04:00
+generated: 2019-03-24T16:24:59.66277663-04:00
